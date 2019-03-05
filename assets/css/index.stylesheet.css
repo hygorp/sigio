@@ -16,11 +16,12 @@ body{
     width: 380px;
     height: auto;
     margin: 0 auto;
-    margin-top: 7%;
+    margin-top: 5%;
     border: thin solid #dbdcdd;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 1px 2px 15px 1px #d6d6d6;
     background-color: #ffffff;
+    position: relative;
 }
 .login-title{
     width: auto;
@@ -33,4 +34,21 @@ body{
     padding-top: 60px;
     padding-bottom: 30px;
     margin: 0 auto;
+}
+@media only screen and (max-width: 768px){
+    .page-center{
+        margin-top: 0%;
+        width: 480px;
+    }
+    .login{
+        width: 420px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .page-center{
+        width: 300px;
+    }
+    .login{
+        width: 260px;
+    }
 }
