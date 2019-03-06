@@ -1,11 +1,10 @@
 <html>
-<meta charset="utf-8">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sigio - Painel</title>
+        <title>Sigio - Dashboard</title>
         <link rel="icon" href="assets/images/fav_sigio.png" type="image/png" sizes="16x16">
-        <link rel="stylesheet" type="text/css" href="assets/css/painel.stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/dashboard.stylesheet.css">
         <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="assets/toastr/toastr.min.css">
         <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
@@ -15,6 +14,20 @@
     </head>
     
     <body>
+        <div class="logo">
+            <center><h1 style="color: #fff">SIGIO</h1></center>
+        </div>
+    
+        <div class="header">
+            <div class="logo-static">
+                <h1 style="color: #fff">SIGIO</h1>
+            </div>
+        </div>
         
+        <div class="sidenav">
+            
+        </div>
+        
+        <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
     </body>
 </html>

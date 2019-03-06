@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/hygorp/NetBeansProjects/sigio/index.php</file>
+            <file>file:/home/hygorp/NetBeansProjects/sigio/assets/css/dashboard.stylesheet.css</file>
+            <file>file:/home/hygorp/NetBeansProjects/sigio/assets/js/dashboard.accordion.menu.js</file>
+            <file>file:/home/hygorp/NetBeansProjects/sigio/dashboard.php</file>
             <file>file:/home/hygorp/NetBeansProjects/sigio/assets/css/index.stylesheet.css</file>
-            <file>file:/home/hygorp/NetBeansProjects/sigio/painel.php</file>
-            <file>file:/home/hygorp/NetBeansProjects/sigio/assets/css/painel.stylesheet.css</file>
         </group>
     </open-files>
 </project-private>
