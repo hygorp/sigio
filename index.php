@@ -21,10 +21,6 @@
         </div>
         
         <div class="page-center">
-            <div class="login-title">
-                <img src="assets/images/login_sigio.png" width="150">
-            </div>
-            
             <div class="login">
                 <form class="ui form">
                     <div class="field">

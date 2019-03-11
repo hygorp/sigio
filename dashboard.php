@@ -14,19 +14,6 @@
     </head>
     
     <body>
-        <div class="logo">
-            <center><h1 style="color: #fff">SIGIO</h1></center>
-        </div>
-    
-        <div class="header">
-            <div class="logo-static">
-                <h1 style="color: #fff">SIGIO</h1>
-            </div>
-        </div>
-        
-        <div class="sidenav">
-            
-        </div>
         
         <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
     </body>
