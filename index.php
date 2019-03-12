@@ -20,6 +20,10 @@
            
         </div>
         
+        <div class="logo">
+            <img src="assets/images/login_sigio.png" width="180">
+        </div>
+        
         <div class="page-center">
             <div class="login">
                 <form class="ui form">

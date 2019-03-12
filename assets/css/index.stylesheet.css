@@ -12,43 +12,49 @@ body{
     width: auto;
     height: 50px;
 }
+.logo{
+    width: 180px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 4%;
+}
 .page-center{
     width: 380px;
     height: auto;
     margin: 0 auto;
-    margin-top: 8%;
+    margin-top: 2%;
     border: thin solid #dbdcdd;
     box-shadow: 1px 2px 15px 1px #d6d6d6;
     background-color: #ffffff;
     position: relative;
 }
-.login-title{
-    width: auto;
-    height: 50px;
-    padding-top: 30px;
-    text-align: center;
-}
 .login{
     width: 320px;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-bottom: 30px;
     margin: 0 auto;
 }
 @media only screen and (max-width: 768px){
+    .alerts{
+        height: 40px;
+    }
     .page-center{
-        margin-top: 0%;
-        width: 480px;
+        margin-top: 2%;
+        width: 340px;
     }
     .login{
-        width: 420px;
+        width: 280px;
     }
 }
 @media only screen and (max-width: 600px){
+    .alerts{
+        height: 30px;
+    }
     .page-center{
         width: 300px;
         margin-top: 5%;
     }
     .login{
-        width: 260px;
+        width: 240px;
     }
 }
