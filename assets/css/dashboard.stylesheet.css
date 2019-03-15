@@ -1,0 +1,110 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    
+}
+body{
+    background-color: #f4f4f4 !important;
+    width: auto;
+}
+.sg-header{
+    width: 100%;
+    height: 50px;
+    background-color: #5b7587 !important;
+    box-shadow: 0px 0.5px 2px 0px #888888;
+    margin-left: 230px;
+    position: absolute;
+    z-index: 5;
+}
+.sidenav{
+    width: 230px;
+    height: 100vh;
+    background-color: #222d32;
+    position: fixed;
+    color: #fff !important;
+}
+.menu-accordion{
+    margin-top: 50px;
+}
+.menu-responsive{
+    display: none;
+}
+.accordion-button{
+    font-family: 'Lato', sans-serif;
+    background-color: #1a2226;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    height: 44px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+.accordion-button:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.accordion-item{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.4);
+    text-align: left;
+    cursor: pointer;
+}
+.accordion-item:hover{
+    color: rgba(255, 255, 255, 0.9);
+}
+.panel {
+  padding-left: 36px;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+.accordion-button:after {
+  content: '+' /* Unicode character for "plus" sign (+) */;
+  font-size: 15px;
+  font-weight: 900;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: '-'; /* Unicode character for "minus" sign (-) */
+}
+@media only screen and (max-width: 768px){
+    .sg-header{
+        margin-left: 80px;
+    }
+    .sidenav{
+        width: 80px;
+    }
+    .panel{
+        display: none;
+    }
+    .accordion-item{
+        display: none
+    }
+    .menu-responsive{
+        display: inline-block;   
+    }
+    /*.menu-item-responsive-first{
+        box-shadow: 0px 0px 0.1px 0px #888888 !important;
+    }*/
+    .menu-item-responsive{
+        width: 80px;
+        height: 60px;
+        padding-top: 16px;
+        padding-left: 22px;
+        border-top: thin solid #1d282d;
+    }
+    .menu-item-responsive:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .accordion-button{
+        display: none;
+    }
+}
