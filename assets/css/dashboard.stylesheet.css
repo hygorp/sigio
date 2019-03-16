@@ -12,22 +12,22 @@ body{
 .sg-header{
     width: 100%;
     height: 50px;
-    background-color: #5b7587 !important;
+    background-color: #00B5AD !important;
     margin-left: 230px;
-    position: absolute;
-    z-index: 5;
+    position: fixed;
 }
 .sidenav{
     width: 230px;
-    height: 100%;
-    position: fixed;
+    height: 100vh;
+    position: absolute;
     background-color: #222d32;
     color: #fff !important;
 }
 .sidenav-logo{
-    padding-top: 4.5px;
-    padding-left: 18px;
+    padding-top: 7px;
+    text-align: center;
     height: 50px;
+    background-color: #019b94;
 }
 .sidenav-logo-responsive{
     display: none;
@@ -40,9 +40,10 @@ body{
     background-color: #1a2226;
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    padding: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
     width: 100%;
-    height: 44px;
+    height: 45px;
     text-align: left;
     border: none;
     outline: none;
@@ -53,7 +54,7 @@ body{
 }
 .accordion-item{
     width: 100%;
-    height: 40px;
+    height: 45px;
     background-color: #13191c;
     color: rgba(255, 255, 255, 0.4);
     text-align: left;
@@ -82,18 +83,24 @@ body{
 .menu-responsive{
     display: none;
 }
+.menu-item-responsive{
+    
+}
+.menu-item-responsive:hover .dropdown-content {
+    display: inline;
+}
 .dropdown-content {
     margin-top: -17px;
     display: none;
     position: absolute;
     margin-left: 21px;
     background-color: #13191c;
-    min-width: 160px;
+    min-width: 210px;
     z-index: 1;
 }
 .dropdown-content a {
-    color: rgba(255, 255, 255, 0.5);
-    padding: 25px 20px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 19px 20px;
     height: 60px;
     text-decoration: none;
     display: block;
@@ -101,8 +108,17 @@ body{
 .dropdown-content a:hover {
     color: rgba(255, 255, 255, 0.9);
 }
-.menu-item-responsive:hover .dropdown-content {
-    display: inline;
+.dropdown-content a:before {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #222d32; 
+    position: absolute;
+    top: 16px;
+    left: -12px;
 }
 @media only screen and (max-width: 768px){
     .sg-header{
@@ -116,9 +132,11 @@ body{
     }
     .sidenav-logo-responsive{
         display: inline-block;
-        padding-left: 20px;
+        text-align: center;
         padding-top: 4.5px;
+        width: 100%;
         height: 50px;
+        background-color: #019b94;
     }
     .panel{
         display: none;
@@ -135,10 +153,13 @@ body{
         padding-top: 16px;
         padding-left: 22px;
         border-top: thin solid #1d282d;
+        color: rgba(255, 255, 255, 0.4);
     }
     .menu-item-responsive:hover{
         background-color: #13191c;
         cursor: pointer;
+        transition: 0.5s linear;
+        color: rgba(255, 255, 255, 0.9);
     }
     .accordion-button{
         display: none;

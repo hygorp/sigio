@@ -20,7 +20,7 @@
         
         <div class="sidenav">
             <div class="sidenav-logo">
-                
+                <img src="assets/images/dashboard_sigio.png" width="90">
             </div>
             <div class="sidenav-logo-responsive">
                 <img src="assets/images/sidenav-sigio.png" width="40">
@@ -34,7 +34,7 @@
                 <div class="panel">
                     <button class="accordion-item">
                         <i class="caret right icon"></i>
-                        Hello
+                        Cadastro
                     </button>
                 </div>
 
@@ -45,7 +45,7 @@
                 <div class="panel">
                     <button class="accordion-item">
                         <i class="caret right icon"></i>
-                        Hello
+                        Cadastro
                     </button>
                 </div>
 
@@ -60,15 +60,108 @@
                     </button>
                 </div>
                 
+                <button class="accordion-button">
+                    <i class="box icon"></i>
+                    Estoque
+                </button>
+                <div class="panel">
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Controle de Estoque
+                    </button>
+                
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Produtos
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Fornecedores
+                    </button>
+                </div>
+                <button class="accordion-button">
+                    <i class="building icon"></i>
+                    Patrimônio
+                </button>
+                <div class="panel">                
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Cadastro
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Controle de Patrimônio
+                    </button>
+
+                </div>
+                
+                <button class="accordion-button">
+                    <i class="dollar sign icon"></i>
+                    Financeiro
+                </button>
+                <div class="panel">
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Contas à Pagar
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Contas à Receber
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Formas de Pagamento
+                    </button>
+                </div>
+                
+                <button class="accordion-button">
+                    <i class="chart line icon"></i>
+                    Relatórios
+                </button>
+                <div class="panel">
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Financeiro
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Estoque
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Fornecedores
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Produtos
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Patrimônio
+                    </button>
+                    
+                    <button class="accordion-item">
+                        <i class="caret right icon"></i>
+                        Consultas
+                    </button>
+                </div>
+                
                 <!--menu-responsive-->
                 
                 <div class="menu-responsive">
                     <div class="menu-item-responsive">
                         <i class="big users icon"></i>
                         <div class="dropdown-content">
-                            <a href="#">
-                                <i class="caret right icon"></i>
-                                Cadastro
+                            <a class="first-dropdown-content">
+                                Pacientes
                             </a>
                             <a href="#">
                                 <i class="caret right icon"></i>
@@ -83,10 +176,102 @@
                     
                     <div class="menu-item-responsive">
                         <i class="big user md icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Cadastro
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="menu-item-responsive">
                         <i class="big address book icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Hello
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-responsive">
+                        <i class="big box icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Controle de Estoque
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Produtos
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Fornecedores
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-responsive">
+                        <i class="big building icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Cadastro
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Controle de Patrimônio
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-responsive">
+                        <i class="big dollar sign icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Contas à Pagar
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Contas à Receber
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Formas de Pagamento
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-responsive">
+                        <i class="big chart line alternate icon"></i>
+                        <div class="dropdown-content">
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Financeiro
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Estoque
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Fornecedores
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Produtos
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Patrimônio
+                            </a>
+                            <a href="#">
+                                <i class="caret right icon"></i>
+                                Consultas
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

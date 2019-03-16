@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="field">
-                        <button class="ui right labeled icon primary large button fluid" type="submit">
+                        <button class="ui right labeled icon teal large button fluid" type="submit">
                             <i class="right arrow icon"></i>
                             Logar
                         </button>
