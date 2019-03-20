@@ -7,33 +7,46 @@
 }
 body{
     background-color: #f4f4f4 !important;
-    width: auto;
 }
 .sg-header{
+    position: fixed;
     width: 100%;
     height: 50px;
     background-color: #00B5AD !important;
-    margin-left: 230px;
-    position: fixed;
-}
-.sidenav{
-    width: 230px;
-    height: 100vh;
-    position: absolute;
-    background-color: #222d32;
-    color: #fff !important;
-}
-.sidenav-logo{
+    z-index: 4;
+}   
+.sg-header-logo{
     padding-top: 7px;
     text-align: center;
+    width: 230px;
+    height: 50px;
+    background-color: #019b94;
+    float: left;
+}
+.sg-header-logo-responsive{
+    display: none;
+    float: left;
+}
+.user-tools{
+    float: right;
+    width: 162px;
     height: 50px;
     background-color: #019b94;
 }
-.sidenav-logo-responsive{
-    display: none;
+.user-tools-dropdown{
+    padding: 17px;
+}
+.sidenav{
+    float: left;
+    width: 230px;
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #222d32;
+    color: #ffffff !important;
+    z-index: 3; 
 }
 .menu-accordion{
-    margin-top: 0px;
+    height: auto;
 }
 .accordion-button{
     font-family: 'Lato', sans-serif;
@@ -43,7 +56,7 @@ body{
     padding-left: 18px;
     padding-right: 18px;
     width: 100%;
-    height: 45px;
+    height: 50px;
     text-align: left;
     border: none;
     outline: none;
@@ -51,6 +64,8 @@ body{
 }
 .accordion-button:hover, .accordion-button:focus{
     color: rgba(255, 255, 255, 0.9);
+    border-left: 4px solid #019b94;
+    transition: all linear 0.4s;
 }
 .accordion-item{
     width: 100%;
@@ -83,9 +98,6 @@ body{
 .menu-responsive{
     display: none;
 }
-.menu-item-responsive{
-    
-}
 .menu-item-responsive:hover .dropdown-content {
     display: inline;
 }
@@ -95,7 +107,7 @@ body{
     position: absolute;
     margin-left: 21px;
     background-color: #13191c;
-    min-width: 210px;
+    min-width: 230px;
     z-index: 1;
 }
 .dropdown-content a {
@@ -120,32 +132,36 @@ body{
     top: 16px;
     left: -12px;
 }
+.main-content{
+    padding-left: 230px;
+    padding-top: 50px;
+}
 @media only screen and (max-width: 768px){
     .sg-header{
-        margin-left: 80px;
+        
     }
-    .sidenav{
-        width: 80px;
-    }
-    .sidenav-logo{
+    .sg-header-logo{
         display: none;
     }
-    .sidenav-logo-responsive{
+    .sg-header-logo-responsive{
         display: inline-block;
         text-align: center;
-        padding-top: 4.5px;
-        width: 100%;
+        padding-top: 5px;
+        width: 80px;
         height: 50px;
         background-color: #019b94;
     }
-    .panel{
-        display: none;
+    .sidenav{
+        width: 80px;
+        height: 150vh;
+        overflow: hidden;
+        padding-top: 50px;
     }
-    .accordion-item{
+    .panel, .accordion-item, .accordion-button{
         display: none
     }
     .menu-responsive{
-        display: inline-block;   
+        display: inline-block;
     }
     .menu-item-responsive{
         width: 80px;
@@ -161,7 +177,15 @@ body{
         transition: 0.5s linear;
         color: rgba(255, 255, 255, 0.9);
     }
-    .accordion-button{
-        display: none;
+    .first-dropdown-content{
+        background-color: #222d32;
+        font-weight: 900;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.9) !important;
+        cursor: default;
+    }
+    .main-content{
+        padding-left: 80px;
+        padding-top: 50px;
     }
 }
