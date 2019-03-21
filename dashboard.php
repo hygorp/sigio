@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/dashboard.stylesheet.css">
         <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="assets/toastr/toastr.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
         <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="assets/semantic/semantic.min.js"></script>
         <script type="text/javascript" src="assets/toastr/toastr.min.js"></script>
@@ -440,7 +441,16 @@
         </div>
         
         <div class="main-content">
-            <h1>Hello World!</h1>
+            <div class="main-dashboard-monitor">
+                <div class="ui grid">
+                    <div class="eight wide column">
+                        <div class="ui teal segment monitor-pacientes">Teal</div>
+                    </div>
+                    <div class="eight wide column">
+                        <div class="ui blue segment monitor-consultas">Blue</div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
