@@ -23,13 +23,19 @@
             <div class="sg-header-logo-responsive">
                 <img src="assets/images/sidenav-sigio.png" width="40">
             </div>
-            
-            <div class="user-tools">
-                
-            </div>
         </div>
         
-        <div class="sidenav">
+        <div class="sidenav">       
+            <div class="active-user">
+                <div class="active-user-data">
+                    <img class="active-user-image ui circular image" src="https://bit.ly/2FnXHSe" width="52" style="float: left">
+                    <div class="active-user-data-info">
+                        <span>Bender Bending</span>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            
             <div class="menu-accordion">
                 <button class="accordion-button">
                     <i class="users icon"></i>

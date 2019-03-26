@@ -1,3 +1,11 @@
+<?php
+    session_start();
+        if(isset($_SESSION['usuario'])){
+            header("location: dashboard.php");
+        }
+    include './classes/Conexao.class.php';
+    include './classes/DAO/UsuariosDAO.class.php';
+?>
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
@@ -26,23 +34,23 @@
         
         <div class="page-center">
             <div class="login">
-                <form class="ui form">
+                <form class="ui form" action="" method="POST">
                     <div class="field">
                         <div class="ui left icon large input">
-                            <input type="text" name="usuario" placeholder="Usuário">
+                            <input type="text" id="usuario" name="usuario" placeholder="Usuário">
                             <i class="user icon"></i>
                         </div>
                     </div>
 
                     <div class="field">
                         <div class="ui left icon large input">
-                            <input type="password" name="senha" placeholder="Senha">
+                            <input type="password" id="senha" name="senha" placeholder="Senha">
                             <i class="key icon"></i>
                         </div>
                     </div>
 
                     <div class="field">
-                        <button class="ui right labeled icon teal large button fluid" type="submit">
+                        <button class="ui right labeled icon teal large button fluid" type="submit" name="logar">
                             <i class="right arrow icon"></i>
                             Logar
                         </button>
@@ -52,6 +60,29 @@
                 </form>
             </div>
         </div>
+        <?php
+            $POST = $_POST;
+            if ($POST){
+                //instanciando objeto $UsuarioDao a partir da Classe UsuariosDAO.class.php
+                $UsuariosDAO = new UsuariosDAO();
+                //variaveis usuario e senha recebem dados dos campos 'usuario e senha'
+                $usuario    = $POST['usuario'];
+                $senha      = md5($POST['senha']);
+                //variavel responsavel por enviar os dados do formulario para o método login em UsuariosDao.class.php
+                $user       = $UsuariosDAO->login($usuario, $senha);
+
+                if (isset($POST['logar'])){
+                    if($user == true){
+                        session_start();
+                        $_SESSION['usuario'] = $usuario;
+                        $_SESSION['senha']   = $senha;
+                        header('location: dashboard.php');
+                    }else{
+                        header('location: index.php?login-error');
+                    }
+                }
+            }
+        ?>
     </body>
     
 </html>

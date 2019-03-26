@@ -3,7 +3,7 @@ class UsuariosDAO {
     private $conexao;
     
     public function __construct() {
-        $this->conexao = new Conexao ();
+        $this->conexao = new Conexao();
     }
     
     public function login($usuario, $senha){
