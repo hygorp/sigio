@@ -1,257 +1,255 @@
 <?php
 class Dentistas {
-    private $matricula;
-    private $nome;
-    private $data_nascimento;
-    private $cpf;
-    private $rg;
-    private $orgao_emissor;
-    private $cep;
-    private $endereco;
-    private $complemento;
-    private $bairro;
-    private $cidade;
-    private $uf;
-    private $pais;
-    private $telefone;
-    private $celular1;
-    private $celular2;
-    private $email;
-    private $especialidade1;
-    private $especialidade2;
-    private $especialidade3;
-    private $conselho_tipo;
-    private $conselho_numero;
-    private $conselho_estado;
-    private $comissao;
-    private $data_admissao;
-    private $data_demissao;
-    private $status;
-    private $usuario;
+    private $matricula_dentistas;
+    private $nome_completo_dentistas;
+    private $data_nascimento_dentistas;
+    private $cpf_dentistas;
+    private $rg_dentistas;
+    private $orgao_emissor_dentistas;
+    private $cep_dentistas;
+    private $endereco_dentistas;
+    private $complemento_dentistas;
+    private $bairro_dentistas;
+    private $cidade_dentistas;
+    private $uf_dentistas;
+    private $pais_dentistas;
+    private $telefone_dentistas;
+    private $celular1_dentistas;
+    private $celular2_dentistas;
+    private $email_dentistas;
+    private $especialidade1_dentistas;
+    private $especialidade2_dentistas;
+    private $especialidade3_dentistas;
+    private $conselho_tipo_dentistas;
+    private $conselho_numero_dentistas;
+    private $conselho_estado_dentistas;
+    private $comissao_dentistas;
+    private $data_admissao_dentistas;
+    private $data_demissao_dentistas;
+    private $status_dentistas;
+    private $usuario_dentistas;
     
-    function getMatricula() {
-        return $this->matricula;
+    function getMatricula_dentistas() {
+        return $this->matricula_dentistas;
     }
 
-    function getNome() {
-        return $this->nome;
+    function getNome_completo_dentistas() {
+        return $this->nome_completo_dentistas;
     }
 
-    function getData_nascimento() {
-        return $this->data_nascimento;
+    function getData_nascimento_dentistas() {
+        return $this->data_nascimento_dentistas;
     }
 
-    function getCpf() {
-        return $this->cpf;
+    function getCpf_dentistas() {
+        return $this->cpf_dentistas;
     }
 
-    function getRg() {
-        return $this->rg;
+    function getRg_dentistas() {
+        return $this->rg_dentistas;
     }
 
-    function getOrgao_emissor() {
-        return $this->orgao_emissor;
+    function getOrgao_emissor_dentistas() {
+        return $this->orgao_emissor_dentistas;
     }
 
-    function getCep() {
-        return $this->cep;
+    function getCep_dentistas() {
+        return $this->cep_dentistas;
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    function getEndereco_dentistas() {
+        return $this->endereco_dentistas;
     }
 
-    function getComplemento() {
-        return $this->complemento;
+    function getComplemento_dentistas() {
+        return $this->complemento_dentistas;
     }
 
-    function getBairro() {
-        return $this->bairro;
+    function getBairro_dentistas() {
+        return $this->bairro_dentistas;
     }
 
-    function getCidade() {
-        return $this->cidade;
+    function getCidade_dentistas() {
+        return $this->cidade_dentistas;
     }
 
-    function getUf() {
-        return $this->uf;
+    function getUf_dentistas() {
+        return $this->uf_dentistas;
     }
 
-    function getPais() {
-        return $this->pais;
+    function getPais_dentistas() {
+        return $this->pais_dentistas;
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    function getTelefone_dentistas() {
+        return $this->telefone_dentistas;
     }
 
-    function getCelular1() {
-        return $this->celular1;
+    function getCelular1_dentistas() {
+        return $this->celular1_dentistas;
     }
 
-    function getCelular2() {
-        return $this->celular2;
+    function getCelular2_dentistas() {
+        return $this->celular2_dentistas;
     }
 
-    function getEmail() {
-        return $this->email;
+    function getEmail_dentistas() {
+        return $this->email_dentistas;
     }
 
-    function getEspecialidade1() {
-        return $this->especialidade1;
+    function getEspecialidade1_dentistas() {
+        return $this->especialidade1_dentistas;
     }
 
-    function getEspecialidade2() {
-        return $this->especialidade2;
+    function getEspecialidade2_dentistas() {
+        return $this->especialidade2_dentistas;
     }
 
-    function getEspecialidade3() {
-        return $this->especialidade3;
+    function getEspecialidade3_dentistas() {
+        return $this->especialidade3_dentistas;
     }
 
-    function getConselho_tipo() {
-        return $this->conselho_tipo;
+    function getConselho_tipo_dentistas() {
+        return $this->conselho_tipo_dentistas;
     }
 
-    function getConselho_numero() {
-        return $this->conselho_numero;
+    function getConselho_numero_dentistas() {
+        return $this->conselho_numero_dentistas;
     }
 
-    function getConselho_estado() {
-        return $this->conselho_estado;
+    function getConselho_estado_dentistas() {
+        return $this->conselho_estado_dentistas;
     }
 
-    function getComissao() {
-        return $this->comissao;
+    function getComissao_dentistas() {
+        return $this->comissao_dentistas;
     }
 
-    function getData_admissao() {
-        return $this->data_admissao;
+    function getData_admissao_dentistas() {
+        return $this->data_admissao_dentistas;
     }
 
-    function getData_demissao() {
-        return $this->data_demissao;
+    function getData_demissao_dentistas() {
+        return $this->data_demissao_dentistas;
     }
 
-    function getStatus() {
-        return $this->status;
+    function getStatus_dentistas() {
+        return $this->status_dentistas;
     }
 
-    function getUsuario() {
-        return $this->usuario;
+    function getUsuario_dentistas() {
+        return $this->usuario_dentistas;
     }
 
-    function setMatricula($matricula) {
-        $this->matricula = $matricula;
+    function setMatricula_dentistas($matricula_dentistas) {
+        $this->matricula_dentistas = $matricula_dentistas;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    function setNome_completo_dentistas($nome_completo_dentistas) {
+        $this->nome_completo_dentistas = $nome_completo_dentistas;
     }
 
-    function setData_nascimento($data_nascimento) {
-        $this->data_nascimento = $data_nascimento;
+    function setData_nascimento_dentistas($data_nascimento_dentistas) {
+        $this->data_nascimento_dentistas = $data_nascimento_dentistas;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
+    function setCpf_dentistas($cpf_dentistas) {
+        $this->cpf_dentistas = $cpf_dentistas;
     }
 
-    function setRg($rg) {
-        $this->rg = $rg;
+    function setRg_dentistas($rg_dentistas) {
+        $this->rg_dentistas = $rg_dentistas;
     }
 
-    function setOrgao_emissor($orgao_emissor) {
-        $this->orgao_emissor = $orgao_emissor;
+    function setOrgao_emissor_dentistas($orgao_emissor_dentistas) {
+        $this->orgao_emissor_dentistas = $orgao_emissor_dentistas;
     }
 
-    function setCep($cep) {
-        $this->cep = $cep;
+    function setCep_dentistas($cep_dentistas) {
+        $this->cep_dentistas = $cep_dentistas;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    function setEndereco_dentistas($endereco_dentistas) {
+        $this->endereco_dentistas = $endereco_dentistas;
     }
 
-    function setComplemento($complemento) {
-        $this->complemento = $complemento;
+    function setComplemento_dentistas($complemento_dentistas) {
+        $this->complemento_dentistas = $complemento_dentistas;
     }
 
-    function setBairro($bairro) {
-        $this->bairro = $bairro;
+    function setBairro_dentistas($bairro_dentistas) {
+        $this->bairro_dentistas = $bairro_dentistas;
     }
 
-    function setCidade($cidade) {
-        $this->cidade = $cidade;
+    function setCidade_dentistas($cidade_dentistas) {
+        $this->cidade_dentistas = $cidade_dentistas;
     }
 
-    function setUf($uf) {
-        $this->uf = $uf;
+    function setUf_dentistas($uf_dentistas) {
+        $this->uf_dentistas = $uf_dentistas;
     }
 
-    function setPais($pais) {
-        $this->pais = $pais;
+    function setPais_dentistas($pais_dentistas) {
+        $this->pais_dentistas = $pais_dentistas;
     }
 
-    function setTelefone($telefone) {
-        $this->telefone = $telefone;
+    function setTelefone_dentistas($telefone_dentistas) {
+        $this->telefone_dentistas = $telefone_dentistas;
     }
 
-    function setCelular1($celular1) {
-        $this->celular1 = $celular1;
+    function setCelular1_dentistas($celular1_dentistas) {
+        $this->celular1_dentistas = $celular1_dentistas;
     }
 
-    function setCelular2($celular2) {
-        $this->celular2 = $celular2;
+    function setCelular2_dentistas($celular2_dentistas) {
+        $this->celular2_dentistas = $celular2_dentistas;
     }
 
-    function setEmail($email) {
-        $this->email = $email;
+    function setEmail_dentistas($email_dentistas) {
+        $this->email_dentistas = $email_dentistas;
     }
 
-    function setEspecialidade1($especialidade1) {
-        $this->especialidade1 = $especialidade1;
+    function setEspecialidade1_dentistas($especialidade1_dentistas) {
+        $this->especialidade1_dentistas = $especialidade1_dentistas;
     }
 
-    function setEspecialidade2($especialidade2) {
-        $this->especialidade2 = $especialidade2;
+    function setEspecialidade2_dentistas($especialidade2_dentistas) {
+        $this->especialidade2_dentistas = $especialidade2_dentistas;
     }
 
-    function setEspecialidade3($especialidade3) {
-        $this->especialidade3 = $especialidade3;
+    function setEspecialidade3_dentistas($especialidade3_dentistas) {
+        $this->especialidade3_dentistas = $especialidade3_dentistas;
     }
 
-    function setConselho_tipo($conselho_tipo) {
-        $this->conselho_tipo = $conselho_tipo;
+    function setConselho_tipo_dentistas($conselho_tipo_dentistas) {
+        $this->conselho_tipo_dentistas = $conselho_tipo_dentistas;
     }
 
-    function setConselho_numero($conselho_numero) {
-        $this->conselho_numero = $conselho_numero;
+    function setConselho_numero_dentistas($conselho_numero_dentistas) {
+        $this->conselho_numero_dentistas = $conselho_numero_dentistas;
     }
 
-    function setConselho_estado($conselho_estado) {
-        $this->conselho_estado = $conselho_estado;
+    function setConselho_estado_dentistas($conselho_estado_dentistas) {
+        $this->conselho_estado_dentistas = $conselho_estado_dentistas;
     }
 
-    function setComissao($comissao) {
-        $this->comissao = $comissao;
+    function setComissao_dentistas($comissao_dentistas) {
+        $this->comissao_dentistas = $comissao_dentistas;
     }
 
-    function setData_admissao($data_admissao) {
-        $this->data_admissao = $data_admissao;
+    function setData_admissao_dentistas($data_admissao_dentistas) {
+        $this->data_admissao_dentistas = $data_admissao_dentistas;
     }
 
-    function setData_demissao($data_demissao) {
-        $this->data_demissao = $data_demissao;
+    function setData_demissao_dentistas($data_demissao_dentistas) {
+        $this->data_demissao_dentistas = $data_demissao_dentistas;
     }
 
-    function setStatus($status) {
-        $this->status = $status;
+    function setStatus_dentistas($status_dentistas) {
+        $this->status_dentistas = $status_dentistas;
     }
 
-    function setUsuario($usuario) {
-        $this->usuario = $usuario;
+    function setUsuario_dentistas($usuario_dentistas) {
+        $this->usuario_dentistas = $usuario_dentistas;
     }
-
-
 }

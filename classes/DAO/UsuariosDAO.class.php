@@ -15,4 +15,14 @@ class UsuariosDAO {
             return false;
         }
     }
+    
+    public function usuario_logado($usuario_logado){
+        $sql = "SELECT * FROM usuarios WHERE nome_usuarios = '$usuario_logado'";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if (mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }
 }

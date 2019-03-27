@@ -1,212 +1,210 @@
 <?php
 class Funcionarios {
-    private $matricula;
-    private $nome;
-    private $data_nascimento;
-    private $cpf;
-    private $rg;
-    private $orgao_emissor;
-    private $cep;
-    private $endereco;
-    private $complemento;
-    private $bairro;
-    private $cidade;
-    private $uf;
-    private $pais;
-    private $telefone;
-    private $celular1;
-    private $celular2;
-    private $email;
-    private $cargo;
-    private $salario;
-    private $data_admissao;
-    private $data_demissao;
-    private $status;
-    private $usuario;
+    private $matricula_funcionarios;
+    private $nome_completo_funcionarios;
+    private $data_nascimento_funcionarios;
+    private $cpf_funcionarios;
+    private $rg_funcionarios;
+    private $orgao_emissor_funcionarios;
+    private $cep_funcionarios;
+    private $endereco_funcionarios;
+    private $complemento_funcionarios;
+    private $bairro_funcionarios;
+    private $cidade_funcionarios;
+    private $uf_funcionarios;
+    private $pais_funcionarios;
+    private $telefone_funcionarios;
+    private $celular1_funcionarios;
+    private $celular2_funcionarios;
+    private $email_funcionarios;
+    private $cargo_funcionarios;
+    private $salario_funcionarios;
+    private $data_admissao_funcionarios;
+    private $data_demissao_funcionarios;
+    private $status_funcionarios;
+    private $usuario_funcionarios;
     
-    function getMatricula() {
-        return $this->matricula;
+    function getMatricula_funcionarios() {
+        return $this->matricula_funcionarios;
     }
 
-    function getNome() {
-        return $this->nome;
+    function getNome_completo_funcionarios() {
+        return $this->nome_completo_funcionarios;
     }
 
-    function getData_nascimento() {
-        return $this->data_nascimento;
+    function getData_nascimento_funcionarios() {
+        return $this->data_nascimento_funcionarios;
     }
 
-    function getCpf() {
-        return $this->cpf;
+    function getCpf_funcionarios() {
+        return $this->cpf_funcionarios;
     }
 
-    function getRg() {
-        return $this->rg;
+    function getRg_funcionarios() {
+        return $this->rg_funcionarios;
     }
 
-    function getOrgao_emissor() {
-        return $this->orgao_emissor;
+    function getOrgao_emissor_funcionarios() {
+        return $this->orgao_emissor_funcionarios;
     }
 
-    function getCep() {
-        return $this->cep;
+    function getCep_funcionarios() {
+        return $this->cep_funcionarios;
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    function getEndereco_funcionarios() {
+        return $this->endereco_funcionarios;
     }
 
-    function getComplemento() {
-        return $this->complemento;
+    function getComplemento_funcionarios() {
+        return $this->complemento_funcionarios;
     }
 
-    function getBairro() {
-        return $this->bairro;
+    function getBairro_funcionarios() {
+        return $this->bairro_funcionarios;
     }
 
-    function getCidade() {
-        return $this->cidade;
+    function getCidade_funcionarios() {
+        return $this->cidade_funcionarios;
     }
 
-    function getUf() {
-        return $this->uf;
+    function getUf_funcionarios() {
+        return $this->uf_funcionarios;
     }
 
-    function getPais() {
-        return $this->pais;
+    function getPais_funcionarios() {
+        return $this->pais_funcionarios;
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    function getTelefone_funcionarios() {
+        return $this->telefone_funcionarios;
     }
 
-    function getCelular1() {
-        return $this->celular1;
+    function getCelular1_funcionarios() {
+        return $this->celular1_funcionarios;
     }
 
-    function getCelular2() {
-        return $this->celular2;
+    function getCelular2_funcionarios() {
+        return $this->celular2_funcionarios;
     }
 
-    function getEmail() {
-        return $this->email;
+    function getEmail_funcionarios() {
+        return $this->email_funcionarios;
     }
 
-    function getCargo() {
-        return $this->cargo;
+    function getCargo_funcionarios() {
+        return $this->cargo_funcionarios;
     }
 
-    function getSalario() {
-        return $this->salario;
+    function getSalario_funcionarios() {
+        return $this->salario_funcionarios;
     }
 
-    function getData_admissao() {
-        return $this->data_admissao;
+    function getData_admissao_funcionarios() {
+        return $this->data_admissao_funcionarios;
     }
 
-    function getData_demissao() {
-        return $this->data_demissao;
+    function getData_demissao_funcionarios() {
+        return $this->data_demissao_funcionarios;
     }
 
-    function getStatus() {
-        return $this->status;
+    function getStatus_funcionarios() {
+        return $this->status_funcionarios;
     }
 
-    function getUsuario() {
-        return $this->usuario;
+    function getUsuario_funcionarios() {
+        return $this->usuario_funcionarios;
     }
 
-    function setMatricula($matricula) {
-        $this->matricula = $matricula;
+    function setMatricula_funcionarios($matricula_funcionarios) {
+        $this->matricula_funcionarios = $matricula_funcionarios;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    function setNome_completo_funcionarios($nome_completo_funcionarios) {
+        $this->nome_completo_funcionarios = $nome_completo_funcionarios;
     }
 
-    function setData_nascimento($data_nascimento) {
-        $this->data_nascimento = $data_nascimento;
+    function setData_nascimento_funcionarios($data_nascimento_funcionarios) {
+        $this->data_nascimento_funcionarios = $data_nascimento_funcionarios;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
+    function setCpf_funcionarios($cpf_funcionarios) {
+        $this->cpf_funcionarios = $cpf_funcionarios;
     }
 
-    function setRg($rg) {
-        $this->rg = $rg;
+    function setRg_funcionarios($rg_funcionarios) {
+        $this->rg_funcionarios = $rg_funcionarios;
     }
 
-    function setOrgao_emissor($orgao_emissor) {
-        $this->orgao_emissor = $orgao_emissor;
+    function setOrgao_emissor_funcionarios($orgao_emissor_funcionarios) {
+        $this->orgao_emissor_funcionarios = $orgao_emissor_funcionarios;
     }
 
-    function setCep($cep) {
-        $this->cep = $cep;
+    function setCep_funcionarios($cep_funcionarios) {
+        $this->cep_funcionarios = $cep_funcionarios;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    function setEndereco_funcionarios($endereco_funcionarios) {
+        $this->endereco_funcionarios = $endereco_funcionarios;
     }
 
-    function setComplemento($complemento) {
-        $this->complemento = $complemento;
+    function setComplemento_funcionarios($complemento_funcionarios) {
+        $this->complemento_funcionarios = $complemento_funcionarios;
     }
 
-    function setBairro($bairro) {
-        $this->bairro = $bairro;
+    function setBairro_funcionarios($bairro_funcionarios) {
+        $this->bairro_funcionarios = $bairro_funcionarios;
     }
 
-    function setCidade($cidade) {
-        $this->cidade = $cidade;
+    function setCidade_funcionarios($cidade_funcionarios) {
+        $this->cidade_funcionarios = $cidade_funcionarios;
     }
 
-    function setUf($uf) {
-        $this->uf = $uf;
+    function setUf_funcionarios($uf_funcionarios) {
+        $this->uf_funcionarios = $uf_funcionarios;
     }
 
-    function setPais($pais) {
-        $this->pais = $pais;
+    function setPais_funcionarios($pais_funcionarios) {
+        $this->pais_funcionarios = $pais_funcionarios;
     }
 
-    function setTelefone($telefone) {
-        $this->telefone = $telefone;
+    function setTelefone_funcionarios($telefone_funcionarios) {
+        $this->telefone_funcionarios = $telefone_funcionarios;
     }
 
-    function setCelular1($celular1) {
-        $this->celular1 = $celular1;
+    function setCelular1_funcionarios($celular1_funcionarios) {
+        $this->celular1_funcionarios = $celular1_funcionarios;
     }
 
-    function setCelular2($celular2) {
-        $this->celular2 = $celular2;
+    function setCelular2_funcionarios($celular2_funcionarios) {
+        $this->celular2_funcionarios = $celular2_funcionarios;
     }
 
-    function setEmail($email) {
-        $this->email = $email;
+    function setEmail_funcionarios($email_funcionarios) {
+        $this->email_funcionarios = $email_funcionarios;
     }
 
-    function setCargo($cargo) {
-        $this->cargo = $cargo;
+    function setCargo_funcionarios($cargo_funcionarios) {
+        $this->cargo_funcionarios = $cargo_funcionarios;
     }
 
-    function setSalario($salario) {
-        $this->salario = $salario;
+    function setSalario_funcionarios($salario_funcionarios) {
+        $this->salario_funcionarios = $salario_funcionarios;
     }
 
-    function setData_admissao($data_admissao) {
-        $this->data_admissao = $data_admissao;
+    function setData_admissao_funcionarios($data_admissao_funcionarios) {
+        $this->data_admissao_funcionarios = $data_admissao_funcionarios;
     }
 
-    function setData_demissao($data_demissao) {
-        $this->data_demissao = $data_demissao;
+    function setData_demissao_funcionarios($data_demissao_funcionarios) {
+        $this->data_demissao_funcionarios = $data_demissao_funcionarios;
     }
 
-    function setStatus($status) {
-        $this->status = $status;
+    function setStatus_funcionarios($status_funcionarios) {
+        $this->status_funcionarios = $status_funcionarios;
     }
 
-    function setUsuario($usuario) {
-        $this->usuario = $usuario;
+    function setUsuario_funcionarios($usuario_funcionarios) {
+        $this->usuario_funcionarios = $usuario_funcionarios;
     }
-
-
 }

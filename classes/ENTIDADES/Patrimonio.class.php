@@ -1,149 +1,147 @@
 <?php
 class Patrimonio {
-    private $id;
-    private $nome;
-    private $descricao;
-    private $quantidade;
-    private $data_cadastro;
-    private $status;
-    private $setor;
-    private $valor;
-    private $data_compra;
-    private $cor_produto;
-    private $fabricante;
-    private $nota_fiscal;
-    private $serie_nota;
-    private $observacoes;
-    private $cobertura_garantia;
-    private $usuario;
-    
-    function getId() {
-        return $this->id;
+    private $id_patrimonio;
+    private $nome_patrimonio;
+    private $descricao_patrimonio;
+    private $quantidade_patrimonio;
+    private $data_cadastro_patrimonio;
+    private $status_patrimonio;
+    private $usuario_cadastro_patrimonio;
+    private $setor_patrimonio;
+    private $valor_patrimonio;
+    private $data_compra_patrimonio;
+    private $cor_produto_patrimonio;
+    private $fabricante_patrimonio;
+    private $nota_fiscal_patrimonio;
+    private $serie_nota_fiscal_patrimonio;
+    private $observacoes_patrimonio;
+    private $cobertura_garantia_patrimonio;
+
+    function getId_patrimonio() {
+        return $this->id_patrimonio;
     }
 
-    function getNome() {
-        return $this->nome;
+    function getNome_patrimonio() {
+        return $this->nome_patrimonio;
     }
 
-    function getDescricao() {
-        return $this->descricao;
+    function getDescricao_patrimonio() {
+        return $this->descricao_patrimonio;
     }
 
-    function getQuantidade() {
-        return $this->quantidade;
+    function getQuantidade_patrimonio() {
+        return $this->quantidade_patrimonio;
     }
 
-    function getData_cadastro() {
-        return $this->data_cadastro;
+    function getData_cadastro_patrimonio() {
+        return $this->data_cadastro_patrimonio;
     }
 
-    function getStatus() {
-        return $this->status;
+    function getStatus_patrimonio() {
+        return $this->status_patrimonio;
     }
 
-    function getSetor() {
-        return $this->setor;
+    function getUsuario_cadastro_patrimonio() {
+        return $this->usuario_cadastro_patrimonio;
     }
 
-    function getValor() {
-        return $this->valor;
+    function getSetor_patrimonio() {
+        return $this->setor_patrimonio;
     }
 
-    function getData_compra() {
-        return $this->data_compra;
+    function getValor_patrimonio() {
+        return $this->valor_patrimonio;
     }
 
-    function getCor_produto() {
-        return $this->cor_produto;
+    function getData_compra_patrimonio() {
+        return $this->data_compra_patrimonio;
     }
 
-    function getFabricante() {
-        return $this->fabricante;
+    function getCor_produto_patrimonio() {
+        return $this->cor_produto_patrimonio;
     }
 
-    function getNota_fiscal() {
-        return $this->nota_fiscal;
+    function getFabricante_patrimonio() {
+        return $this->fabricante_patrimonio;
     }
 
-    function getSerie_nota() {
-        return $this->serie_nota;
+    function getNota_fiscal_patrimonio() {
+        return $this->nota_fiscal_patrimonio;
     }
 
-    function getObservacoes() {
-        return $this->observacoes;
+    function getSerie_nota_fiscal_patrimonio() {
+        return $this->serie_nota_fiscal_patrimonio;
     }
 
-    function getCobertura_garantia() {
-        return $this->cobertura_garantia;
+    function getObservacoes_patrimonio() {
+        return $this->observacoes_patrimonio;
     }
 
-    function getUsuario() {
-        return $this->usuario;
+    function getCobertura_garantia_patrimonio() {
+        return $this->cobertura_garantia_patrimonio;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function setId_patrimonio($id_patrimonio) {
+        $this->id_patrimonio = $id_patrimonio;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    function setNome_patrimonio($nome_patrimonio) {
+        $this->nome_patrimonio = $nome_patrimonio;
     }
 
-    function setDescricao($descricao) {
-        $this->descricao = $descricao;
+    function setDescricao_patrimonio($descricao_patrimonio) {
+        $this->descricao_patrimonio = $descricao_patrimonio;
     }
 
-    function setQuantidade($quantidade) {
-        $this->quantidade = $quantidade;
+    function setQuantidade_patrimonio($quantidade_patrimonio) {
+        $this->quantidade_patrimonio = $quantidade_patrimonio;
     }
 
-    function setData_cadastro($data_cadastro) {
-        $this->data_cadastro = $data_cadastro;
+    function setData_cadastro_patrimonio($data_cadastro_patrimonio) {
+        $this->data_cadastro_patrimonio = $data_cadastro_patrimonio;
     }
 
-    function setStatus($status) {
-        $this->status = $status;
+    function setStatus_patrimonio($status_patrimonio) {
+        $this->status_patrimonio = $status_patrimonio;
     }
 
-    function setSetor($setor) {
-        $this->setor = $setor;
+    function setUsuario_cadastro_patrimonio($usuario_cadastro_patrimonio) {
+        $this->usuario_cadastro_patrimonio = $usuario_cadastro_patrimonio;
     }
 
-    function setValor($valor) {
-        $this->valor = $valor;
+    function setSetor_patrimonio($setor_patrimonio) {
+        $this->setor_patrimonio = $setor_patrimonio;
     }
 
-    function setData_compra($data_compra) {
-        $this->data_compra = $data_compra;
+    function setValor_patrimonio($valor_patrimonio) {
+        $this->valor_patrimonio = $valor_patrimonio;
     }
 
-    function setCor_produto($cor_produto) {
-        $this->cor_produto = $cor_produto;
+    function setData_compra_patrimonio($data_compra_patrimonio) {
+        $this->data_compra_patrimonio = $data_compra_patrimonio;
     }
 
-    function setFabricante($fabricante) {
-        $this->fabricante = $fabricante;
+    function setCor_produto_patrimonio($cor_produto_patrimonio) {
+        $this->cor_produto_patrimonio = $cor_produto_patrimonio;
     }
 
-    function setNota_fiscal($nota_fiscal) {
-        $this->nota_fiscal = $nota_fiscal;
+    function setFabricante_patrimonio($fabricante_patrimonio) {
+        $this->fabricante_patrimonio = $fabricante_patrimonio;
     }
 
-    function setSerie_nota($serie_nota) {
-        $this->serie_nota = $serie_nota;
+    function setNota_fiscal_patrimonio($nota_fiscal_patrimonio) {
+        $this->nota_fiscal_patrimonio = $nota_fiscal_patrimonio;
     }
 
-    function setObservacoes($observacoes) {
-        $this->observacoes = $observacoes;
+    function setSerie_nota_fiscal_patrimonio($serie_nota_fiscal_patrimonio) {
+        $this->serie_nota_fiscal_patrimonio = $serie_nota_fiscal_patrimonio;
     }
 
-    function setCobertura_garantia($cobertura_garantia) {
-        $this->cobertura_garantia = $cobertura_garantia;
+    function setObservacoes_patrimonio($observacoes_patrimonio) {
+        $this->observacoes_patrimonio = $observacoes_patrimonio;
     }
 
-    function setUsuario($usuario) {
-        $this->usuario = $usuario;
+    function setCobertura_garantia_patrimonio($cobertura_garantia_patrimonio) {
+        $this->cobertura_garantia_patrimonio = $cobertura_garantia_patrimonio;
     }
-
-
 }

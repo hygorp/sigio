@@ -1,176 +1,210 @@
 <?php
 class Pacientes {
-    private $matricula;
-    private $nome;
-    private $data_nascimento;
-    private $cpf;
-    private $rg;
-    private $orgao_emissor;
-    private $cep;
-    private $endereco;
-    private $complemento;
-    private $bairro;
-    private $cidade;
-    private $uf;
-    private $pais;
-    private $telefone;
-    private $celular1;
-    private $celular2;
-    private $email;
-    private $data_cadastro;
-    private $status;
+    private $matricula_pacientes;
+    private $nome_completo_pacientes;
+    private $data_nascimento_pacientes;
+    private $cpf_pacientes;
+    private $rg_pacientes;
+    private $orgao_emissor_pacientes;
+    private $cep_pacientes;
+    private $endereco_pacientes;
+    private $complemento_pacientes;
+    private $bairro_pacientes;
+    private $cidade_pacientes;
+    private $uf_pacientes;
+    private $pais_pacientes;
+    private $telefone_pacientes;
+    private $celular1_pacientes;
+    private $celular2_pacientes;
+    private $email_pacientes;
+    private $status_pacientes;
+    private $carteira_convenio_pacientes;
+    private $titular_convenio_pacientes;
+    private $tipo_plano_convenio_pacientes;
+    private $data_cadastro_pacientes;
+    private $id_convenios_pacientes;
     
-    function getMatricula() {
-        return $this->matricula;
+    function getMatricula_pacientes() {
+        return $this->matricula_pacientes;
     }
 
-    function getNome() {
-        return $this->nome;
+    function getNome_completo_pacientes() {
+        return $this->nome_completo_pacientes;
     }
 
-    function getData_nascimento() {
-        return $this->data_nascimento;
+    function getData_nascimento_pacientes() {
+        return $this->data_nascimento_pacientes;
     }
 
-    function getCpf() {
-        return $this->cpf;
+    function getCpf_pacientes() {
+        return $this->cpf_pacientes;
     }
 
-    function getRg() {
-        return $this->rg;
+    function getRg_pacientes() {
+        return $this->rg_pacientes;
     }
 
-    function getOrgao_emissor() {
-        return $this->orgao_emissor;
+    function getOrgao_emissor_pacientes() {
+        return $this->orgao_emissor_pacientes;
     }
 
-    function getCep() {
-        return $this->cep;
+    function getCep_pacientes() {
+        return $this->cep_pacientes;
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    function getEndereco_pacientes() {
+        return $this->endereco_pacientes;
     }
 
-    function getComplemento() {
-        return $this->complemento;
+    function getComplemento_pacientes() {
+        return $this->complemento_pacientes;
     }
 
-    function getBairro() {
-        return $this->bairro;
+    function getBairro_pacientes() {
+        return $this->bairro_pacientes;
     }
 
-    function getCidade() {
-        return $this->cidade;
+    function getCidade_pacientes() {
+        return $this->cidade_pacientes;
     }
 
-    function getUf() {
-        return $this->uf;
+    function getUf_pacientes() {
+        return $this->uf_pacientes;
     }
 
-    function getPais() {
-        return $this->pais;
+    function getPais_pacientes() {
+        return $this->pais_pacientes;
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    function getTelefone_pacientes() {
+        return $this->telefone_pacientes;
     }
 
-    function getCelular1() {
-        return $this->celular1;
+    function getCelular1_pacientes() {
+        return $this->celular1_pacientes;
     }
 
-    function getCelular2() {
-        return $this->celular2;
+    function getCelular2_pacientes() {
+        return $this->celular2_pacientes;
     }
 
-    function getEmail() {
-        return $this->email;
+    function getEmail_pacientes() {
+        return $this->email_pacientes;
     }
 
-    function getData_cadastro() {
-        return $this->data_cadastro;
+    function getStatus_pacientes() {
+        return $this->status_pacientes;
     }
 
-    function getStatus() {
-        return $this->status;
+    function getCarteira_convenio_pacientes() {
+        return $this->carteira_convenio_pacientes;
     }
 
-    function setMatricula($matricula) {
-        $this->matricula = $matricula;
+    function getTitular_convenio_pacientes() {
+        return $this->titular_convenio_pacientes;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    function getTipo_plano_convenio_pacientes() {
+        return $this->tipo_plano_convenio_pacientes;
     }
 
-    function setData_nascimento($data_nascimento) {
-        $this->data_nascimento = $data_nascimento;
+    function getData_cadastro_pacientes() {
+        return $this->data_cadastro_pacientes;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
+    function getId_convenios_pacientes() {
+        return $this->id_convenios_pacientes;
     }
 
-    function setRg($rg) {
-        $this->rg = $rg;
+    function setMatricula_pacientes($matricula_pacientes) {
+        $this->matricula_pacientes = $matricula_pacientes;
     }
 
-    function setOrgao_emissor($orgao_emissor) {
-        $this->orgao_emissor = $orgao_emissor;
+    function setNome_completo_pacientes($nome_completo_pacientes) {
+        $this->nome_completo_pacientes = $nome_completo_pacientes;
     }
 
-    function setCep($cep) {
-        $this->cep = $cep;
+    function setData_nascimento_pacientes($data_nascimento_pacientes) {
+        $this->data_nascimento_pacientes = $data_nascimento_pacientes;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    function setCpf_pacientes($cpf_pacientes) {
+        $this->cpf_pacientes = $cpf_pacientes;
     }
 
-    function setComplemento($complemento) {
-        $this->complemento = $complemento;
+    function setRg_pacientes($rg_pacientes) {
+        $this->rg_pacientes = $rg_pacientes;
     }
 
-    function setBairro($bairro) {
-        $this->bairro = $bairro;
+    function setOrgao_emissor_pacientes($orgao_emissor_pacientes) {
+        $this->orgao_emissor_pacientes = $orgao_emissor_pacientes;
     }
 
-    function setCidade($cidade) {
-        $this->cidade = $cidade;
+    function setCep_pacientes($cep_pacientes) {
+        $this->cep_pacientes = $cep_pacientes;
     }
 
-    function setUf($uf) {
-        $this->uf = $uf;
+    function setEndereco_pacientes($endereco_pacientes) {
+        $this->endereco_pacientes = $endereco_pacientes;
     }
 
-    function setPais($pais) {
-        $this->pais = $pais;
+    function setComplemento_pacientes($complemento_pacientes) {
+        $this->complemento_pacientes = $complemento_pacientes;
     }
 
-    function setTelefone($telefone) {
-        $this->telefone = $telefone;
+    function setBairro_pacientes($bairro_pacientes) {
+        $this->bairro_pacientes = $bairro_pacientes;
     }
 
-    function setCelular1($celular1) {
-        $this->celular1 = $celular1;
+    function setCidade_pacientes($cidade_pacientes) {
+        $this->cidade_pacientes = $cidade_pacientes;
     }
 
-    function setCelular2($celular2) {
-        $this->celular2 = $celular2;
+    function setUf_pacientes($uf_pacientes) {
+        $this->uf_pacientes = $uf_pacientes;
     }
 
-    function setEmail($email) {
-        $this->email = $email;
+    function setPais_pacientes($pais_pacientes) {
+        $this->pais_pacientes = $pais_pacientes;
     }
 
-    function setData_cadastro($data_cadastro) {
-        $this->data_cadastro = $data_cadastro;
+    function setTelefone_pacientes($telefone_pacientes) {
+        $this->telefone_pacientes = $telefone_pacientes;
     }
 
-    function setStatus($status) {
-        $this->status = $status;
+    function setCelular1_pacientes($celular1_pacientes) {
+        $this->celular1_pacientes = $celular1_pacientes;
     }
 
+    function setCelular2_pacientes($celular2_pacientes) {
+        $this->celular2_pacientes = $celular2_pacientes;
+    }
 
+    function setEmail_pacientes($email_pacientes) {
+        $this->email_pacientes = $email_pacientes;
+    }
+
+    function setStatus_pacientes($status_pacientes) {
+        $this->status_pacientes = $status_pacientes;
+    }
+
+    function setCarteira_convenio_pacientes($carteira_convenio_pacientes) {
+        $this->carteira_convenio_pacientes = $carteira_convenio_pacientes;
+    }
+
+    function setTitular_convenio_pacientes($titular_convenio_pacientes) {
+        $this->titular_convenio_pacientes = $titular_convenio_pacientes;
+    }
+
+    function setTipo_plano_convenio_pacientes($tipo_plano_convenio_pacientes) {
+        $this->tipo_plano_convenio_pacientes = $tipo_plano_convenio_pacientes;
+    }
+
+    function setData_cadastro_pacientes($data_cadastro_pacientes) {
+        $this->data_cadastro_pacientes = $data_cadastro_pacientes;
+    }
+
+    function setId_convenios_pacientes($id_convenios_pacientes) {
+        $this->id_convenios_pacientes = $id_convenios_pacientes;
+    }   
 }

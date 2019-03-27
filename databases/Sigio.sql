@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`convenios` (
   `conta_banco_convenios` VARCHAR(15) NOT NULL,
   `tipo_conta_banco_convenios` VARCHAR(45) NOT NULL,
   `favorecido_banco_convenios` VARCHAR(50) NOT NULL,
-  `observacoes_convenios` VARCHAR(80) NOT NULL,
+  `observacoes_convenios` VARCHAR(80),
   PRIMARY KEY (`id_convenios`, `nome_fantasia_convenios`),
   UNIQUE INDEX `cnpj_convenios_UNIQUE` (`cnpj_convenios` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -194,9 +194,9 @@ CREATE TABLE IF NOT EXISTS `sigio`.`estoque` (
   `codigo_produto_estoque` INT NOT NULL,
   `quantidade_estoque` INT NOT NULL,
   `data_entrada_estoque` DATE NOT NULL,
-  `data_retirada_estoque` DATE NOT NULL,
+  `data_retirada_estoque` DATE,
   `usuario_cadastro_estoque` VARCHAR(15) NOT NULL,
-  `observacoes_estoque` VARCHAR(100) NOT NULL,
+  `observacoes_estoque` VARCHAR(100),
   `unidade_medida_estoque` VARCHAR(45) NULL,
   PRIMARY KEY (`id_estoque`, `produto_estoque`, `usuario_cadastro_estoque`),
   UNIQUE INDEX `id_estoque_UNIQUE` (`id_estoque` ASC) VISIBLE,
@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`patrimonio` (
   `fabricante_patrimonio` VARCHAR(45) NULL,
   `nota_fiscal_patrimonio` INT NULL,
   `serie_nota_fiscal_patrimonio` INT NULL,
-  `observacoes_patrimonio` VARCHAR(100) NULL,
+  `observacoes_patrimonio` VARCHAR(100),
   `cobertura_garantia_patrimonio` DATE NULL,
   UNIQUE INDEX `id_patrimonio_UNIQUE` (`id_patrimonio` ASC) VISIBLE,
   PRIMARY KEY (`id_patrimonio`, `usuario_cadastro_patrimonio`),
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`laboratorios` (
   `conta_banco_laboratorios` VARCHAR(15) NOT NULL,
   `tipo_conta_banco_laboratorios` VARCHAR(45) NOT NULL,
   `favorecido_banco_laboratorios` VARCHAR(50) NOT NULL,
-  `observacoes_laboratorios` VARCHAR(80) NOT NULL,
+  `observacoes_laboratorios` VARCHAR(80),
   PRIMARY KEY (`id_laboratorios`, `nome_fantasia_laboratorios`),
   UNIQUE INDEX `cnpj_laboratorios_UNIQUE` (`cnpj_laboratorios` ASC) VISIBLE,
   UNIQUE INDEX `id_laboratorios_UNIQUE` (`id_laboratorios` ASC) VISIBLE)
@@ -318,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`fornecedores` (
   `conta_banco_fornecedores` VARCHAR(15) NOT NULL,
   `tipo_conta_banco_fornecedores` VARCHAR(45) NOT NULL,
   `favorecido_banco_fornecedores` VARCHAR(50) NOT NULL,
-  `observacoes_fornecedores` VARCHAR(80) NOT NULL,
+  `observacoes_fornecedores` VARCHAR(80),
   PRIMARY KEY (`id_fornecedores`, `nome_fantasia_fornecedores`),
   UNIQUE INDEX `id_fornecedores_UNIQUE` (`id_fornecedores` ASC) VISIBLE,
   UNIQUE INDEX `cnpj_fornecedores_UNIQUE` (`cnpj_fornecedores` ASC) VISIBLE)
@@ -333,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`agenda` (
   `matricula_pacientes` INT NOT NULL,
   `data_consulta_agenda` DATE NOT NULL,
   `hora_consulta_agenda` TIME NOT NULL,
-  `observacoes_agenda` VARCHAR(100) NOT NULL,
+  `observacoes_agenda` VARCHAR(100),
   PRIMARY KEY (`matricula_dentistas`, `matricula_pacientes`),
   INDEX `matricula_pacientes_idx` (`matricula_pacientes` ASC) VISIBLE,
   CONSTRAINT `fk_matricula_dentistas_agenda`
@@ -536,7 +536,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`ortodontia` (
   `atm_ortodontia` VARCHAR(200) NOT NULL,
   `radio_ortodontia` VARCHAR(200) NOT NULL,
   `modelo_ortodontia` VARCHAR(200) NOT NULL,
-  `observacoes_ortodontia` VARCHAR(200) NOT NULL,
+  `observacoes_ortodontia` VARCHAR(200),
   PRIMARY KEY (`matricula_pacientes`),
   UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
   CONSTRAINT `fk_matricula_pacientes_ortodontia`
@@ -557,7 +557,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`implantodontia` (
   `marca_implantodontia` VARCHAR(200) NOT NULL,
   `enxerto_implantodontia` ENUM('Sim', 'Nao') NOT NULL,
   `tipo_enxerto_implantodontia` VARCHAR(200) NOT NULL,
-  `observacoes_implantodontia` VARCHAR(200) NOT NULL,
+  `observacoes_implantodontia` VARCHAR(200),
   PRIMARY KEY (`matricula_pacientes`),
   CONSTRAINT `fk_matricula_pacientes_implantodontia`
     FOREIGN KEY (`matricula_pacientes`)

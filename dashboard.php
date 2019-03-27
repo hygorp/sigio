@@ -1,3 +1,13 @@
+<?php
+    session_start();
+        if(!(isset($_SESSION['usuario']))){
+            header("location: index.php");
+        }
+    include './classes/Conexao.class.php';
+    include './classes/DAO/UsuariosDAO.class.php';
+    $UsuariosDAO = new UsuariosDAO();
+    $usuario_logado = $_SESSION['usuario'];
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,6 +22,25 @@
         <script type="text/javascript" src="assets/semantic/semantic.min.js"></script>
         <script type="text/javascript" src="assets/toastr/toastr.min.js"></script>
         <script type="text/javascript" src="assets/js/form-validation.js"></script>
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false, 
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        </script>
     </head>
     
     <body>
@@ -23,17 +52,45 @@
             <div class="sg-header-logo-responsive">
                 <img src="assets/images/sidenav-sigio.png" width="40">
             </div>
+            
+            <form action="" method="POST">
+                <button class="sg-header-logout" type="submit" name="logout" alt="Logout">
+                    <div class="logout-icon">
+                        <i class="power off large icon"></i>
+                    </div>
+                </button>
+                <?php
+                    if($_POST){
+                        if (isset($_POST['logout'])){
+                            SESSION_START();
+                            SESSION_DESTROY();
+                            echo '<script>toastr["warning"]("Você será desconectado!", "Atenção")</script>';
+                            header("refresh: 3; index.php");
+                        }
+                    }
+                ?>
+            </form>
         </div>
         
         <div class="sidenav">       
             <div class="active-user">
                 <div class="active-user-data">
-                    <img class="active-user-image ui circular image" src="https://bit.ly/2FnXHSe" width="52" style="float: left">
+                    <img class="active-user-image ui circular image" src="https://bit.ly/2FnXHSe" width="52">
                     <div class="active-user-data-info">
-                        <span>Bender Bending</span>
-                        <br>
+                        <span><?php echo $usuario_logado; ?></span>
+                        <div class="user-status">
+                            <div class="online-icon"></div>
+                            <p>Online</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="initial-menu">
+                <p>
+                    <i class="bars icon"></i>
+                    Menu Principal
+                </p>
             </div>
             
             <div class="menu-accordion">
@@ -457,6 +514,18 @@
                     </div>
                 </div>
             </div>
+            
+            <?php 
+                $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
+                if($exibir_usuario_logado == true){
+                    for($i = 0; $i < mysqli_num_rows($exibir_usuario_logado); $i++){
+                        $dados_usuario_logado = mysqli_fetch_assoc($exibir_usuario_logado);
+                        echo "<h1>'".dados_usuario_logado['nome_usuarios']."'</h1>";
+                    }
+                }else{
+                    echo 'erro';
+                }
+            ?>
         </div>
         
         <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>

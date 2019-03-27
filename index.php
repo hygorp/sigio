@@ -21,6 +21,25 @@
         <script type="text/javascript" src="assets/semantic/semantic.min.js"></script>
         <script type="text/javascript" src="assets/toastr/toastr.min.js"></script>
         <script type="text/javascript" src="assets/js/form-validation.js"></script>
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false, 
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        </script>
     </head>
     
     <body>
@@ -50,7 +69,7 @@
                     </div>
 
                     <div class="field">
-                        <button class="ui right labeled icon teal large button fluid" type="submit" name="logar">
+                        <button class="ui right labeled icon teal large button fluid" name="logar">
                             <i class="right arrow icon"></i>
                             Logar
                         </button>
@@ -73,12 +92,11 @@
 
                 if (isset($POST['logar'])){
                     if($user == true){
-                        session_start();
                         $_SESSION['usuario'] = $usuario;
                         $_SESSION['senha']   = $senha;
                         header('location: dashboard.php');
                     }else{
-                        header('location: index.php?login-error');
+                        echo '<script>toastr["error"]("Usuário ou Senha incorretos!", "Erro")</script>';
                     }
                 }
             }
