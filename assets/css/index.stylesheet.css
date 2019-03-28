@@ -13,10 +13,11 @@ body{
     height: 50px;
 }
 .logo{
-    width: 180px;
+    width: 200px;
     text-align: center;
     margin: 0 auto;
     margin-top: 4%;
+    
 }
 .page-center{
     width: 380px;

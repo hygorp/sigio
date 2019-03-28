@@ -56,6 +56,7 @@ body{
     padding-top: 50px;
     background-color: #222d32;
     color: #ffffff !important;
+    overflow-y: scroll;
     z-index: 3; 
 }
 .active-user{
@@ -78,33 +79,33 @@ body{
     text-transform: uppercase;
 }
 .user-status{
-	width: auto;
+    width: auto;
 }
 .user-status p{
-	padding-left: 15px;
-	padding-top: 1px;
-	font-size: 13px;
-	font-weight: 600;
-	color: rgba(255, 255, 255, 0.7);
+    padding-left: 15px;
+    padding-top: 1px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
 }
 .online-icon{
-	margin-top: 5px;
-	width: 10px;
-	height: 10px;
-	background-color: #31d64f;
-	border-radius: 100px;
-        float: left;
+    margin-top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #31d64f;
+    border-radius: 100px;
+    float: left;
 }
 .initial-menu{
-	width: auto;
-	height: 40px;
-	background-color: #161d21;
+    width: auto;
+    height: 40px;
+    background-color: #161d21;
 }
 .initial-menu p{
-	padding-top: 10px;
-	padding-left: 18px;
-	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    padding-left: 18px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
 }
 .menu-accordion{
     height: auto;
@@ -155,10 +156,10 @@ body{
     color: rgba(255, 255, 255, 0.9);
 }
 .panel {
-  padding-left: 20px;
-  display: none;
-  background-color: #13191c;
-  overflow: hidden;
+    padding-left: 20px;
+    display: none;
+    background-color: #13191c;
+    overflow: hidden;
 }
 .menu-responsive{
     display: none;
