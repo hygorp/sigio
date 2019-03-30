@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #f4f4f4 !important;
+    background-color: #FFFFFF !important;
 }
 .sg-header{
     position: fixed;
@@ -50,14 +50,13 @@ body{
     padding-top: 0px;
 }
 .sidenav{
-    float: left;
     width: 230px;
-    height: 100vh;
+    height: 80em;
     padding-top: 50px;
     background-color: #222d32;
     color: #ffffff !important;
-    overflow-y: scroll;
-    z-index: 3; 
+    float: left;
+    z-index: 3;
 }
 .active-user{
     width: 100%;
@@ -140,7 +139,7 @@ body{
     margin-left: 5px;
     transition: all 1s;
 }
-.active:after{
+.ativo:after{
     content: '\f053';
     transform: rotate(-90deg);
 }
@@ -176,17 +175,17 @@ body{
     min-width: 230px;
     z-index: 1;
 }
-.dropdown-content a {
+.dropdown-content-item{
     color: rgba(255, 255, 255, 0.4);
     padding: 19px 20px;
     height: 60px;
     text-decoration: none;
     display: block;
 }
-.dropdown-content a:hover {
+.dropdown-content-item:hover {
     color: rgba(255, 255, 255, 0.9);
 }
-.dropdown-content a:before {
+.dropdown-content-item:before {
     content: "";
     display: block;
     width: 0; 
@@ -201,17 +200,32 @@ body{
 .main-content{
     padding-left: 230px;
     padding-top: 50px;
-}
-.main-dashboard-monitor{
-    margin: 0 auto;
-    padding: 20px;
     width: 100%;
+    height: 100%;
 }
-.monitor-pacientes{
-    height: 250px;
+.bread{
+    width: 100%;
+    height: 30px;
+    background-color: #F4F4F4;
+    padding: 8px;
 }
-.monitor-consultas{
-    height: 250px;
+.cadastro-pacientes{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.cadastro-dentistas{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.cadastro-funcionarios{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 @media only screen and (max-width: 768px){
     .sg-header{
@@ -233,7 +247,7 @@ body{
     }
     .sidenav{
         width: 80px;
-        height: 150vh;
+        height: 150em;
         overflow: hidden;
         padding-top: 50px;
     }
@@ -261,6 +275,8 @@ body{
         color: rgba(255, 255, 255, 0.9);
     }
     .first-dropdown-content{
+        height: 60.5px;
+        padding: 18px;
         background-color: #222d32;
         font-weight: 900;
         font-size: 17px;

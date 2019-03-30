@@ -53,7 +53,7 @@
         
         <div class="page-center">
             <div class="login">
-                <form class="ui form" action="" method="POST">
+                <form class="ui form login-form" action="" method="POST">
                     <div class="field">
                         <div class="ui left icon large input">
                             <input type="text" id="usuario" name="usuario" placeholder="Usuário">
