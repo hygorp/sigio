@@ -7,9 +7,13 @@
     
     include './classes/Conexao.class.php';
     include './classes/ENTIDADES/Usuarios.class.php';
+    include './classes/ENTIDADES/Pacientes.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
+    include './classes/DAO/PacientesDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
+    $PacientesDAO = new PacientesDAO();
     $Usuarios = new Usuarios();
+    $Pacientes = new Pacientes();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -20,6 +24,13 @@
             $Usuarios->setNome_usuarios($dados_usuario_logado['nome_usuarios']);
             $Usuarios->setSenha_usuarios($dados_usuario_logado['senha_usuarios']);
             $Usuarios->setNivel_acesso_usuarios($dados_usuario_logado['nivel_acesso_usuarios']); 
+        }
+    }
+    
+    $quantidade_pacientes = $PacientesDAO->contar_pacientes();
+    if($quantidade_pacientes == true){
+        for($i = 0; $i < mysqli_num_rows($quantidade_pacientes); $i++){
+            $dados_quantidade_pacientes = mysqli_fetch_assoc($quantidade_pacientes);
         }
     }
     
@@ -119,6 +130,13 @@
                 </div>
             </div>
             
+            <div class="initial-menu" onclick="location.href='dashboard.php?p=dados-dashboard'">
+                <p>
+                    <i class="dashboard icon"></i>
+                    Dashboard
+                </p>
+            </div>
+            
             <div class="initial-menu">
                 <p>
                     <i class="bars icon"></i>
@@ -131,9 +149,14 @@
             </div>    
         </div>
         
+        <div class="sidenav-responsive">
+            <?php include $funcoes; ?>
+        </div>
+        
         <div class="main-content">
             <?php
                 $valueGet = @$_GET['p'];
+                if($valueGet == "dados-dashboard"){require_once 'dashboard/dados.dashboard.php';}
                 if($valueGet == "cadastro-pacientes"){require_once 'pacientes/cadastro.pacientes.php';}
                 if($valueGet == "consultar-pacientes"){require_once 'pacientes/consulta.pacientes.php';}
                 if($valueGet == "cadastro-dentistas"){require_once 'dentistas/cadastro.dentistas.php';}
@@ -143,7 +166,8 @@
             ?>
         </div>
         
-        <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
+        <div class="sg-footer"></div>
         
+        <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
     </body>
 </html>

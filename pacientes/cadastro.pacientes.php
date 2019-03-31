@@ -1,7 +1,7 @@
 <div class="bread">
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
-        <a class="section" href="dashboard.php">Dashboard</a>
+        <a class="section" href="dashboard.php?p=dados-dashboardp">Dashboard</a>
         <i class="users icon divider"></i>
         <div class="active section">Cadastro</div>  
     </div>

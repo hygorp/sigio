@@ -1,7 +1,7 @@
 <?php
     session_start();
         if(isset($_SESSION['usuario'])){
-            header("location: dashboard.php");
+            header("location: dashboard.php?p=dados-dashboard");
         }
     include './classes/Conexao.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
@@ -94,7 +94,7 @@
                     if($user == true){
                         $_SESSION['usuario'] = $usuario;
                         $_SESSION['senha']   = $senha;
-                        header('location: dashboard.php');
+                        header('location: dashboard.php?p=dados-dashboard');
                     }else{
                         echo '<script>toastr["error"]("Usuário ou Senha incorretos!", "Erro")</script>';
                     }
