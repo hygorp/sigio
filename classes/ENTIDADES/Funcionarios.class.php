@@ -22,7 +22,7 @@ class Funcionarios {
     private $data_admissao_funcionarios;
     private $data_demissao_funcionarios;
     private $status_funcionarios;
-    private $usuario_funcionarios;
+    private $nome_usuarios_funcionarios;
     
     function getMatricula_funcionarios() {
         return $this->matricula_funcionarios;
@@ -112,7 +112,7 @@ class Funcionarios {
         return $this->status_funcionarios;
     }
 
-    function getUsuario_funcionarios() {
+    function getNome_Usuarios_funcionarios() {
         return $this->usuario_funcionarios;
     }
 
@@ -204,7 +204,7 @@ class Funcionarios {
         $this->status_funcionarios = $status_funcionarios;
     }
 
-    function setUsuario_funcionarios($usuario_funcionarios) {
+    function setNome_usuarios_funcionarios($usuario_funcionarios) {
         $this->usuario_funcionarios = $usuario_funcionarios;
     }
 }

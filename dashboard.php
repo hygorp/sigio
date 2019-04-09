@@ -12,18 +12,22 @@
     include './classes/ENTIDADES/Pacientes.class.php';
     include './classes/ENTIDADES/Estoque.class.php';
     include './classes/ENTIDADES/Dentistas.class.php';
+    include './classes/ENTIDADES/Funcionarios.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/EstoqueDAO.class.php';
     include './classes/DAO/DentistasDAO.class.php';
+    include './classes/DAO/FuncionariosDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $EstoqueDAO = new EstoqueDAO();
     $DentistasDAO = new DentistasDAO();
+    $FuncionariosDAO = new FuncionariosDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Estoque = new Estoque();
     $Dentistas = new Dentistas();
+    $Funcionarios = new Funcionarios();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);

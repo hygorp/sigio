@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="cadastro-funcionarios">
-    <form class="ui form cadastro-funcionarios-form">
+    <form class="ui form cadastro-funcionarios-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Funcionários</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
         <div class="two fields">
@@ -136,8 +136,43 @@
                 <script>$('select.dropdown').dropdown();</script>
             </div>
         </div>
-        <button class="ui button teal" type="submit" name="cadastrar_funcionario">Cadastrar Funcionário</button>
+        <button class="ui button teal" type="submit" name="cadastrar_funcionarios">Cadastrar Funcionário</button>
         <div class="ui error message"></div>
     </form>
 </div>
+
+<?php 
+    if($POST){
+        if(isset($POST['cadastrar_funcionarios'])){
+            $Funcionarios->setNome_completo_funcionarios($POST['nome_completo_funcionarios']);
+            $Funcionarios->setData_nascimento_funcionarios($POST['data_nascimento_funcionarios']);
+            $Funcionarios->setCpf_funcionarios($POST['cpf_funcionarios']);
+            $Funcionarios->setRg_funcionarios($POST['rg_funcionarios']);
+            $Funcionarios->setOrgao_emissor_funcionarios($POST['orgao_emissor_funcionarios']);
+            $Funcionarios->setCep_funcionarios($POST['cep_funcionarios']);
+            $Funcionarios->setEndereco_funcionarios($POST['endereco_funcionarios']);
+            $Funcionarios->setComplemento_funcionarios($POST['complemento_funcionarios']);
+            $Funcionarios->setBairro_funcionarios($POST['bairro_funcionarios']);
+            $Funcionarios->setCidade_funcionarios($POST['cidade_funcionarios']);
+            $Funcionarios->setUf_funcionarios($POST['uf_funcionarios']);
+            $Funcionarios->setPais_funcionarios($POST['pais_funcionarios']);
+            $Funcionarios->setTelefone_funcionarios($POST['telefone_funcionarios']);
+            $Funcionarios->setCelular1_funcionarios($POST['celular1_funcionarios']);
+            $Funcionarios->setCelular2_funcionarios($POST['celular2_funcionarios']);
+            $Funcionarios->setEmail_funcionarios($POST['email_funcionarios']);
+            $Funcionarios->setCargo_funcionarios($POST['cargo_funcionarios']);
+            $Funcionarios->setSalario_funcionarios($POST['salario_funcionarios']);
+            $Funcionarios->setData_admissao_funcionarios($POST['data_admissao_funcionarios']);
+            $Funcionarios->setData_demissao_funcionarios($POST['data_demissao_funcionarios']);
+            $Funcionarios->setStatus_funcionarios($POST['status_funcionarios']);
+            $Funcionarios->setNome_usuarios_funcionarios($POST['nome_usuarios_funcionarios']);
+            
+            $exe = $FuncionariosDAO->cadastrar_funcionarios($Funcionarios);
+                if($exe == true){
+                    echo '<script>toastr["success"]("Funcionário cadastrado!", "Sucesso")</script>';
+                }else{
+                    echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
+                }
+        }
+    }
 
