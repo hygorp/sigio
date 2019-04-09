@@ -1,13 +1,13 @@
 <div class="bread">
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
-        <a class="section" href="dashboard.php">Dashboard</a>
+        <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
         <i class="users icon divider"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
 <div class="cadastro-dentistas">
-    <form class="ui form cadastro-dentistas-form">
+    <form class="ui form cadastro-dentistas-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Dentistas</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
         <div class="two fields">
@@ -151,7 +151,54 @@
                 <script>$('select.dropdown').dropdown();</script>
             </div>
         </div>
-        <button class="ui button teal" type="submit" name="cadastrar_dentista">Cadastrar Dentista</button>
+        <div class="one fields">
+            <div class="four wide field">
+                <label>Nome de Usuário</label>
+                <input type="text" name="nome_usuarios_dentistas" placeholder="Nome de Usuário">
+            </div>
+        </div>
+        
+        <button class="ui button teal" type="submit" name="cadastrar_dentistas">Cadastrar Dentista</button>
         <div class="ui error message"></div>
     </form>
 </div>
+
+<?php 
+    if($POST){
+        if(isset($POST['cadastrar_dentistas'])){
+            $Dentistas->setNome_completo_dentistas($POST['nome_completo_dentistas']);
+            $Dentistas->setData_nascimento_dentistas($POST['data_nascimento_dentistas']);
+            $Dentistas->setCpf_dentistas($POST['cpf_dentistas']);
+            $Dentistas->setRg_dentistas($POST['rg_dentistas']);
+            $Dentistas->setOrgao_emissor_dentistas($POST['orgao_emissor_dentistas']);
+            $Dentistas->setCep_dentistas($POST['cep_dentistas']);
+            $Dentistas->setEndereco_dentistas($POST['endereco_dentistas']);
+            $Dentistas->setComplemento_dentistas($POST['complemento_dentistas']);
+            $Dentistas->setBairro_dentistas($POST['bairro_dentistas']);
+            $Dentistas->setCidade_dentistas($POST['cidade_dentistas']);
+            $Dentistas->setUf_dentistas($POST['uf_dentistas']);
+            $Dentistas->setPais_dentistas($POST['pais_dentistas']);
+            $Dentistas->setTelefone_dentistas($POST['telefone_dentistas']);
+            $Dentistas->setCelular1_dentistas($POST['celular1_dentistas']);
+            $Dentistas->setCelular2_dentistas($POST['celular2_dentistas']);
+            $Dentistas->setEmail_dentistas($POST['email_dentistas']);
+            $Dentistas->setEspecialidade1_dentistas($POST['especialidade1_dentistas']);
+            $Dentistas->setEspecialidade2_dentistas($POST['especialidade2_dentistas']);
+            $Dentistas->setEspecialidade3_dentistas($POST['especialidade3_dentistas']);
+            $Dentistas->setConselho_tipo_dentistas($POST['conselho_tipo_dentistas']);
+            $Dentistas->setConselho_numero_dentistas($POST['conselho_numero_dentistas']);
+            $Dentistas->setConselho_estado_dentistas($POST['conselho_estado_dentistas']);
+            $Dentistas->setComissao_dentistas($POST['comissao_dentistas']);
+            $Dentistas->setData_admissao_dentistas($POST['data_admissao_dentistas']);
+            $Dentistas->setData_demissao_dentistas($POST['data_demissao_dentistas']);
+            $Dentistas->setStatus_dentistas($POST['status_dentistas']);
+            $Dentistas->setNome_usuarios_dentistas($POST['nome_usuarios_dentistas']);
+            
+            $exe = $DentistasDAO->cadastrar_dentistas($Dentistas);
+                if($exe == true){
+                    echo '<script>toastr["success"]("Dentista cadastrado!", "Sucesso")</script>';
+                }else{
+                    echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
+                }
+        }
+    }

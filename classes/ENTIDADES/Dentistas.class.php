@@ -27,7 +27,7 @@ class Dentistas {
     private $data_admissao_dentistas;
     private $data_demissao_dentistas;
     private $status_dentistas;
-    private $usuario_dentistas;
+    private $nome_usuarios_dentistas;
     
     function getMatricula_dentistas() {
         return $this->matricula_dentistas;
@@ -137,8 +137,8 @@ class Dentistas {
         return $this->status_dentistas;
     }
 
-    function getUsuario_dentistas() {
-        return $this->usuario_dentistas;
+    function getNome_usuarios_dentistas() {
+        return $this->nome_usuarios_dentistas;
     }
 
     function setMatricula_dentistas($matricula_dentistas) {
@@ -249,7 +249,7 @@ class Dentistas {
         $this->status_dentistas = $status_dentistas;
     }
 
-    function setUsuario_dentistas($usuario_dentistas) {
-        $this->usuario_dentistas = $usuario_dentistas;
+    function setNome_usuarios_dentistas($nome_usuarios_dentistas) {
+        $this->nome_usuarios_dentistas = $nome_usuarios_dentistas;
     }
 }

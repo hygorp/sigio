@@ -11,15 +11,19 @@
     include './classes/ENTIDADES/Usuarios.class.php';
     include './classes/ENTIDADES/Pacientes.class.php';
     include './classes/ENTIDADES/Estoque.class.php';
+    include './classes/ENTIDADES/Dentistas.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/EstoqueDAO.class.php';
+    include './classes/DAO/DentistasDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $EstoqueDAO = new EstoqueDAO();
+    $DentistasDAO = new DentistasDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Estoque = new Estoque();
+    $Dentistas = new Dentistas();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -37,6 +41,13 @@
     if($quantidade_pacientes == true){
         for($i = 0; $i < mysqli_num_rows($quantidade_pacientes); $i++){
             $dados_quantidade_pacientes = mysqli_fetch_assoc($quantidade_pacientes);
+        }
+    }
+    
+    $quantidade_dentistas = $DentistasDAO->contar_dentistas();
+    if($quantidade_dentistas == true){
+        for($i = 0; $i < mysqli_num_rows($quantidade_dentistas); $i++){
+            $dados_quantidade_dentistas = mysqli_fetch_assoc($quantidade_dentistas);
         }
     }
     

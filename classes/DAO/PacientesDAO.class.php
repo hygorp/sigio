@@ -19,7 +19,6 @@ class PacientesDAO {
         }
     }
 
-
     public function contar_pacientes(){
         $sql = "SELECT COUNT(*) FROM pacientes;";
         $exe = mysqli_query($this->conexao->getCon(), $sql);
@@ -39,4 +38,6 @@ class PacientesDAO {
             return false;
         }
     }
+    
+    
 }

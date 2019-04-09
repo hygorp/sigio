@@ -35,7 +35,7 @@
             <tr>
                 <td><?php echo $dados_listaDePacientes['nome_completo_pacientes'] ?></td>
                 <td><?php echo $dados_listaDePacientes['cpf_pacientes'] ?></td>
-                <td><?php echo date_format($date, 'd/m/Y')?></td>
+                <td><?php echo $dados_listaDePacientes['data_nascimento_pacientes']; date('d/m/Y')?></td>
                 <td><?php echo $dados_listaDePacientes['telefone_pacientes'] ?></td>
                 <td><?php echo $dados_listaDePacientes['celular1_pacientes'] ?></td>
                 <td><?php echo $dados_listaDePacientes['email_pacientes'] ?></td>
