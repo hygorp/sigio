@@ -3,6 +3,7 @@ class Estoque {
     private $id_estoque;
     private $produto_estoque;
     private $descricao_produto_estoque;
+    private $valor_produto_estoque;
     private $codigo_produto_estoque;
     private $quantidade_estoque;
     private $data_entrada_estoque;
@@ -22,6 +23,10 @@ class Estoque {
 
     function getDescricao_produto_estoque() {
         return $this->descricao_produto_estoque;
+    }
+    
+    function getValor_produto_estoque() {
+        return $this->valor_produto_estoque;
     }
 
     function getCodigo_produto_estoque() {
@@ -63,6 +68,10 @@ class Estoque {
     function setDescricao_produto_estoque($descricao_produto_estoque) {
         $this->descricao_produto_estoque = $descricao_produto_estoque;
     }
+    
+    function setValor_produto_estoque($valor_produto_estoque) {
+        $this->valor_produto_estoque = $valor_produto_estoque;
+    }
 
     function setCodigo_produto_estoque($codigo_produto_estoque) {
         $this->codigo_produto_estoque = $codigo_produto_estoque;
@@ -91,7 +100,4 @@ class Estoque {
     function setUnidade_medida_estoque($unidade_medida_estoque) {
         $this->unidade_medida_estoque = $unidade_medida_estoque;
     }
-
-
-
 }

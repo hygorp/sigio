@@ -119,9 +119,9 @@
     Estoque
 </button>
 <div class="panel">
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=cadastro-estoque'">
         <i class="caret right icon"></i>
-        Controle de Estoque
+        Cadastro de Produto
     </button>
 
     <button class="accordion-item">
@@ -322,9 +322,9 @@
             <div class="first-dropdown-content">
                 Estoque
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=cadastro-estoque'">
                 <i class="caret right icon"></i>
-                Controle de Estoque
+                Cadastro de Produto
             </div>
             <div class="dropdown-content-item">
                 <i class="caret right icon"></i>

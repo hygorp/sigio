@@ -109,17 +109,17 @@
             
         <h3 class="ui header disabled">Informações da Carteira Profissional do Dentista</h3>
         <div class="three fields">
-            <div class="eight wide field">
+            <div class="seven wide field">
                 <label>Tipo do Conselho</label>
                 <input type="text" name="conselho_tipo_dentistas" placeholder="Tipo do Conselho">
             </div>
             
-            <div class="eight wide field">
+            <div class="seven wide field">
                 <label>Número do Conselho</label>
                 <input type="text" name="conselho_numero_dentistas" placeholder="Número do Conselho">
             </div>
             
-            <div class="two wide field">
+            <div class="four wide field">
                 <label>UF de Expedição</label>
                 <input type="text" name="conselho_estado_dentistas" placeholder="UF">
             </div>

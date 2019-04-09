@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     session_start();
     
     if(!(isset($_SESSION['usuario']))){
@@ -8,12 +10,16 @@
     include './classes/Conexao.class.php';
     include './classes/ENTIDADES/Usuarios.class.php';
     include './classes/ENTIDADES/Pacientes.class.php';
+    include './classes/ENTIDADES/Estoque.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
+    include './classes/DAO/EstoqueDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
+    $EstoqueDAO = new EstoqueDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
+    $Estoque = new Estoque();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -163,6 +169,7 @@
                 if($valueGet == "consultar-dentistas") {require_once 'dentistas/consulta.dentistas.php';}
                 if($valueGet == "cadastro-funcionarios"){require_once 'funcionarios/cadastro.funcionarios.php';}
                 if($valueGet == "consultar-funcionarios"){require_once 'funcionarios/consulta.funcionarios.php';}
+                if($valueGet == "cadastro-estoque"){require_once 'estoque/cadastro.estoque.php';}
             ?>
         </div>
         

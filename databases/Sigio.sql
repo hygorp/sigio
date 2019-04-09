@@ -35,7 +35,7 @@ ENGINE = MyISAM;
 CREATE TABLE IF NOT EXISTS `sigio`.`funcionarios` (
   `matricula_funcionarios` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_funcionarios` VARCHAR(100) NOT NULL,
-  `data_nascimento_funcionarios` DATE NOT NULL,
+  `data_nascimento_funcionarios` VARCHAR(8) NOT NULL,
   `cpf_funcionarios` VARCHAR(11) NOT NULL,
   `rg_funcionarios` VARCHAR(10) NOT NULL,
   `orgao_emissor_funcionarios` VARCHAR(10) NOT NULL,
@@ -52,19 +52,14 @@ CREATE TABLE IF NOT EXISTS `sigio`.`funcionarios` (
   `email_funcionarios` VARCHAR(45) NULL,
   `cargo_funcionarios` VARCHAR(45) NOT NULL,
   `salario_funcionarios` DECIMAL(10,2) NOT NULL,
-  `data_admissao_funcionarios` DATE NOT NULL,
-  `data_demissao_funcionarios` DATE NULL,
+  `data_admissao_funcionarios` VARCHAR(8) NOT NULL,
+  `data_demissao_funcionarios` VARCHAR(8) NULL,
   `status_funcionarios` VARCHAR(10) NOT NULL,
-  `nome_usuarios` VARCHAR(15) NOT NULL,
+  `nome_usuarios_funcionarios` VARCHAR(15) NOT NULL,
   UNIQUE INDEX `matricula_funcionarios_UNIQUE` (`matricula_funcionarios` ASC) VISIBLE,
   PRIMARY KEY (`matricula_funcionarios`),
-  UNIQUE INDEX `cpf_funcionarios_UNIQUE` (`cpf_funcionarios` ASC) VISIBLE,
-  INDEX `fk_nome_usuarios_funcionarios_idx` (`nome_usuarios` ASC) VISIBLE,
-  CONSTRAINT `fk_nome_usuarios_funcionarios`
-    FOREIGN KEY (`nome_usuarios`)
-    REFERENCES `sigio`.`usuarios` (`nome_usuarios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `cpf_funcionarios_UNIQUE` (`cpf_funcionarios` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -74,7 +69,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `sigio`.`dentistas` (
   `matricula_dentistas` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_dentistas` VARCHAR(100) NOT NULL,
-  `data_nascimento_dentistas` DATE NOT NULL,
+  `data_nascimento_dentistas` VARCHAR(8) NOT NULL,
   `cpf_dentistas` VARCHAR(11) NOT NULL,
   `rg_dentistas` VARCHAR(10) NOT NULL,
   `orgao_emissor_dentistas` VARCHAR(10) NOT NULL,
@@ -96,19 +91,14 @@ CREATE TABLE IF NOT EXISTS `sigio`.`dentistas` (
   `conselho_numero_dentistas` VARCHAR(10) NOT NULL,
   `conselho_estado_dentistas` VARCHAR(2) NOT NULL,
   `comissao_dentistas` FLOAT NOT NULL,
-  `data_admissao_dentistas` DATE NOT NULL,
-  `data_demissao_dentistas` DATE NULL,
+  `data_admissao_dentistas` VARCHAR(8) NOT NULL,
+  `data_demissao_dentistas` VARCHAR(8) NULL,
   `status_dentistas` VARCHAR(10) NOT NULL,
-  `nome_usuarios` VARCHAR(15) NOT NULL,
+  `nome_usuarios_dentistas` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`cpf_dentistas`),
   UNIQUE INDEX `matricula_dentistas_UNIQUE` (`matricula_dentistas` ASC) VISIBLE,
-  UNIQUE INDEX `cpf_dentistas_UNIQUE` (`cpf_dentistas` ASC) VISIBLE,
-  INDEX `fk_nome_usuarios_dentistas_idx` (`nome_usuarios` ASC) VISIBLE,
-  CONSTRAINT `fk_nome_usuarios_dentistas`
-    FOREIGN KEY (`nome_usuarios`)
-    REFERENCES `sigio`.`usuarios` (`nome_usuarios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `cpf_dentistas_UNIQUE` (`cpf_dentistas` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -151,7 +141,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `matricula_pacientes` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_pacientes` VARCHAR(100) NOT NULL,
-  `data_nascimento_pacientes` DATE NOT NULL,
+  `data_nascimento_pacientes` VARCHAR(8) NOT NULL,
   `cpf_pacientes` VARCHAR(11) NOT NULL,
   `rg_pacientes` VARCHAR(10) NOT NULL,
   `orgao_emissor_pacientes` VARCHAR(10) NOT NULL,
@@ -170,17 +160,12 @@ CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `carteira_convenio_pacientes` INT NOT NULL,
   `titular_convenio_pacientes` VARCHAR(100) NOT NULL,
   `tipo_plano_convenio_pacientes` VARCHAR(100) NOT NULL,
-  `data_cadastro_pacientes` DATE NOT NULL,
-  `id_convenios` INT NOT NULL,
+  `data_cadastro_pacientes` VARCHAR(8) NOT NULL,
+  `id_convenios_pacientes` INT NOT NULL,
   UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
   PRIMARY KEY (`cpf_pacientes`),
-  UNIQUE INDEX `cpf_pacientes_UNIQUE` (`cpf_pacientes` ASC) VISIBLE,
-  INDEX `fk_id_convenios_idx` (`id_convenios` ASC) VISIBLE,
-  CONSTRAINT `fk_id_convenios_pacientes`
-    FOREIGN KEY (`id_convenios`)
-    REFERENCES `sigio`.`convenios` (`id_convenios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `cpf_pacientes_UNIQUE` (`cpf_pacientes` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -191,17 +176,17 @@ CREATE TABLE IF NOT EXISTS `sigio`.`estoque` (
   `id_estoque` INT NOT NULL AUTO_INCREMENT,
   `produto_estoque` VARCHAR(50) NOT NULL,
   `descricao_produto_estoque` VARCHAR(100) NOT NULL,
+  `valor_produto_estoque` DECIMAL(10,2) NOT NULL,
   `codigo_produto_estoque` INT NOT NULL,
   `quantidade_estoque` INT NOT NULL,
-  `data_entrada_estoque` DATE NOT NULL,
-  `data_retirada_estoque` DATE,
+  `data_entrada_estoque` VARCHAR(8) NOT NULL,
+  `data_retirada_estoque` VARCHAR(8),
   `usuario_cadastro_estoque` VARCHAR(15) NOT NULL,
   `observacoes_estoque` VARCHAR(100),
   `unidade_medida_estoque` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_estoque`, `produto_estoque`, `usuario_cadastro_estoque`),
-  UNIQUE INDEX `id_estoque_UNIQUE` (`id_estoque` ASC) VISIBLE,
-  UNIQUE INDEX `descricao_produto_estoque_UNIQUE` (`descricao_produto_estoque` ASC) VISIBLE,
-  UNIQUE INDEX `nome_usuarios_UNIQUE` (`usuario_cadastro_estoque` ASC) VISIBLE)
+  PRIMARY KEY (`id_estoque`),
+  UNIQUE INDEX `id_estoque_UNIQUE` (`id_estoque` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -213,21 +198,21 @@ CREATE TABLE IF NOT EXISTS `sigio`.`patrimonio` (
   `nome_patrimonio` VARCHAR(45) NOT NULL,
   `descricao_patrimonio` VARCHAR(45) NOT NULL,
   `quantidade_patrimonio` INT NOT NULL,
-  `data_cadastro_patrimonio` DATE NOT NULL,
+  `data_cadastro_patrimonio` VARCHAR(8) NOT NULL,
   `status_patrimonio` VARCHAR(50) NULL,
   `usuario_cadastro_patrimonio` VARCHAR(15) NOT NULL,
   `setor_patrimonio` VARCHAR(45) NOT NULL,
-  `valor_patrimonio` FLOAT NOT NULL,
-  `data_compra_patrimonio` DATE NULL,
+  `valor_patrimonio` DECIMAL(10,2) NOT NULL,
+  `data_compra_patrimonio` VARCHAR(8) NULL,
   `cor_produto_patrimonio` VARCHAR(15) NULL,
   `fabricante_patrimonio` VARCHAR(45) NULL,
   `nota_fiscal_patrimonio` INT NULL,
   `serie_nota_fiscal_patrimonio` INT NULL,
   `observacoes_patrimonio` VARCHAR(100),
-  `cobertura_garantia_patrimonio` DATE NULL,
+  `cobertura_garantia_patrimonio` VARCHAR(8) NULL,
   UNIQUE INDEX `id_patrimonio_UNIQUE` (`id_patrimonio` ASC) VISIBLE,
-  PRIMARY KEY (`id_patrimonio`, `usuario_cadastro_patrimonio`),
-  UNIQUE INDEX `usuario_cadastro_patimonio_UNIQUE` (`usuario_cadastro_patrimonio` ASC) VISIBLE)
+  PRIMARY KEY (`id_patrimonio`)
+)
 ENGINE = InnoDB;
 
 
@@ -245,13 +230,9 @@ ENGINE = InnoDB;
 -- Table `sigio`.`anamnese`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`anamnese` (
-  `matricula_pacientes` INT NOT NULL,
-  PRIMARY KEY (`matricula_pacientes`),
-  CONSTRAINT `fk_matricula_pacientes_anamnese`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `matricula_pacientes_anamnese` INT NOT NULL,
+  PRIMARY KEY (`matricula_pacientes_anamnese`)
+)
 ENGINE = InnoDB;
 
 
@@ -329,23 +310,13 @@ ENGINE = InnoDB;
 -- Table `sigio`.`agenda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`agenda` (
-  `matricula_dentistas` INT NOT NULL,
-  `matricula_pacientes` INT NOT NULL,
-  `data_consulta_agenda` DATE NOT NULL,
+  `matricula_dentistas_agenda` INT NOT NULL,
+  `matricula_pacientes_agenda` INT NOT NULL,
+  `data_consulta_agenda` VARCHAR(8) NOT NULL,
   `hora_consulta_agenda` TIME NOT NULL,
   `observacoes_agenda` VARCHAR(100),
-  PRIMARY KEY (`matricula_dentistas`, `matricula_pacientes`),
-  INDEX `matricula_pacientes_idx` (`matricula_pacientes` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_dentistas_agenda`
-    FOREIGN KEY (`matricula_dentistas`)
-    REFERENCES `sigio`.`dentistas` (`matricula_dentistas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_matricula_pacientes_agenda`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`matricula_dentistas_agenda`, `matricula_pacientes_agenda`)
+)
 ENGINE = InnoDB;
 
 
@@ -353,23 +324,14 @@ ENGINE = InnoDB;
 -- Table `sigio`.`atestados`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`atestados` (
-  `matricula_dentistas` INT NOT NULL,
-  `matricula_paciente` INT NOT NULL,
+  `matricula_dentistas_atestados` INT NOT NULL,
+  `matricula_pacientes_atestados` INT NOT NULL,
   `descricao_atestados` VARCHAR(200) NOT NULL,
-  `data_atestados` DATE NOT NULL,
+  `data_atestados` VARCHAR(8) NOT NULL,
   `hora_entrada_atestados` TIME NOT NULL,
   `hora_saida_atestados` TIME NOT NULL,
-  PRIMARY KEY (`matricula_dentistas`, `matricula_paciente`),
-  CONSTRAINT `fk_matricula_pacientes_atestados`
-    FOREIGN KEY (`matricula_paciente`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_matricula_dentistas_atestados`
-    FOREIGN KEY (`matricula_dentistas`)
-    REFERENCES `sigio`.`dentistas` (`matricula_dentistas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`matricula_dentistas_atestados`, `matricula_pacientes_atestados`)
+)
 ENGINE = InnoDB;
 
 
@@ -378,11 +340,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`contaspagar` (
   `id_contaspagar` INT NOT NULL AUTO_INCREMENT,
-  `data_vencimento_contaspagar` DATE NOT NULL,
+  `data_vencimento_contaspagar` VARCHAR(8) NOT NULL,
   `nome_contaspagar` VARCHAR(45) NOT NULL,
   `descricao_contaspagar` VARCHAR(100) NOT NULL,
   `valor_contaspagar` DECIMAL(10,2) NOT NULL,
-  `data_pagamento_contaspagar` DATE NOT NULL,
+  `data_pagamento_contaspagar` VARCHAR(8) NOT NULL,
   PRIMARY KEY (`id_contaspagar`),
   UNIQUE INDEX `id_contaspagar_UNIQUE` (`id_contaspagar` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -393,11 +355,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`contasreceber` (
   `id_contasreceber` INT NOT NULL AUTO_INCREMENT,
-  `data_vencimento_contasrebecer` DATE NOT NULL,
+  `data_vencimento_contasrebecer` VARCHAR(8) NOT NULL,
   `nome_contasreceber` VARCHAR(45) NOT NULL,
   `descricao_contasreceber` VARCHAR(100) NOT NULL,
   `valor_contasreceber` DECIMAL(10,2) NOT NULL,
-  `data_recebimento_contasreceber` DATE NOT NULL,
+  `data_recebimento_contasreceber` VARCHAR(8) NOT NULL,
   PRIMARY KEY (`id_contasreceber`),
   UNIQUE INDEX `id_contasreceber_UNIQUE` (`id_contasreceber` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -408,29 +370,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`orcamentos` (
   `id_orcamentos` INT NOT NULL AUTO_INCREMENT,
-  `matricula_pacientes` INT NOT NULL,
-  `matricula_dentistas` INT NOT NULL,
+  `matricula_pacientes_orcamentos` INT NOT NULL,
+  `matricula_dentistas_orcamentos` INT NOT NULL,
   `codigo_procedimentos` VARCHAR(15) NOT NULL,
   `valor_tratamento_orcamentos` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_orcamentos`),
-  UNIQUE INDEX `id_orcamentos_UNIQUE` (`id_orcamentos` ASC) VISIBLE,
-  INDEX `matricula_pacientes_idx` (`matricula_pacientes` ASC) VISIBLE,
-  INDEX `fk_codigo_tratamentos_idx` (`codigo_procedimentos` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_pacientes_orcamentos`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_matricula_dentistas_orcamentos`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`dentistas` (`matricula_dentistas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_codigo_procedimentos_orcamentos`
-    FOREIGN KEY (`codigo_procedimentos`)
-    REFERENCES `sigio`.`procedimentos` (`codigo_procedimentos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `id_orcamentos_UNIQUE` (`id_orcamentos` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -473,18 +419,11 @@ ENGINE = InnoDB;
 -- Table `sigio`.`especialidades`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`especialidades` (
-  `codigo_especialidade` INT NOT NULL AUTO_INCREMENT,
-  `descricao_especialidade` VARCHAR(100) NOT NULL,
-  `especialidadescol` VARCHAR(45) NULL,
-  `matricula_dentistas` INT NULL,
-  PRIMARY KEY (`codigo_especialidade`),
-  UNIQUE INDEX `codigo_especialidade_UNIQUE` (`codigo_especialidade` ASC) VISIBLE,
-  INDEX `fk_matricula_dentistas_idx` (`matricula_dentistas` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_dentistas_especialidades`
-    FOREIGN KEY (`matricula_dentistas`)
-    REFERENCES `sigio`.`dentistas` (`matricula_dentistas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `codigo_especialidades` INT NOT NULL AUTO_INCREMENT,
+  `descricao_especialidades` VARCHAR(100) NOT NULL,
+  `matricula_dentistas_especialidades` INT NULL,
+  PRIMARY KEY (`codigo_especialidades`)
+)
 ENGINE = InnoDB;
 
 
@@ -492,16 +431,11 @@ ENGINE = InnoDB;
 -- Table `sigio`.`odontograma`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`odontograma` (
-  `matricula_pacientes` INT NOT NULL,
+  `matricula_pacientes_odontograma` INT NOT NULL,
   `dente_odontograma` INT NOT NULL,
   `descricao_odontograma` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`matricula_pacientes`),
-  UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_pacientes_odontograma`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`matricula_pacientes_odontograma`)
+)
 ENGINE = InnoDB;
 
 
@@ -520,7 +454,7 @@ ENGINE = InnoDB;
 -- Table `sigio`.`ortodontia`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`ortodontia` (
-  `matricula_pacientes` INT NOT NULL,
+  `matricula_pacientes_ortodontia` INT NOT NULL,
   `previsao_ortodontia` VARCHAR(200) NOT NULL,
   `razoes_ortodontia` VARCHAR(200) NOT NULL,
   `motivacao_ortodontia` VARCHAR(200) NOT NULL,
@@ -537,13 +471,8 @@ CREATE TABLE IF NOT EXISTS `sigio`.`ortodontia` (
   `radio_ortodontia` VARCHAR(200) NOT NULL,
   `modelo_ortodontia` VARCHAR(200) NOT NULL,
   `observacoes_ortodontia` VARCHAR(200),
-  PRIMARY KEY (`matricula_pacientes`),
-  UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_pacientes_ortodontia`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`matricula_pacientes_ortodontia`)
+)
 ENGINE = InnoDB;
 
 
@@ -551,19 +480,15 @@ ENGINE = InnoDB;
 -- Table `sigio`.`implantodontia`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`implantodontia` (
-  `matricula_pacientes` INT NOT NULL,
+  `matricula_pacientes_implantodontia` INT NOT NULL,
   `regioes_implantodontia` VARCHAR(200) NOT NULL,
   `areas_implantodontia` VARCHAR(200) NOT NULL,
   `marca_implantodontia` VARCHAR(200) NOT NULL,
-  `enxerto_implantodontia` ENUM('Sim', 'Nao') NOT NULL,
+  `enxerto_implantodontia` VARCHAR(3) NOT NULL,
   `tipo_enxerto_implantodontia` VARCHAR(200) NOT NULL,
   `observacoes_implantodontia` VARCHAR(200),
-  PRIMARY KEY (`matricula_pacientes`),
-  CONSTRAINT `fk_matricula_pacientes_implantodontia`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`matricula_pacientes_implantodontia`)
+)
 ENGINE = InnoDB;
 
 
@@ -571,21 +496,16 @@ ENGINE = InnoDB;
 -- Table `sigio`.`endodontia_tratamento_realizado`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`endodontia_tratamento_realizado` (
-  `matricula_pacientes` INT NOT NULL,
+  `matricula_pacientes_endodontia` INT NOT NULL,
   `canal_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
   `comprimento_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
   `lima_inicial_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
   `lima_final_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
   `referencia_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
   `descricao_endodontia_tratamento_realizado` VARCHAR(45) NOT NULL,
-  `data_alta_endodontia_tratamento_realizado` DATE NULL,
-  PRIMARY KEY (`matricula_pacientes`),
-  UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
-  CONSTRAINT `fk_matricula_pacientes_endodontia`
-    FOREIGN KEY (`matricula_pacientes`)
-    REFERENCES `sigio`.`pacientes` (`matricula_pacientes`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `data_alta_endodontia_tratamento_realizado` VARCHAR(8) NULL,
+  PRIMARY KEY (`matricula_pacientes_endodontia`)
+)
 ENGINE = InnoDB;
 
 

@@ -316,5 +316,59 @@ $(function(){
            }
         }
     });
-    
+    $('.ui.form.cadastro-estoque-form').form({
+        keyboardShortcuts: false,
+        fields: {
+           produto_estoque: {
+               identifier: 'produto_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome do Produto',
+               }]
+           },
+           descricao_produto_estoque: {
+               identifier: 'descricao_produto_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Descrição do Produto',
+               }]
+           },
+           valor_produto_estoque: {
+               identifier: 'valor_produto_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Valor do Produto',
+               }]
+           },
+           codigo_produto_estoque: {
+               identifier: 'codigo_produto_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Códio do Produto',
+               }]
+           },
+           quantidade_estoque: {
+               identifier: 'quantidade_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Quantidade',
+               }]
+           },
+           data_entrada_estoque: {
+               identifier: 'data_entrada_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Data de Entrada',
+               }]
+           },
+           unidade_medida_estoque: {
+               identifier: 'unidade_medida_estoque',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Unidade de Medida',
+               }]
+           }
+           
+        }
+    });
 });

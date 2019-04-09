@@ -1,13 +1,13 @@
 <div class="bread">
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
-        <a class="section" href="dashboard.php?p=dados-dashboardp">Dashboard</a>
+        <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
         <i class="users icon divider"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
 <div class="cadastro-pacientes">
-    <form class="ui form cadastro-pacientes-form">
+    <form class="ui form cadastro-pacientes-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Pacientes</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
         <div class="two fields">
@@ -107,22 +107,26 @@
             
         <h3 class="ui header disabled">Informações de Convênios</h3>
         <div class="two fields">
+            <div class="four wide field">
+                <label>ID do Convênio</label>
+                <input type="text" name="id_convenios_pacientes" placeholder="ID do Convênio">
+            </div>
             <div class="eight wide field">
                 <label>Carteira Convênio</label>
                 <input type="text" name="carteira_convenio_pacientes" placeholder="Carteira Convênio">
-            </div>
-            
-            <div class="eight wide field">
-                <label>Titular do Convênio</label>
-                <input type="text" name="titular_convenio_pacientes" placeholder="Titular do Convênio">
             </div>
         </div>
         
         <div class="two fields">
             <div class="eight wide field">
+                <label>Titular do Convênio</label>
+                <input type="text" name="titular_convenio_pacientes" placeholder="Titular do Convênio">
+            </div>
+            <div class="eight wide field">
                 <label>Tipo de Plano do Convênio</label>
                 <input type="text" name="tipo_plano_convenio_pacientes" placeholder="Tipo de Plano do Convênio">
             </div>
+            
         </div>
         
         <h3 class="ui header disabled">Finalizando</h3>
@@ -134,14 +138,49 @@
             
             <div class="four wide field">
                 <label>Status do Paciente</label>
-                <select class="ui fluid dropdown">
+                <select class="ui fluid dropdown" name="status_pacientes">
                     <option value="Ativo">Ativo</option>
                     <option value="Inativo">Inativo</option>
                 </select>
                 <script>$('select.dropdown').dropdown();</script>
             </div>
         </div>
-        <button class="ui button teal" type="submit" name="cadastrar_paciente">Cadastrar Paciente</button>
+        <button class="ui button teal" type="submit" name="cadastrar_pacientes">Cadastrar Paciente</button>
         <div class="ui error message"></div>
     </form>
 </div>
+
+<?php 
+    if($POST){
+        if(isset($POST['cadastrar_pacientes'])){
+            $Pacientes->setNome_completo_pacientes($POST['nome_completo_pacientes']);
+            $Pacientes->setData_nascimento_pacientes($POST['data_nascimento_pacientes']);
+            $Pacientes->setCpf_pacientes($POST['cpf_pacientes']);
+            $Pacientes->setRg_pacientes($POST['rg_pacientes']);
+            $Pacientes->setOrgao_emissor_pacientes($POST['orgao_emissor_pacientes']);
+            $Pacientes->setCep_pacientes($POST['cep_pacientes']);
+            $Pacientes->setEndereco_pacientes($POST['endereco_pacientes']);
+            $Pacientes->setComplemento_pacientes($POST['complemento_pacientes']);
+            $Pacientes->setBairro_pacientes($POST['bairro_pacientes']);
+            $Pacientes->setCidade_pacientes($POST['cidade_pacientes']);
+            $Pacientes->setUf_pacientes($POST['uf_pacientes']);
+            $Pacientes->setPais_pacientes($POST['pais_pacientes']);
+            $Pacientes->setTelefone_pacientes($POST['telefone_pacientes']);
+            $Pacientes->setCelular1_pacientes($POST['celular1_pacientes']);
+            $Pacientes->setCelular2_pacientes($POST['celular2_pacientes']);
+            $Pacientes->setEmail_pacientes($POST['email_pacientes']);
+            $Pacientes->setStatus_pacientes($POST['status_pacientes']);
+            $Pacientes->setCarteira_convenio_pacientes($POST['carteira_convenio_pacientes']);
+            $Pacientes->setTitular_convenio_pacientes($POST['titular_convenio_pacientes']);
+            $Pacientes->setTipo_plano_convenio_pacientes($POST['tipo_plano_convenio_pacientes']);
+            $Pacientes->setData_cadastro_pacientes($POST['data_cadastro_pacientes']);
+            $Pacientes->setId_convenios_pacientes($POST['id_convenios_pacientes']);
+            
+            $exe = $PacientesDAO->cadastrar_pacientes($Pacientes);
+                if($exe == true){
+                    echo '<script>toastr["success"]("Paciente cadastrado!", "Sucesso")</script>';
+                }else{
+                    echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
+                }
+        }
+    }
