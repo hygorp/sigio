@@ -140,12 +140,12 @@
     Patrimônio
 </button>
 <div class="panel">                
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=cadastro-patrimonio'">
         <i class="caret right icon"></i>
         Cadastro
     </button>
 
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=controle-patrimonio'">
         <i class="caret right icon"></i>
         Controle de Patrimônio
     </button>
@@ -344,11 +344,11 @@
             <div class="first-dropdown-content">
                 Patrimônio
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=cadastro-patrimonio'">
                 <i class="caret right icon"></i>
                 Cadastro
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=controle-patrimonio'">
                 <i class="caret right icon"></i>
                 Controle de Patrimônio
             </div>

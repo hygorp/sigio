@@ -1,12 +1,3 @@
-<?php
-    $listaDeDentistas = $DentistasDAO->listar_dentistas();
-    if($listaDeDentistas == true){
-        for($i = 0; $i < mysqli_num_rows($listaDeDentistas); $i++){
-            $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
-            $date = date_create($dados_listaDeDentistas['data_nascimento_dentistas']);
-        }
-    }
-?>
 <div class="bread">
     <div class="ui breadcrumb">
         <i class="dashboard icon divider active"></i>
@@ -18,7 +9,7 @@
     </div>
 </div>
 
-<div class="consulta-pacientes">
+<div class="consulta-dentistas">
     <table class="ui selectable celled table">
         <thead>
             <tr>
@@ -32,14 +23,22 @@
         </thead>
         
         <tbody>
-            <tr>
-                <td><?php echo $dados_listaDeDentistas['nome_completo_dentistas'] ?></td>
-                <td><?php echo $dados_listaDeDentistas['data_nascimento_dentistas']; date('d/m/Y')?></td>
-                <td><?php echo $dados_listaDeDentistas['conselho_tipo_dentistas'] ?></td>
-                <td><?php echo $dados_listaDeDentistas['conselho_numero_dentistas'] ?></td>
-                <td><?php echo $dados_listaDeDentistas['celular1_dentistas'] ?></td>
-                <td><?php echo $dados_listaDeDentistas['email_dentistas'] ?></td>
-            </tr>
+            <?php
+                $listaDeDentistas = $DentistasDAO->listar_dentistas();
+                if($listaDeDentistas == true){
+                    for($i = 0; $i < mysqli_num_rows($listaDeDentistas); $i++){
+                        $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
+                        echo "<tr>
+                        <td>".$dados_listaDeDentistas['nome_completo_dentistas']."</td>
+                        <td>".$dados_listaDeDentistas['data_nascimento_dentistas']."</td>
+                        <td>".$dados_listaDeDentistas['conselho_tipo_dentistas']."</td>
+                        <td>".$dados_listaDeDentistas['conselho_numero_dentistas']."</td>
+                        <td>".$dados_listaDeDentistas['celular1_dentistas']."</td>
+                        <td>".$dados_listaDeDentistas['email_dentistas']."</td>
+                        </tr>";
+                    }
+                }
+            ?>
         </tbody>
     </table>
 </div>

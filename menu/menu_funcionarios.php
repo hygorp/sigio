@@ -116,22 +116,6 @@
 </div>
 
 <button class="accordion-button">
-    <i class="building icon"></i>
-    Patrimônio
-</button>
-<div class="panel">                
-    <button class="accordion-item">
-        <i class="caret right icon"></i>
-        Cadastro
-    </button>
-
-    <button class="accordion-item">
-        <i class="caret right icon"></i>
-        Controle de Patrimônio
-    </button>
-</div>
-
-<button class="accordion-button">
     <i class="shipping fast icon"></i>
     Fornecedores
 </button>
@@ -292,23 +276,6 @@
             <div class="dropdown-content-item">
                 <i class="caret right icon"></i>
                 Fornecedores
-            </div>
-        </div>
-    </div>
-
-    <div class="menu-item-responsive">
-        <i class="big building icon"></i>
-        <div class="dropdown-content">
-            <div class="first-dropdown-content">
-                Patrimônio
-            </div>
-            <div class="dropdown-content-item">
-                <i class="caret right icon"></i>
-                Cadastro
-            </div>
-            <div class="dropdown-content-item">
-                <i class="caret right icon"></i>
-                Controle de Patrimônio
             </div>
         </div>
     </div>

@@ -371,4 +371,101 @@ $(function(){
            
         }
     });
+    $('.ui.form.cadastro-patrimonio-form').form({
+        keyboardShortcuts: false,
+        fields: {
+           nome_patrimonio: {
+               identifier: 'nome_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome do Patrimônio',
+               }]
+           },
+           descricao_patrimonio: {
+               identifier: 'descricao_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Descrição',
+               }]
+           },
+           valor_patrimonio: {
+               identifier: 'valor_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Valor do Patrimônio',
+               }]
+           },
+           setor_patrimonio: {
+               identifier: 'setor_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Setor',
+               }]
+           },
+           quantidade_patrimonio: {
+               identifier: 'quantidade_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Quantidade',
+               }]
+           },
+           cor_produto_patrimonio: {
+               identifier: 'cor_produto_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Cor',
+               }]
+           },
+           data_compra_patrimonio: {
+               identifier: 'data_compra_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Data da Compra',
+               }]
+           },
+           fabricante_patrimonio: {
+               identifier: 'fabricante_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Fabricante',
+               }]
+           },
+           nota_fiscal_patrimonio: {
+               identifier: 'nota_fiscal_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nota Fiscal',
+               }]
+           },
+           serie_nota_fiscal_patrimonio: {
+               identifier: 'serie_nota_fiscal_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Série',
+               }]
+           },
+           cobertura_garantia_patrimonio: {
+               identifier: 'cobertura_garantia_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Cobertura da Garantia',
+               }]
+           },
+           status_patrimonio: {
+               identifier: 'status_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Status',
+               }]
+           },
+           data_cadastro_patrimonio: {
+               identifier: 'data_cadastro_patrimonio',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Data de Cadastro',
+               }]
+           },
+           
+        }
+    });
 });

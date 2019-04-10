@@ -13,21 +13,25 @@
     include './classes/ENTIDADES/Estoque.class.php';
     include './classes/ENTIDADES/Dentistas.class.php';
     include './classes/ENTIDADES/Funcionarios.class.php';
+    include './classes/ENTIDADES/Patrimonio.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/EstoqueDAO.class.php';
     include './classes/DAO/DentistasDAO.class.php';
     include './classes/DAO/FuncionariosDAO.class.php';
+    include './classes/DAO/PatrimonioDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $EstoqueDAO = new EstoqueDAO();
     $DentistasDAO = new DentistasDAO();
     $FuncionariosDAO = new FuncionariosDAO();
+    $PatrimonioDAO = new PatrimonioDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Estoque = new Estoque();
     $Dentistas = new Dentistas();
     $Funcionarios = new Funcionarios();
+    $Patrimonio = new Patrimonio();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -185,6 +189,8 @@
                 if($valueGet == "cadastro-funcionarios"){require_once 'funcionarios/cadastro.funcionarios.php';}
                 if($valueGet == "consultar-funcionarios"){require_once 'funcionarios/consulta.funcionarios.php';}
                 if($valueGet == "cadastro-estoque"){require_once 'estoque/cadastro.estoque.php';}
+                if($valueGet == "cadastro-patrimonio"){require_once 'patrimonio/cadastro.patrimonio.php';}
+                if($valueGet == "controle-patrimonio"){require_once 'patrimonio/controle.patrimonio.php';}
             ?>
         </div>
         

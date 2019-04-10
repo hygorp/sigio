@@ -1,12 +1,3 @@
-<?php
-    $listaDePacientes = $PacientesDAO->listar_pacientes();
-    if($listaDePacientes == true){
-        for($i = 0; $i < mysqli_num_rows($listaDePacientes); $i++){
-            $dados_listaDePacientes = mysqli_fetch_assoc($listaDePacientes);
-            $date = date_create($dados_listaDePacientes['data_nascimento_pacientes']);
-        }
-    }
-?>
 <div class="bread">
     <div class="ui breadcrumb">
         <i class="dashboard icon divider active"></i>
@@ -32,14 +23,22 @@
         </thead>
         
         <tbody>
-            <tr>
-                <td><?php echo $dados_listaDePacientes['nome_completo_pacientes'] ?></td>
-                <td><?php echo $dados_listaDePacientes['cpf_pacientes'] ?></td>
-                <td><?php echo $dados_listaDePacientes['data_nascimento_pacientes']; date('d/m/Y')?></td>
-                <td><?php echo $dados_listaDePacientes['telefone_pacientes'] ?></td>
-                <td><?php echo $dados_listaDePacientes['celular1_pacientes'] ?></td>
-                <td><?php echo $dados_listaDePacientes['email_pacientes'] ?></td>
-            </tr>
+            <?php
+                $listaDePacientes = $PacientesDAO->listar_pacientes();
+                if($listaDePacientes == true){
+                    for($i = 0; $i < mysqli_num_rows($listaDePacientes); $i++){
+                        $dados_listaDePacientes = mysqli_fetch_assoc($listaDePacientes);
+                        echo "<tr>
+                        <td>".$dados_listaDePacientes['nome_completo_pacientes']."</td>
+                        <td>".$dados_listaDePacientes['cpf_pacientes']."</td>
+                        <td>".$dados_listaDePacientes['data_nascimento_pacientes']."</td>
+                        <td>".$dados_listaDePacientes['telefone_pacientes']."</td>
+                        <td>".$dados_listaDePacientes['celular1_pacientes']."</td>
+                        <td>".$dados_listaDePacientes['email_pacientes']."</td>
+                    </tr>";
+                    }
+                }
+            ?>   
         </tbody>
     </table>
 </div>

@@ -18,4 +18,14 @@ class FuncionariosDAO {
             return false;
         }
     }
+    
+    public function listar_funcionarios(){
+        $sql = "SELECT * FROM funcionarios";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }
 }
