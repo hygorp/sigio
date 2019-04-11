@@ -240,13 +240,32 @@ body{
     padding-top: 2%;
     padding-bottom: 2%;
 }
+.cadastro-patrimonio{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.cadastro-fornecedores{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
 .consulta-pacientes{
     width: 95%;
     margin: 0 auto;
     padding-top: 2%;
     padding-bottom: 2%;
 }
-.consulta-patrimonio{
+.controle-patrimonio{
+    width: 95%;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.controle-fornecedores{
     width: 95%;
     height: 100vh;
     margin: 0 auto;

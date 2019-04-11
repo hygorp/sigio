@@ -468,4 +468,101 @@ $(function(){
            
         }
     });
+    
+    $('.ui.form.cadastro-fornecedores-form').form({
+        keyboardShortcuts: false,
+        fields: {
+           razao_social_fornecedores: {
+               identifier: 'razao_social_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Razão Social',
+               }]
+           },
+           nome_fantasia_fornecedores: {
+               identifier: 'nome_fantasia_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome Fantasia',
+               }]
+           },
+           inscricao_estadual_fornecedores: {
+               identifier: 'inscricao_estadual_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Inscrição Estadual',
+               }]
+           },
+           cnpj_fornecedores: {
+               identifier: 'cnpj_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo CNPJ',
+               }]
+           },
+           atuacao_fornecedores: {
+               identifier: 'atuacao_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Áre de Atuação',
+               }]
+           },
+           endereco_fornecedores: {
+               identifier: 'endereco_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Endereço',
+               }]
+           },
+           complemento_fornecedores: {
+               identifier: 'complemento_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Complemento',
+               }]
+           },
+           bairro_fornecedores: {
+               identifier: 'bairro_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Bairro',
+               }]
+           },
+           cidade_fornecedores: {
+               identifier: 'cidade_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o Cidade',
+               }]
+           },
+           uf_fornecedores: {
+               identifier: 'uf_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo UF',
+               }]
+           },
+           pais_fornecedores: {
+               identifier: 'pais_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo País',
+               }]
+           },
+           telefone_fornecedores: {
+               identifier: 'telefone_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o primeiro campo Telefone',
+               }]
+           },
+           nome_representante_fornecedores: {
+               identifier: 'nome_representante_fornecedores',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome do Representante',
+               }]
+           }
+        }
+    });
 });

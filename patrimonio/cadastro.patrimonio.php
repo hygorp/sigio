@@ -6,7 +6,7 @@
         <div class="active section">Cadastro</div>  
     </div>
 </div>
-<div class="cadastro-estoque">
+<div class="cadastro-patrimonio">
     <form class="ui form cadastro-patrimonio-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Patrimônio</h2>
         <h3 class="ui header disabled">Informações</h3>

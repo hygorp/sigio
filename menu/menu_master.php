@@ -156,12 +156,12 @@
     Fornecedores
 </button>
 <div class="panel">                
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=cadastro-fornecedores'">
         <i class="caret right icon"></i>
         Cadastro
     </button>
 
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=controle-fornecedores'">
         <i class="caret right icon"></i>
         Controle de Fornecedores
     </button>
@@ -360,11 +360,11 @@
             <div class="first-dropdown-content">
                 Fornecedores
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=cadastro-fornecedores'">
                 <i class="caret right icon"></i>
                 Cadastro
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=controle-fornecedores'">
                 <i class="caret right icon"></i>
                 Controle de Fornecedores
             </div>

@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="consulta-patrimonio">
+<div class="controle-patrimonio">
     <table class="ui selectable celled table">
         <thead>
             <tr>

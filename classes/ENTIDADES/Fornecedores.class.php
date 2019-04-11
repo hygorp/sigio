@@ -12,6 +12,7 @@ class Fornecedores {
     private $bairro_fornecedores;
     private $cidade_fornecedores;
     private $uf_fornecedores;
+    private $pais_fornecedores;
     private $telefone_fornecedores;
     private $celular1_fornecedores;
     private $celular2_fornecedores;
@@ -24,6 +25,7 @@ class Fornecedores {
     private $conta_banco_fornecedores;
     private $tipo_conta_banco_fornecedores;
     private $favorecido_banco_fornecedores;
+    private $status_fornecedores;
     private $observacoes_fornecedores;
     
     function getId_fornecedores() {
@@ -73,6 +75,10 @@ class Fornecedores {
     function getUf_fornecedores() {
         return $this->uf_fornecedores;
     }
+    
+    function getPais_fornecedores() {
+        return $this->pais_fornecedores;
+    }
 
     function getTelefone_fornecedores() {
         return $this->telefone_fornecedores;
@@ -120,6 +126,10 @@ class Fornecedores {
 
     function getFavorecido_banco_fornecedores() {
         return $this->favorecido_banco_fornecedores;
+    }
+    
+    function getStatus_fornecedores() {
+        return $this->status_fornecedores;
     }
 
     function getObservacoes_fornecedores() {
@@ -173,6 +183,10 @@ class Fornecedores {
     function setUf_fornecedores($uf_fornecedores) {
         $this->uf_fornecedores = $uf_fornecedores;
     }
+    
+    function setPais_fornecedores($pais_fornecedores) {
+        $this->pais_fornecedores = $pais_fornecedores;
+    }
 
     function setTelefone_fornecedores($telefone_fornecedores) {
         $this->telefone_fornecedores = $telefone_fornecedores;
@@ -220,6 +234,10 @@ class Fornecedores {
 
     function setFavorecido_banco_fornecedores($favorecido_banco_fornecedores) {
         $this->favorecido_banco_fornecedores = $favorecido_banco_fornecedores;
+    }
+    
+    function setStatus_fornecedores($status_fornecedores) {
+        $this->status_fornecedores = $status_fornecedores;
     }
 
     function setObservacoes_fornecedores($observacoes_fornecedores) {
