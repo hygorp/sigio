@@ -16,6 +16,7 @@
     include './classes/ENTIDADES/Patrimonio.class.php';
     include './classes/ENTIDADES/Fornecedores.class.php';
     include './classes/ENTIDADES/Laboratorios.class.php';
+    include './classes/ENTIDADES/Convenios.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/EstoqueDAO.class.php';
@@ -24,6 +25,7 @@
     include './classes/DAO/PatrimonioDAO.class.php';
     include './classes/DAO/FornecedoresDAO.class.php';
     include './classes/DAO/LaboratoriosDAO.class.php';
+    include './classes/DAO/ConveniosDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $EstoqueDAO = new EstoqueDAO();
@@ -32,6 +34,7 @@
     $PatrimonioDAO = new PatrimonioDAO();
     $FornecedoresDAO = new FornecedoresDAO();
     $LaboratoriosDAO = new LaboratoriosDAO();
+    $ConveniosDAO = new ConveniosDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Estoque = new Estoque();
@@ -40,6 +43,7 @@
     $Patrimonio = new Patrimonio();
     $Fornecedores = new Fornecedores();
     $Laboratorios = new Laboratorios();
+    $Convenios = new Convenios();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -204,6 +208,7 @@
                 if($valueGet == "controle-fornecedores"){require_once 'fornecedores/controle.fornecedores.php';}
                 if($valueGet == "cadastro-laboratorios"){require_once 'laboratorios/cadastro.laboratorios.php';}
                 if($valueGet == "controle-laboratorios"){require_once 'laboratorios/controle.laboratorios.php';}
+                if($valueGet == "cadastro-convenios"){require_once 'convenios/cadastro.convenios.php';}
             ?>
         </div>
         

@@ -188,7 +188,7 @@
     Convênios
 </button>
 <div class="panel">                
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=cadastro-convenios'">
         <i class="caret right icon"></i>
         Cadastro
     </button>
@@ -394,7 +394,7 @@
             <div class="first-dropdown-content">
                 Convênios
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=cadastro-convenios'">
                 <i class="caret right icon"></i>
                 Cadastro
             </div>

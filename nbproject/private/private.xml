@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/hygor/Desktop/sigio/databases/Sigio.sql</file>
-            <file>file:/C:/Users/hygor/Desktop/sigio/assets/js/form-validation.js</file>
+            <file>file:/C:/Users/hygor/Desktop/sigio/convenios/cadastro.convenios.php</file>
+            <file>file:/C:/Users/hygor/Desktop/sigio/dashboard.php</file>
+            <file>file:/C:/Users/hygor/Desktop/sigio/classes/DAO/ConveniosDAO.class.php</file>
         </group>
     </open-files>
 </project-private>
