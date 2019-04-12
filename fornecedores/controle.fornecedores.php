@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="consulta-fornecedores">
+<div class="controle-fornecedores">
     <table class="ui selectable celled table">
         <thead>
             <tr>
@@ -32,7 +32,7 @@
                         <td>".$dados_listaDeFornecedores['id_fornecedores']."</td>
                         <td>".$dados_listaDeFornecedores['nome_fantasia_fornecedores']."</td>
                         <td>".$dados_listaDeFornecedores['endereco_fornecedores']."</td>
-                        <td>".$dados_listaDeFornecedores['telefone_fornecedores']."</td>
+                        <td class='telefone'>".$dados_listaDeFornecedores['telefone_fornecedores']."</td>
                         <td>".$dados_listaDeFornecedores['nome_representante_fornecedores']."</td>
                         <td>".$dados_listaDeFornecedores['status_fornecedores']."</td>
                         </tr>";

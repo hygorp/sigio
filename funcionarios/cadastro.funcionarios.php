@@ -2,7 +2,7 @@
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
-        <i class="users icon divider"></i>
+        <i class="caret right icon"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
@@ -18,19 +18,19 @@
             
             <div class="three wide field">
                 <label>Data de Nascimento</label>
-                <input type="text" name="data_nascimento_funcionarios" placeholder="Data de Nascimento">
+                <input type="text" class="data" name="data_nascimento_funcionarios" placeholder="Data de Nascimento">
             </div>
         </div>
         
         <div class="three fields">
             <div class="seven wide field">
                 <label>CPF</label>
-                <input type="text" name="cpf_funcionarios" placeholder="CPF">
+                <input type="text" class="cpf" name="cpf_funcionarios" placeholder="CPF">
             </div>
             
             <div class="seven wide field">
                 <label>RG</label>
-                <input type="text" name="rg_funcionarios" placeholder="RG">
+                <input type="text" class="rg" name="rg_funcionarios" placeholder="RG">
             </div>
             
             <div class="three wide field">
@@ -43,7 +43,7 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" name="cep_funcionarios" placeholder="CEP">
+                <input type="text" class="cep" name="cep_funcionarios" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
@@ -83,18 +83,18 @@
         <div class="four fields">
             <div class="three wide field">
                 <label>Telefone</label>
-                <input type="text" name="telefone_funcionarios" placeholder="(00) 0000-0000">
+                <input type="text" class="telefone" name="telefone_funcionarios" placeholder="(00) 0000-0000">
             </div>
             
             <div class="six wide field">
                 <label>Celular</label>
                 <div class="two fields">
                     <div class="three field">
-                        <input type="text" name="celular1_funcionarios" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular1_funcionarios" placeholder="(00) 00000-0000">
                     </div>
                     
                     <div class="field">
-                        <input type="text" name="celular2_funcionarios" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular2_funcionarios" placeholder="(00) 00000-0000">
                     </div>
                 </div>
             </div>
@@ -119,12 +119,12 @@
         <div class="three fields">
             <div class="six wide field">
                 <label>Data de Admissão</label>
-                <input type="text" name="data_admissao_funcionarios" placeholder="Data de Admissão">
+                <input type="text" class="data" name="data_admissao_funcionarios" placeholder="Data de Admissão">
             </div>
             
             <div class="six wide field">
                 <label>Data de Demissão</label>
-                <input type="text" name="data_demissao_funcionarios" placeholder="Data de Demissão">
+                <input type="text" class="data" name="data_demissao_funcionarios" placeholder="Data de Demissão">
             </div>
             
             <div class="six wide field">
@@ -142,28 +142,31 @@
 </div>
 
 <?php 
+    function soNumero($str){
+        return preg_replace('/[^0-9]/', '', $str);
+    }
     if($POST){
         if(isset($POST['cadastrar_funcionarios'])){
             $Funcionarios->setNome_completo_funcionarios($POST['nome_completo_funcionarios']);
-            $Funcionarios->setData_nascimento_funcionarios($POST['data_nascimento_funcionarios']);
-            $Funcionarios->setCpf_funcionarios($POST['cpf_funcionarios']);
-            $Funcionarios->setRg_funcionarios($POST['rg_funcionarios']);
+            $Funcionarios->setData_nascimento_funcionarios(soNumero($POST['data_nascimento_funcionarios']));
+            $Funcionarios->setCpf_funcionarios(soNumero($POST['cpf_funcionarios']));
+            $Funcionarios->setRg_funcionarios(soNumero($POST['rg_funcionarios']));
             $Funcionarios->setOrgao_emissor_funcionarios($POST['orgao_emissor_funcionarios']);
-            $Funcionarios->setCep_funcionarios($POST['cep_funcionarios']);
+            $Funcionarios->setCep_funcionarios(soNumero($POST['cep_funcionarios']));
             $Funcionarios->setEndereco_funcionarios($POST['endereco_funcionarios']);
             $Funcionarios->setComplemento_funcionarios($POST['complemento_funcionarios']);
             $Funcionarios->setBairro_funcionarios($POST['bairro_funcionarios']);
             $Funcionarios->setCidade_funcionarios($POST['cidade_funcionarios']);
             $Funcionarios->setUf_funcionarios($POST['uf_funcionarios']);
             $Funcionarios->setPais_funcionarios($POST['pais_funcionarios']);
-            $Funcionarios->setTelefone_funcionarios($POST['telefone_funcionarios']);
-            $Funcionarios->setCelular1_funcionarios($POST['celular1_funcionarios']);
-            $Funcionarios->setCelular2_funcionarios($POST['celular2_funcionarios']);
+            $Funcionarios->setTelefone_funcionarios(soNumero($POST['telefone_funcionarios']));
+            $Funcionarios->setCelular1_funcionarios(soNumero($POST['celular1_funcionarios']));
+            $Funcionarios->setCelular2_funcionarios(soNumero($POST['celular2_funcionarios']));
             $Funcionarios->setEmail_funcionarios($POST['email_funcionarios']);
             $Funcionarios->setCargo_funcionarios($POST['cargo_funcionarios']);
             $Funcionarios->setSalario_funcionarios($POST['salario_funcionarios']);
-            $Funcionarios->setData_admissao_funcionarios($POST['data_admissao_funcionarios']);
-            $Funcionarios->setData_demissao_funcionarios($POST['data_demissao_funcionarios']);
+            $Funcionarios->setData_admissao_funcionarios(soNumero($POST['data_admissao_funcionarios']));
+            $Funcionarios->setData_demissao_funcionarios(soNumero($POST['data_demissao_funcionarios']));
             $Funcionarios->setStatus_funcionarios($POST['status_funcionarios']);
             $Funcionarios->setNome_usuarios_funcionarios($POST['nome_usuarios_funcionarios']);
             

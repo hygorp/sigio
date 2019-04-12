@@ -2,7 +2,7 @@
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
-        <i class="users icon divider"></i>
+        <i class="caret right icon"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
@@ -18,19 +18,19 @@
             
             <div class="three wide field">
                 <label>Data de Nascimento</label>
-                <input type="text" name="data_nascimento_dentistas" placeholder="Data de Nascimento">
+                <input type="text" class="data" name="data_nascimento_dentistas" placeholder="Data de Nascimento">
             </div>
         </div>
         
         <div class="three fields">
             <div class="seven wide field">
                 <label>CPF</label>
-                <input type="text" name="cpf_dentistas" placeholder="CPF">
+                <input type="text" class="cpf" name="cpf_dentistas" placeholder="CPF">
             </div>
             
             <div class="seven wide field">
                 <label>RG</label>
-                <input type="text" name="rg_dentistas" placeholder="RG">
+                <input type="text" class="rg" name="rg_dentistas" placeholder="RG">
             </div>
             
             <div class="three wide field">
@@ -43,7 +43,7 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" name="cep_dentistas" placeholder="CEP">
+                <input type="text" class="cep" name="cep_dentistas" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
@@ -83,18 +83,18 @@
         <div class="four fields">
             <div class="three wide field">
                 <label>Telefone</label>
-                <input type="text" name="telefone_dentistas" placeholder="(00) 0000-0000">
+                <input type="text" class="telefone" name="telefone_dentistas" placeholder="(00) 0000-0000">
             </div>
             
             <div class="six wide field">
                 <label>Celular</label>
                 <div class="two fields">
                     <div class="three field">
-                        <input type="text" name="celular1_dentistas" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular1_dentistas" placeholder="(00) 00000-0000">
                     </div>
                     
                     <div class="field">
-                        <input type="text" name="celular2_dentistas" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular2_dentistas" placeholder="(00) 00000-0000">
                     </div>
                 </div>
             </div>
@@ -134,12 +134,12 @@
             
             <div class="four wide field">
                 <label>Data de Admissão</label>
-                <input type="text" name="data_admissao_dentistas" placeholder="Data de Admissão">
+                <input type="text" class="data" name="data_admissao_dentistas" placeholder="Data de Admissão">
             </div>
             
             <div class="four wide field">
                 <label>Data de Demissão</label>
-                <input type="text" name="data_demissao_dentistas" placeholder="Data de Demissão">
+                <input type="text" class="data" name="data_demissao_dentistas" placeholder="Data de Demissão">
             </div>
             
             <div class="four wide field">
@@ -164,23 +164,26 @@
 </div>
 
 <?php 
+    function soNumero($str){
+        return preg_replace('/[^0-9]/', '', $str);
+    }
     if($POST){
         if(isset($POST['cadastrar_dentistas'])){
             $Dentistas->setNome_completo_dentistas($POST['nome_completo_dentistas']);
-            $Dentistas->setData_nascimento_dentistas($POST['data_nascimento_dentistas']);
-            $Dentistas->setCpf_dentistas($POST['cpf_dentistas']);
-            $Dentistas->setRg_dentistas($POST['rg_dentistas']);
+            $Dentistas->setData_nascimento_dentistas(soNumero($POST['data_nascimento_dentistas']));
+            $Dentistas->setCpf_dentistas(soNumero($POST['cpf_dentistas']));
+            $Dentistas->setRg_dentistas(soNumero($POST['rg_dentistas']));
             $Dentistas->setOrgao_emissor_dentistas($POST['orgao_emissor_dentistas']);
-            $Dentistas->setCep_dentistas($POST['cep_dentistas']);
+            $Dentistas->setCep_dentistas(soNumero($POST['cep_dentistas']));
             $Dentistas->setEndereco_dentistas($POST['endereco_dentistas']);
             $Dentistas->setComplemento_dentistas($POST['complemento_dentistas']);
             $Dentistas->setBairro_dentistas($POST['bairro_dentistas']);
             $Dentistas->setCidade_dentistas($POST['cidade_dentistas']);
             $Dentistas->setUf_dentistas($POST['uf_dentistas']);
             $Dentistas->setPais_dentistas($POST['pais_dentistas']);
-            $Dentistas->setTelefone_dentistas($POST['telefone_dentistas']);
-            $Dentistas->setCelular1_dentistas($POST['celular1_dentistas']);
-            $Dentistas->setCelular2_dentistas($POST['celular2_dentistas']);
+            $Dentistas->setTelefone_dentistas(soNumero($POST['telefone_dentistas']));
+            $Dentistas->setCelular1_dentistas(soNumero($POST['celular1_dentistas']));
+            $Dentistas->setCelular2_dentistas(soNumero($POST['celular2_dentistas']));
             $Dentistas->setEmail_dentistas($POST['email_dentistas']);
             $Dentistas->setEspecialidade1_dentistas($POST['especialidade1_dentistas']);
             $Dentistas->setEspecialidade2_dentistas($POST['especialidade2_dentistas']);
@@ -189,8 +192,8 @@
             $Dentistas->setConselho_numero_dentistas($POST['conselho_numero_dentistas']);
             $Dentistas->setConselho_estado_dentistas($POST['conselho_estado_dentistas']);
             $Dentistas->setComissao_dentistas($POST['comissao_dentistas']);
-            $Dentistas->setData_admissao_dentistas($POST['data_admissao_dentistas']);
-            $Dentistas->setData_demissao_dentistas($POST['data_demissao_dentistas']);
+            $Dentistas->setData_admissao_dentistas(soNumero($POST['data_admissao_dentistas']));
+            $Dentistas->setData_demissao_dentistas(soNumero($POST['data_demissao_dentistas']));
             $Dentistas->setStatus_dentistas($POST['status_dentistas']);
             $Dentistas->setNome_usuarios_dentistas($POST['nome_usuarios_dentistas']);
             

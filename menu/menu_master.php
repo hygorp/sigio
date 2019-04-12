@@ -172,12 +172,12 @@
     Laboratórios
 </button>
 <div class="panel">                
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=cadastro-laboratorios'">
         <i class="caret right icon"></i>
         Cadastro
     </button>
 
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=controle-laboratorios'">
         <i class="caret right icon"></i>
         Controle de Laboratórios
     </button>
@@ -377,11 +377,11 @@
             <div class="first-dropdown-content">
                 Laboratórios
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=cadastro-laboratorios'">
                 <i class="caret right icon"></i>
                 Cadastro
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=controle-laboratorios'">
                 <i class="caret right icon"></i>
                 Controle de Laboratórios
             </div>

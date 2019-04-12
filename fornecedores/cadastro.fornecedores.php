@@ -2,7 +2,7 @@
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
-        <i class="users icon divider"></i>
+        <i class="caret right icon"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
@@ -25,7 +25,7 @@
         <div class="three fields">
             <div class="six wide field">
                 <label>CNPJ</label>
-                <input type="text" name="cnpj_fornecedores" placeholder="CNPJ">
+                <input type="text" class="cnpj" name="cnpj_fornecedores" placeholder="CNPJ">
             </div>
             
             <div class="five wide field">
@@ -43,7 +43,7 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" name="cep_fornecedores" placeholder="CEP">
+                <input type="text" class="cep" name="cep_fornecedores" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
@@ -83,18 +83,18 @@
         <div class="four fields">
             <div class="three wide field">
                 <label>Telefone</label>
-                <input type="text" name="telefone_fornecedores" placeholder="(00) 0000-0000">
+                <input type="text" class="telefone" name="telefone_fornecedores" placeholder="(00) 0000-0000">
             </div>
             
             <div class="six wide field">
                 <label>Celular</label>
                 <div class="two fields">
                     <div class="three field">
-                        <input type="text" name="celular1_fornecedores" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular1_fornecedores" placeholder="(00) 00000-0000">
                     </div>
                     
                     <div class="field">
-                        <input type="text" name="celular2_fornecedores" placeholder="(00) 00000-0000">
+                        <input type="text" class="celular" name="celular2_fornecedores" placeholder="(00) 00000-0000">
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
             
             <div class="seven wide field">
                 <label>Celular</label>
-                <input type="text" name="celular_representante_fornecedores" placeholder="(00) 00000-0000">
+                <input type="text" class="celular" name="celular_representante_fornecedores" placeholder="(00) 00000-0000">
             </div>
         </div>
         
@@ -147,47 +147,52 @@
                 <input type="text" name="favorecido_banco_fornecedores" placeholder="Titular">
             </div>
         </div>
+        
         <div class="two fields">
-        <div class="four wide field">
-                <label>Status do Fornecedor</label>
-                <select class="ui fluid dropdown" name="status_fornecedores">
-                    <option value="Ativo">Ativo</option>
-                    <option value="Inativo">Inativo</option>
-                </select>
-                <script>$('select.dropdown').dropdown();</script>
+            <div class="four wide field">
+                    <label>Status do Fornecedor</label>
+                    <select class="ui fluid dropdown" name="status_fornecedores">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                    <script>$('select.dropdown').dropdown();</script>
+            </div>
         </div>
         
-        <div class="twelve wide field">
+        <div class="field">
             <label>Observações</label>
             <textarea rows="3" type="text" name="observacoes_fornecedores" placeholder="Observações"></textarea>
         </div>
-        </div>
+        
         <button class="ui button teal" type="submit" name="cadastrar_fornecedores">Cadastrar Fornecedor</button>
         <div class="ui error message"></div>
     </form>
 </div>
 
 <?php 
+    function soNumero($str){
+        return preg_replace('/[^0-9]/', '', $str);
+    }
     if($POST){
         if(isset($POST['cadastrar_fornecedores'])){
             $Fornecedores->setRazao_social_fornecedores($POST['razao_social_fornecedores']);
             $Fornecedores->setNome_fantasia_fornecedores($POST['nome_fantasia_fornecedores']);
             $Fornecedores->setInscricao_estadual_fornecedores($POST['inscricao_estadual_fornecedores']);
-            $Fornecedores->setCNPJ_fornecedores($POST['cnpj_fornecedores']);
+            $Fornecedores->setCNPJ_fornecedores(soNumero($POST['cnpj_fornecedores']));
             $Fornecedores->setAtuacao_fornecedores($POST['atuacao_fornecedores']);
-            $Fornecedores->setCep_fornecedores($POST['cep_fornecedores']);
+            $Fornecedores->setCep_fornecedores(soNumero($POST['cep_fornecedores']));
             $Fornecedores->setEndereco_fornecedores($POST['endereco_fornecedores']);
             $Fornecedores->setComplemento_fornecedores($POST['complemento_fornecedores']);
             $Fornecedores->setBairro_fornecedores($POST['bairro_fornecedores']);
             $Fornecedores->setCidade_fornecedores($POST['cidade_fornecedores']);
             $Fornecedores->setUf_fornecedores($POST['uf_fornecedores']);
             $Fornecedores->setPais_fornecedores($POST['pais_fornecedores']);
-            $Fornecedores->setTelefone_fornecedores($POST['telefone_fornecedores']);
-            $Fornecedores->setCelular1_fornecedores($POST['celular1_fornecedores']);
-            $Fornecedores->setCelular2_fornecedores($POST['celular2_fornecedores']);
+            $Fornecedores->setTelefone_fornecedores(soNumero($POST['telefone_fornecedores']));
+            $Fornecedores->setCelular1_fornecedores(soNumero($POST['celular1_fornecedores']));
+            $Fornecedores->setCelular2_fornecedores(soNumero($POST['celular2_fornecedores']));
             $Fornecedores->setEmail_fornecedores($POST['email_fornecedores']);
             $Fornecedores->setNome_representante_fornecedores($POST['nome_representante_fornecedores']);
-            $Fornecedores->setCelular_representante_fornecedores($POST['celular_representante_fornecedores']);
+            $Fornecedores->setCelular_representante_fornecedores(soNumero($POST['celular_representante_fornecedores']));
             $Fornecedores->setBanco_fornecedores($POST['banco_fornecedores']);
             $Fornecedores->setAgencia_banco_fornecedores($POST['agencia_banco_fornecedores']);
             $Fornecedores->setOperacao_banco_fornecedores($POST['operacao_banco_fornecedores']);

@@ -15,6 +15,7 @@
     include './classes/ENTIDADES/Funcionarios.class.php';
     include './classes/ENTIDADES/Patrimonio.class.php';
     include './classes/ENTIDADES/Fornecedores.class.php';
+    include './classes/ENTIDADES/Laboratorios.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/EstoqueDAO.class.php';
@@ -22,6 +23,7 @@
     include './classes/DAO/FuncionariosDAO.class.php';
     include './classes/DAO/PatrimonioDAO.class.php';
     include './classes/DAO/FornecedoresDAO.class.php';
+    include './classes/DAO/LaboratoriosDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $EstoqueDAO = new EstoqueDAO();
@@ -29,6 +31,7 @@
     $FuncionariosDAO = new FuncionariosDAO();
     $PatrimonioDAO = new PatrimonioDAO();
     $FornecedoresDAO = new FornecedoresDAO();
+    $LaboratoriosDAO = new LaboratoriosDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Estoque = new Estoque();
@@ -36,6 +39,7 @@
     $Funcionarios = new Funcionarios();
     $Patrimonio = new Patrimonio();
     $Fornecedores = new Fornecedores();
+    $Laboratorios = new Laboratorios();
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
@@ -94,6 +98,7 @@
         <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="assets/semantic/semantic.min.js"></script>
         <script type="text/javascript" src="assets/toastr/toastr.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
         <script type="text/javascript" src="assets/js/form-validation.js"></script>
         <script>
             toastr.options = {
@@ -197,6 +202,8 @@
                 if($valueGet == "controle-patrimonio"){require_once 'patrimonio/controle.patrimonio.php';}
                 if($valueGet == "cadastro-fornecedores"){require_once 'fornecedores/cadastro.fornecedores.php';}
                 if($valueGet == "controle-fornecedores"){require_once 'fornecedores/controle.fornecedores.php';}
+                if($valueGet == "cadastro-laboratorios"){require_once 'laboratorios/cadastro.laboratorios.php';}
+                if($valueGet == "controle-laboratorios"){require_once 'laboratorios/controle.laboratorios.php';}
             ?>
         </div>
         

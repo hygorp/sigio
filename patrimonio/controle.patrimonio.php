@@ -33,7 +33,7 @@
                         <td>".$dados_listaDePatrimonio['nome_patrimonio']."</td>
                         <td>".$dados_listaDePatrimonio['descricao_patrimonio']."</td>
                         <td>".$dados_listaDePatrimonio['quantidade_patrimonio']."</td>
-                        <td>".$dados_listaDePatrimonio['data_cadastro_patrimonio']."</td>
+                        <td class='data'>".$dados_listaDePatrimonio['data_cadastro_patrimonio']."</td>
                         <td>".$dados_listaDePatrimonio['status_patrimonio']."</td>
                         </tr>";
                     }

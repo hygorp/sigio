@@ -30,10 +30,10 @@
                         $dados_listaDeFuncionarios = mysqli_fetch_assoc($listaDeFuncionarios);
                         echo "<tr>
                         <td>".$dados_listaDeFuncionarios['nome_completo_funcionarios']."</td>
-                        <td>".$dados_listaDeFuncionarios['data_nascimento_funcionarios']."</td>
-                        <td>".$dados_listaDeFuncionarios['cpf_funcionarios']."</td>
+                        <td class='data'>".$dados_listaDeFuncionarios['data_nascimento_funcionarios']."</td>
+                        <td class='cpf'>".$dados_listaDeFuncionarios['cpf_funcionarios']."</td>
                         <td>".$dados_listaDeFuncionarios['cargo_funcionarios']."</td>
-                        <td>".$dados_listaDeFuncionarios['celular1_funcionarios']."</td>
+                        <td class='celular'>".$dados_listaDeFuncionarios['celular1_funcionarios']."</td>
                         <td>".$dados_listaDeFuncionarios['email_funcionarios']."</td>
                         </tr>";
                     }

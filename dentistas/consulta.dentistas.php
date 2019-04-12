@@ -30,10 +30,10 @@
                         $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
                         echo "<tr>
                         <td>".$dados_listaDeDentistas['nome_completo_dentistas']."</td>
-                        <td>".$dados_listaDeDentistas['data_nascimento_dentistas']."</td>
+                        <td class='data'>".$dados_listaDeDentistas['data_nascimento_dentistas']."</td>
                         <td>".$dados_listaDeDentistas['conselho_tipo_dentistas']."</td>
                         <td>".$dados_listaDeDentistas['conselho_numero_dentistas']."</td>
-                        <td>".$dados_listaDeDentistas['celular1_dentistas']."</td>
+                        <td class='celular'>".$dados_listaDeDentistas['celular1_dentistas']."</td>
                         <td>".$dados_listaDeDentistas['email_dentistas']."</td>
                         </tr>";
                     }

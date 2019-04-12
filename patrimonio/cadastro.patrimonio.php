@@ -2,7 +2,7 @@
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
-        <i class="users icon divider"></i>
+        <i class="caret right icon"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
@@ -50,7 +50,7 @@
         <div class="two fields">
             <div class="four wide field">
                 <label>Data da Compra</label>
-                <input type="text" name="data_compra_patrimonio" placeholder="Data da Compra">
+                <input type="text" class="data" name="data_compra_patrimonio" placeholder="Data da Compra">
             </div>
             
             <div class="twelve wide field">
@@ -89,7 +89,7 @@
             
             <div class="four wide field">
                 <label>Data de Cadastro</label>
-                <input type="text" name="data_cadastro_patrimonio" placeholder="Data de Cadastro">
+                <input type="text" class="data" name="data_cadastro_patrimonio" placeholder="Data de Cadastro">
             </div>
         </div>
         
@@ -103,18 +103,21 @@
 </div>
 
 <?php
+    function soNumero($str){
+        return preg_replace('/[^0-9]/', '', $str);
+    }
     if($POST){
         if(isset($POST['cadastrar_patrimonio'])){
             
             $Patrimonio->setNome_patrimonio($POST['nome_patrimonio']);
             $Patrimonio->setDescricao_patrimonio($POST['descricao_patrimonio']);
             $Patrimonio->setQuantidade_patrimonio($POST['quantidade_patrimonio']);
-            $Patrimonio->setData_cadastro_patrimonio($POST['data_cadastro_patrimonio']);
+            $Patrimonio->setData_cadastro_patrimonio(soNumero($POST['data_cadastro_patrimonio']));
             $Patrimonio->setStatus_patrimonio($POST['status_patrimonio']);
             $Patrimonio->setUsuario_cadastro_patrimonio($POST['usuario_cadastro_patrimonio']);
             $Patrimonio->setSetor_patrimonio($POST['setor_patrimonio']);
             $Patrimonio->setValor_patrimonio($POST['valor_patrimonio']);
-            $Patrimonio->setData_compra_patrimonio($POST['data_compra_patrimonio']);
+            $Patrimonio->setData_compra_patrimonio(soNumero($POST['data_compra_patrimonio']));
             $Patrimonio->setCor_produto_patrimonio($POST['cor_produto_patrimonio']);
             $Patrimonio->setFabricante_patrimonio($POST['fabricante_patrimonio']);
             $Patrimonio->setNota_fiscal_patrimonio($POST['nota_fiscal_patrimonio']);

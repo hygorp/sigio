@@ -2,7 +2,7 @@
     <div class="ui breadcrumb">
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
-        <i class="users icon divider"></i>
+        <i class="caret right icon"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
@@ -39,14 +39,14 @@
             
             <div class="four wide field">
                 <label>Data de Entrada</label>
-                <input type="text" name="data_entrada_estoque" placeholder="Data de Entrada">
+                <input type="text" class="data" name="data_entrada_estoque" placeholder="Data de Entrada">
             </div>
         </div>
        
         <div class="three fields">
             <div class="four wide field">
                 <label>Data de Retirada</label>
-                <input type="text" name="data_retirada_estoque" placeholder="Data de Retirada">
+                <input type="text" class="data" name="data_retirada_estoque" placeholder="Data de Retirada">
             </div>
             
             <div class="eight wide field">
@@ -70,6 +70,9 @@
 </div>
 
 <?php
+    function soNumero($str){
+        return preg_replace('/[^0-9]/', '', $str);
+    }
     if($POST){
         if(isset($POST['cadastrar_produto'])){
             
@@ -78,8 +81,8 @@
             $Estoque->setValor_produto_estoque($POST['valor_produto_estoque']);
             $Estoque->setCodigo_produto_estoque($POST['codigo_produto_estoque']);
             $Estoque->setQuantidade_estoque($POST['quantidade_estoque']);
-            $Estoque->setData_entrada_estoque($POST['data_entrada_estoque']);
-            $Estoque->setData_retirada_estoque($POST['data_retirada_estoque']);
+            $Estoque->setData_entrada_estoque(soNumero($POST['data_entrada_estoque']));
+            $Estoque->setData_retirada_estoque(soNumero($POST['data_retirada_estoque']));
             $Estoque->setUsuario_cadastro_estoque($POST['usuario_cadastro_estoque']);
             $Estoque->setUnidade_medida_estoque($POST['unidade_medida_estoque']);
             $Estoque->setObservacoes_estoque($POST['observacoes_estoque']);
