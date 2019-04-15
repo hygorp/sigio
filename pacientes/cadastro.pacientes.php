@@ -10,8 +10,8 @@
     <form class="ui form cadastro-pacientes-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Pacientes</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
-        <div class="two fields">
-            <div class="fourteen wide field">
+        <div class="three fields">
+            <div class="eleven wide field">
                 <label>Nome Completo</label>
                 <input type="text" name="nome_completo_pacientes" placeholder="Nome Completo">
             </div>
@@ -19,6 +19,15 @@
             <div class="three wide field">
                 <label>Data de Nascimento</label>
                 <input type="text" class="data" name="data_nascimento_pacientes" placeholder="Data de Nascimento">
+            </div>
+            
+            <div class="three wide field">
+                <label>Sexo</label>
+                <select class="ui fluid dropdown" name="sexo_pacientes">
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outros">Outros</option>
+                </select>
             </div>
         </div>
         
@@ -158,6 +167,7 @@
         if(isset($POST['cadastrar_pacientes'])){
             $Pacientes->setNome_completo_pacientes($POST['nome_completo_pacientes']);
             $Pacientes->setData_nascimento_pacientes(soNumero($POST['data_nascimento_pacientes']));
+            $Pacientes->setSexo_pacientes($POST['sexo_pacientes']);
             $Pacientes->setCpf_pacientes(soNumero($POST['cpf_pacientes']));
             $Pacientes->setRg_pacientes(soNumero($POST['rg_pacientes']));
             $Pacientes->setOrgao_emissor_pacientes($POST['orgao_emissor_pacientes']);

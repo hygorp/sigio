@@ -49,11 +49,10 @@ body{
     height: 100%;
     background-color: #222d32;
     color: #ffffff !important;
-    padding-top: 50px; 
-    overflow-y: scroll;
+    padding-top: 50px;
     position: fixed;
+    overflow-y: scroll;
     float: left;
-    z-index: 3;
 }
 .sidenav-responsive, .menu-responsive{
     display: none;
@@ -107,7 +106,7 @@ body{
     color: rgba(255, 255, 255, 0.5);
 }
 .menu-accordion{
-    height: auto;
+    width: 100%;
 }
 .accordion-button{
     font-family: 'Lato', sans-serif;
@@ -199,10 +198,12 @@ body{
 }
 .main-content{
     width: auto;
-    height: auto;
+    height: 100%;
     margin-left: 230px;
     padding-top: 50px;
+    padding-bottom: 50px;
     background-color: #FFFFFF !important;
+    overflow-y: scroll;
 }
 .bread{
     width: 100%;
@@ -218,6 +219,12 @@ body{
 }
 .cadastro-pacientes{
     width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.consulta-pacientes{
+    width: 95%;
     margin: 0 auto;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -282,12 +289,6 @@ body{
     padding-top: 2%;
     padding-bottom: 2%;
 }
-.consulta-pacientes{
-    width: 95%;
-    margin: 0 auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
 .controle-patrimonio{
     width: 95%;
     margin: 0 auto;
@@ -300,12 +301,6 @@ body{
     padding-top: 2%;
     padding-bottom: 2%;
 }
-.sg-footer{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    background-color: #eee;
-}
 @media only screen and (max-width: 768px){
     .sg-header-logo, .sidenav, .menu-accordion, .active-user, .initial-menu, .panel, .accordion-item, .accordion-button{
         display: none;
@@ -317,11 +312,12 @@ body{
         width: 80px;
         height: 50px;
         background-color: #019b94;
+        cursor: pointer;
     }
     .sidenav-responsive{
         display: inline-block;
         width: 80px;
-        height: auto;
+        height: 150vh;
         background-color: #222d32;
         color: #ffffff !important;
         padding-top: 50px;
@@ -354,8 +350,11 @@ body{
         cursor: default;
     }
     .main-content{
+        height: auto;
         margin-left: 80px;
         padding-top: 50px;
+        padding-bottom: 40px;
+        overflow: hidden;
     }
     .sidenav{
         margin-left: 80px;

@@ -10,36 +10,36 @@
     include './classes/Conexao.class.php';
     include './classes/ENTIDADES/Usuarios.class.php';
     include './classes/ENTIDADES/Pacientes.class.php';
-    include './classes/ENTIDADES/Estoque.class.php';
     include './classes/ENTIDADES/Dentistas.class.php';
     include './classes/ENTIDADES/Funcionarios.class.php';
+    include './classes/ENTIDADES/Estoque.class.php';
     include './classes/ENTIDADES/Patrimonio.class.php';
     include './classes/ENTIDADES/Fornecedores.class.php';
     include './classes/ENTIDADES/Laboratorios.class.php';
     include './classes/ENTIDADES/Convenios.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
-    include './classes/DAO/EstoqueDAO.class.php';
     include './classes/DAO/DentistasDAO.class.php';
     include './classes/DAO/FuncionariosDAO.class.php';
+    include './classes/DAO/EstoqueDAO.class.php';
     include './classes/DAO/PatrimonioDAO.class.php';
     include './classes/DAO/FornecedoresDAO.class.php';
     include './classes/DAO/LaboratoriosDAO.class.php';
     include './classes/DAO/ConveniosDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
-    $EstoqueDAO = new EstoqueDAO();
     $DentistasDAO = new DentistasDAO();
     $FuncionariosDAO = new FuncionariosDAO();
+    $EstoqueDAO = new EstoqueDAO(); 
     $PatrimonioDAO = new PatrimonioDAO();
     $FornecedoresDAO = new FornecedoresDAO();
     $LaboratoriosDAO = new LaboratoriosDAO();
     $ConveniosDAO = new ConveniosDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
-    $Estoque = new Estoque();
     $Dentistas = new Dentistas();
     $Funcionarios = new Funcionarios();
+    $Estoque = new Estoque();
     $Patrimonio = new Patrimonio();
     $Fornecedores = new Fornecedores();
     $Laboratorios = new Laboratorios();
@@ -132,7 +132,7 @@
             </div>
             
             <div class="sg-header-logo-responsive">
-                <img src="assets/images/sidenav-sigio.png" width="40">
+                <img src="assets/images/sidenav-sigio.png" width="40" onclick="location.href='dashboard.php?p=dados-dashboard'">
             </div>
             
             <form action="" method="POST">
@@ -167,18 +167,18 @@
                     </div>
                 </div>
             </div>
+               
+            <div class="initial-menu">
+                <p>
+                    <i class="bars icon"></i>
+                    Menu Principal
+                </p>
+            </div>
             
             <div class="initial-menu" onclick="location.href='dashboard.php?p=dados-dashboard'">
                 <p>
                     <i class="dashboard icon"></i>
                     Dashboard
-                </p>
-            </div>
-            
-            <div class="initial-menu">
-                <p>
-                    <i class="bars icon"></i>
-                    Menu Principal
                 </p>
             </div>
             
@@ -197,6 +197,7 @@
                 if($valueGet == "dados-dashboard"){require_once 'dashboard/dados.dashboard.php';}
                 if($valueGet == "cadastro-pacientes"){require_once 'pacientes/cadastro.pacientes.php';}
                 if($valueGet == "consultar-pacientes"){require_once 'pacientes/consulta.pacientes.php';}
+                if($valueGet == "prontuario-pacientes"){require_once 'pacientes/prontuario.pacientes.php';}
                 if($valueGet == "cadastro-dentistas"){require_once 'dentistas/cadastro.dentistas.php';}
                 if($valueGet == "consultar-dentistas") {require_once 'dentistas/consulta.dentistas.php';}
                 if($valueGet == "cadastro-funcionarios"){require_once 'funcionarios/cadastro.funcionarios.php';}
@@ -211,9 +212,7 @@
                 if($valueGet == "cadastro-convenios"){require_once 'convenios/cadastro.convenios.php';}
             ?>
         </div>
-        
-        <div class="sg-footer"></div>
-        
+  
         <script type="text/javascript" src="assets/js/dashboard.accordion.menu.js"></script>
     </body>
 </html>

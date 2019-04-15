@@ -3,6 +3,7 @@ class Pacientes {
     private $matricula_pacientes;
     private $nome_completo_pacientes;
     private $data_nascimento_pacientes;
+    private $sexo_pacientes;
     private $cpf_pacientes;
     private $rg_pacientes;
     private $orgao_emissor_pacientes;
@@ -34,6 +35,10 @@ class Pacientes {
 
     function getData_nascimento_pacientes() {
         return $this->data_nascimento_pacientes;
+    }
+    
+    function getSexo_pacientes() {
+        return $this->sexo_pacientes;
     }
 
     function getCpf_pacientes() {
@@ -126,6 +131,10 @@ class Pacientes {
 
     function setData_nascimento_pacientes($data_nascimento_pacientes) {
         $this->data_nascimento_pacientes = $data_nascimento_pacientes;
+    }
+    
+    function setSexo_pacientes($sexo_pacientes) {
+        $this->sexo_pacientes = $sexo_pacientes;
     }
 
     function setCpf_pacientes($cpf_pacientes) {

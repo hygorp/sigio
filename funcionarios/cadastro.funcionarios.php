@@ -10,8 +10,8 @@
     <form class="ui form cadastro-funcionarios-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Funcionários</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
-        <div class="two fields">
-            <div class="fourteen wide field">
+        <div class="three fields">
+            <div class="ten wide field">
                 <label>Nome Completo</label>
                 <input type="text" name="nome_completo_funcionarios" placeholder="Nome Completo">
             </div>
@@ -19,6 +19,15 @@
             <div class="three wide field">
                 <label>Data de Nascimento</label>
                 <input type="text" class="data" name="data_nascimento_funcionarios" placeholder="Data de Nascimento">
+            </div>
+            
+            <div class="three wide field">
+                <label>Status do Funcionário</label>
+                <select class="ui fluid dropdown" name="sexo_funcionarios">
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outros">Outros</option>
+                </select>
             </div>
         </div>
         
@@ -149,6 +158,7 @@
         if(isset($POST['cadastrar_funcionarios'])){
             $Funcionarios->setNome_completo_funcionarios($POST['nome_completo_funcionarios']);
             $Funcionarios->setData_nascimento_funcionarios(soNumero($POST['data_nascimento_funcionarios']));
+            $Funcionarios->setSexo_funcionarios($POST['sexo_funcionarios']);
             $Funcionarios->setCpf_funcionarios(soNumero($POST['cpf_funcionarios']));
             $Funcionarios->setRg_funcionarios(soNumero($POST['rg_funcionarios']));
             $Funcionarios->setOrgao_emissor_funcionarios($POST['orgao_emissor_funcionarios']);

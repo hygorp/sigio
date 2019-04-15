@@ -84,7 +84,7 @@
             
             <div class="four wide field">
                 <label>Usuário de Cadastro</label>
-                <input type="text" name="usuario_cadastro_patrimonio" placeholder="Usuário">
+                <input type="text" name="usuario_cadastro_patrimonio" placeholder="Usuário" value="<?php echo $usuario_logado; ?>">
             </div>
             
             <div class="four wide field">

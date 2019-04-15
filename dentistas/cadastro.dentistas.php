@@ -10,8 +10,8 @@
     <form class="ui form cadastro-dentistas-form" method="POST">
         <h2 class="ui dividing header">Cadastro de Dentistas</h2>
         <h3 class="ui header disabled">Informações Pessoais</h3>
-        <div class="two fields">
-            <div class="fourteen wide field">
+        <div class="three fields">
+            <div class="eleven wide field">
                 <label>Nome Completo</label>
                 <input type="text" name="nome_completo_dentistas" placeholder="Nome Completo">
             </div>
@@ -19,6 +19,15 @@
             <div class="three wide field">
                 <label>Data de Nascimento</label>
                 <input type="text" class="data" name="data_nascimento_dentistas" placeholder="Data de Nascimento">
+            </div>
+            
+            <div class="three wide field">
+                <label>Sexo</label>
+                <select class="ui fluid dropdown" name="sexo_dentistas">
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outros">Outros</option>
+                </select>
             </div>
         </div>
         
@@ -106,6 +115,100 @@
         </div>
         
         <h3 class="ui header disabled">Especializações do Dentista</h3>
+        <div class="three fields">
+            <div class="six wide field">
+                <label>Especialidade 01</label>
+                <select class="ui fluid dropdown" name="especialidade1_dentistas">
+                    <option value="" class="disabled">Selecione a Especialidade</option>
+                    <option value="Cirurgia e Traumatologia Buco Maxilo Faciais">Cirurgia e Traumatologia Buco Maxilo Faciais</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                    <option value="Dentistica">Dentistica</option> 
+                    <option value="Dentistica Restauradora">Dentistica Restauradora</option> 
+                    <option value="Disfuncao Temporo-Mandibular e Dor-Orofacial">Disfuncao Temporo-Mandibular e Dor-Orofacial</option> 
+                    <option value="Endodontia">Endodontia</option> 
+                    <option value="Estomatologia">Estomatologia</option> 
+                    <option value="Implantodontia">Implantodontia</option> 
+                    <option value="Odontologia do Trabalho">Odontologia do Trabalho</option> 
+                    <option value="Odontologia em Saude Coletiva">Odontologia em Saude Coletiva</option> 
+                    <option value="Odontologia Legal">Odontologia Legal</option> 
+                    <option value="Odontologia para Pacientes com Necessidades Especiais">Odontologia para Pacientes com Necessidades Especiais</option> 
+                    <option value="Odontogeriatria">Odontogeriatria</option> 
+                    <option value="Odontopediatria">Odontopediatria</option> 
+                    <option value="Ortodontia">Ortodontia</option> 
+                    <option value="Ortodontia e Ortopedia Facial">Ortodontia e Ortopedia Facial</option> 
+                    <option value="Ortopedia Funcional dos Maxilares">Ortopedia Funcional dos Maxilares</option> 
+                    <option value="Patologia Bucal">Patologia Bucal</option> 
+                    <option value="Periodontia">Periodontia</option> 
+                    <option value="Protese Buco Maxilo Facial">Protese Buco Maxilo Facial</option> 
+                    <option value="Protese Dentaria">Protese Dentaria</option> 
+                    <option value="Radiologia">Radiologia</option> 
+                    <option value="Radiologia Odontologica e Imaginologia">Radiologia Odontologica e Imaginologia</option> 
+                    <option value="Saúde Coletiva">Saúde Coletiva</option> 
+                </select>
+            </div>
+            
+            <div class="six wide field">
+                <label>Especialidade 02</label>
+                <select class="ui fluid dropdown" name="especialidade2_dentistas">
+                    <option value="" class="disabled">Selecione a Especialidade</option>
+                    <option value="Cirurgia e Traumatologia Buco Maxilo Faciais">Cirurgia e Traumatologia Buco Maxilo Faciais</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                    <option value="Dentistica">Dentistica</option> 
+                    <option value="Dentistica Restauradora">Dentistica Restauradora</option> 
+                    <option value="Disfuncao Temporo-Mandibular e Dor-Orofacial">Disfuncao Temporo-Mandibular e Dor-Orofacial</option> 
+                    <option value="Endodontia">Endodontia</option> 
+                    <option value="Estomatologia">Estomatologia</option> 
+                    <option value="Implantodontia">Implantodontia</option> 
+                    <option value="Odontologia do Trabalho">Odontologia do Trabalho</option> 
+                    <option value="Odontologia em Saude Coletiva">Odontologia em Saude Coletiva</option> 
+                    <option value="Odontologia Legal">Odontologia Legal</option> 
+                    <option value="Odontologia para Pacientes com Necessidades Especiais">Odontologia para Pacientes com Necessidades Especiais</option> 
+                    <option value="Odontogeriatria">Odontogeriatria</option> 
+                    <option value="Odontopediatria">Odontopediatria</option> 
+                    <option value="Ortodontia">Ortodontia</option> 
+                    <option value="Ortodontia e Ortopedia Facial">Ortodontia e Ortopedia Facial</option> 
+                    <option value="Ortopedia Funcional dos Maxilares">Ortopedia Funcional dos Maxilares</option> 
+                    <option value="Patologia Bucal">Patologia Bucal</option> 
+                    <option value="Periodontia">Periodontia</option> 
+                    <option value="Protese Buco Maxilo Facial">Protese Buco Maxilo Facial</option> 
+                    <option value="Protese Dentaria">Protese Dentaria</option> 
+                    <option value="Radiologia">Radiologia</option> 
+                    <option value="Radiologia Odontologica e Imaginologia">Radiologia Odontologica e Imaginologia</option> 
+                    <option value="Saúde Coletiva">Saúde Coletiva</option> 
+                </select>
+            </div>
+            
+            <div class="six wide field">
+                <label>Especialidade 03</label>
+                <select class="ui fluid dropdown" name="especialidade3_dentistas">
+                    <option value="" class="disabled">Selecione a Especialidade</option>
+                    <option value="Cirurgia e Traumatologia Buco Maxilo Faciais">Cirurgia e Traumatologia Buco Maxilo Faciais</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                    <option value="Dentistica">Dentistica</option> 
+                    <option value="Dentistica Restauradora">Dentistica Restauradora</option> 
+                    <option value="Disfuncao Temporo-Mandibular e Dor-Orofacial">Disfuncao Temporo-Mandibular e Dor-Orofacial</option> 
+                    <option value="Endodontia">Endodontia</option> 
+                    <option value="Estomatologia">Estomatologia</option> 
+                    <option value="Implantodontia">Implantodontia</option> 
+                    <option value="Odontologia do Trabalho">Odontologia do Trabalho</option> 
+                    <option value="Odontologia em Saude Coletiva">Odontologia em Saude Coletiva</option> 
+                    <option value="Odontologia Legal">Odontologia Legal</option> 
+                    <option value="Odontologia para Pacientes com Necessidades Especiais">Odontologia para Pacientes com Necessidades Especiais</option> 
+                    <option value="Odontogeriatria">Odontogeriatria</option> 
+                    <option value="Odontopediatria">Odontopediatria</option> 
+                    <option value="Ortodontia">Ortodontia</option> 
+                    <option value="Ortodontia e Ortopedia Facial">Ortodontia e Ortopedia Facial</option> 
+                    <option value="Ortopedia Funcional dos Maxilares">Ortopedia Funcional dos Maxilares</option> 
+                    <option value="Patologia Bucal">Patologia Bucal</option> 
+                    <option value="Periodontia">Periodontia</option> 
+                    <option value="Protese Buco Maxilo Facial">Protese Buco Maxilo Facial</option> 
+                    <option value="Protese Dentaria">Protese Dentaria</option> 
+                    <option value="Radiologia">Radiologia</option> 
+                    <option value="Radiologia Odontologica e Imaginologia">Radiologia Odontologica e Imaginologia</option> 
+                    <option value="Saúde Coletiva">Saúde Coletiva</option> 
+                </select>
+            </div>
+        </div>
             
         <h3 class="ui header disabled">Informações da Carteira Profissional do Dentista</h3>
         <div class="three fields">
@@ -144,7 +247,7 @@
             
             <div class="four wide field">
                 <label>Status do Dentista</label>
-                <select class="ui fluid dropdown">
+                <select class="ui fluid dropdown" name="status_dentistas">
                     <option value="Ativo">Ativo</option>
                     <option value="Inativo">Inativo</option>
                 </select>
@@ -157,7 +260,7 @@
                 <input type="text" name="nome_usuarios_dentistas" placeholder="Nome de Usuário">
             </div>
         </div>
-        
+        <br>
         <button class="ui button teal" type="submit" name="cadastrar_dentistas">Cadastrar Dentista</button>
         <div class="ui error message"></div>
     </form>
@@ -171,6 +274,7 @@
         if(isset($POST['cadastrar_dentistas'])){
             $Dentistas->setNome_completo_dentistas($POST['nome_completo_dentistas']);
             $Dentistas->setData_nascimento_dentistas(soNumero($POST['data_nascimento_dentistas']));
+            $Dentistas->setSexo_dentistas($POST['sexo_dentistas']);
             $Dentistas->setCpf_dentistas(soNumero($POST['cpf_dentistas']));
             $Dentistas->setRg_dentistas(soNumero($POST['rg_dentistas']));
             $Dentistas->setOrgao_emissor_dentistas($POST['orgao_emissor_dentistas']);

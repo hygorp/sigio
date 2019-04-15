@@ -196,11 +196,11 @@
             $Convenios->setObservacoes_convenios($POST['observacoes_convenios']);
             
             $exe = $ConveniosDAO->cadastrar_convenios($Convenios);
-                if($exe == true){
-                    echo '<script>toastr["success"]("Convênio cadastrado!", "Sucesso")</script>';
-                }else{
-                    echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
-                }
+            if($exe == true){
+                echo '<script>toastr["success"]("Convênio cadastrado!", "Sucesso")</script>';
+            }else{
+                echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
+            }
         }
     }
 

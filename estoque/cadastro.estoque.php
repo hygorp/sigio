@@ -51,7 +51,7 @@
             
             <div class="eight wide field">
                 <label>Usuário de Cadastro</label>
-                <input type="text" name="usuario_cadastro_estoque" placeholder="Usuário">
+                <input type="text" name="usuario_cadastro_estoque" placeholder="Usuário" value="<?php echo $usuario_logado; ?>" readonly>
             </div>
             
             <div class="eight wide field">

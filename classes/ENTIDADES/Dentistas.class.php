@@ -3,6 +3,7 @@ class Dentistas {
     private $matricula_dentistas;
     private $nome_completo_dentistas;
     private $data_nascimento_dentistas;
+    private $sexo_dentistas;
     private $cpf_dentistas;
     private $rg_dentistas;
     private $orgao_emissor_dentistas;
@@ -40,7 +41,11 @@ class Dentistas {
     function getData_nascimento_dentistas() {
         return $this->data_nascimento_dentistas;
     }
-
+    
+    function getSexo_dentistas(){
+        return $this->sexo_dentistas;
+    }
+            
     function getCpf_dentistas() {
         return $this->cpf_dentistas;
     }
@@ -151,6 +156,10 @@ class Dentistas {
 
     function setData_nascimento_dentistas($data_nascimento_dentistas) {
         $this->data_nascimento_dentistas = $data_nascimento_dentistas;
+    }
+    
+    function setSexo_dentistas($sexo_dentistas){
+        $this->sexo_dentistas = $sexo_dentistas;
     }
 
     function setCpf_dentistas($cpf_dentistas) {

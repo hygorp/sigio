@@ -3,6 +3,7 @@ class Funcionarios {
     private $matricula_funcionarios;
     private $nome_completo_funcionarios;
     private $data_nascimento_funcionarios;
+    private $sexo_funcionarios;
     private $cpf_funcionarios;
     private $rg_funcionarios;
     private $orgao_emissor_funcionarios;
@@ -34,6 +35,10 @@ class Funcionarios {
 
     function getData_nascimento_funcionarios() {
         return $this->data_nascimento_funcionarios;
+    }
+    
+    function getSexo_funcionarios(){
+        return$this->sexo_funcionarios;
     }
 
     function getCpf_funcionarios() {
@@ -126,6 +131,10 @@ class Funcionarios {
 
     function setData_nascimento_funcionarios($data_nascimento_funcionarios) {
         $this->data_nascimento_funcionarios = $data_nascimento_funcionarios;
+    }
+    
+    function setSexo_funcionarios($sexo_funcionarios) {
+        $this->sexo_funcionarios = $sexo_funcionarios;
     }
 
     function setCpf_funcionarios($cpf_funcionarios) {
