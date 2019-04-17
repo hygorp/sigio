@@ -30,7 +30,7 @@ class PacientesDAO {
     }
     
     public function listar_pacientes(){
-        $sql = "SELECT * FROM pacientes ORDER BY nome_completo_pacientes ASC";
+        $sql = "SELECT * FROM pacientes ORDER BY nome_completo_pacientes ASC;";
         $exe = mysqli_query($this->conexao->getCon(), $sql);
         if(mysqli_num_rows($exe) > 0){
             return $exe;
@@ -39,5 +39,13 @@ class PacientesDAO {
         }
     }
     
-    
+    public function prontuario(){
+        $sql = "SELECT * FROM pacientes";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }
 }
