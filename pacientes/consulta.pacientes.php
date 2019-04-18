@@ -62,25 +62,95 @@
                                 '.$dados_modalProntuario['nome_completo_pacientes'].'
                             </div>
                             
-                            <div class="content">
+                            <div class="scrolling content">
                                 <div class="ui top attached tabular menu">
-                                    <a class="item active" data-tab="first">First</a>
+                                    <a class="item active" data-tab="first">Dados Pessoais</a>
                                     <a class="item" data-tab="second">Second</a>
                                     <a class="item" data-tab="third">Third</a>
                                 </div>
                                 
                                 <div class="ui bottom attached tab segment active" data-tab="first">
-                                    <div class="field">
-                                        <div class="ui input">
-                                            <input type="text" value="'.$dados_modalProntuario['nome_completo_pacientes'].'">
+                                    <div class="ui form">
+                                        <div class="three fields">
+                                            <div class="twelve wide field">
+                                                <label>Nome Completo</label>
+                                                <input type="text" name="nome_completo_pacientes" value="'.$dados_modalProntuario['nome_completo_pacientes'].'">
+                                            </div>
+                                            
+                                            <div class="three wide field">
+                                                <label>Data de Nascimento</label>
+                                                <input type="text" name="data_nascimento_pacientes" value="'.$dados_modalProntuario['data_nascimento_pacientes'].'" class="data">
+                                            </div>
+                                            
+                                            <div class="three wide field">
+                                                <label>Sexo</label>
+                                                <select class="ui fluid dropdown" name="sexo_pacientes">
+                                                    <option selected="'.$dados_modalProntuario['sexo_pacientes'].'">'.$dados_modalProntuario['sexo_pacientes'].'</option>
+                                                    <option value="Feminino">Feminino</option>
+                                                    <option value="Masculino">Masculino</option>
+                                                    <option value="Outros">Outros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="three fields">
+                                            <div class="six wide field">
+                                                <label>CPF</label>
+                                                <input type="text" name="cpf_pacientes" value="'.$dados_modalProntuario['cpf_pacientes'].'" class="cpf">
+                                            </div>
+                                            
+                                            <div class="six wide field">
+                                                <label>RG</label>
+                                                <input type="text" name="rg_pacientes" value="'.$dados_modalProntuario['rg_pacientes'].'" class="rg">
+                                            </div>
+                                            
+                                            <div class="six wide field">
+                                                <label>Orgão Emissor</label>
+                                                <input type="text" name="orgao_emissor_pacientes" value="'.$dados_modalProntuario['orgao_emissor_pacientes'].'">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="two fields">
+                                            <div class="six wide field">
+                                                <label>CEP</label>
+                                                <input type="text" name="cep_pacientes" value="'.$dados_modalProntuario['cep_pacientes'].'" class="cep">
+                                            </div>
+                                            
+                                            <div class="twelve wide field">
+                                                <label>Endereço</label>
+                                                <input type="text" name="endereco_pacientes" value="'.$dados_modalProntuario['endereco_pacientes'].'">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="one fields">
+                                            <div class="sixteen wide field">
+                                                <label>Complemento</label>
+                                                <input type="text" name="complemento_pacientes" value="'.$dados_modalProntuario['complemento_pacientes'].'">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="four fields">
+                                            <div class="six wide field">
+                                                <label>Bairro</label>
+                                                <input type="text" name="bairro_pacientes" value="'.$dados_modalProntuario['bairro_pacientes'].'">
+                                            </div>
+                                            
+                                            <div class="six wide field">
+                                                <label>Cidade</label>
+                                                <input type="text" name="cidade_pacientes" value="'.$dados_modalProntuario['cidade_pacientes'].'">
+                                            </div>
+                                            
+                                            <div class="three wide field">
+                                                <label>UF</label>
+                                                <input type="text" name="uf_pacientes" value="'.$dados_modalProntuario['uf_pacientes'].'">
+                                            </div>
+                                            
+                                            <div class="three wide field">
+                                                <label>País</label>
+                                                <input type="text" name="pais_pacientes" value="'.$dados_modalProntuario['pais_pacientes'].'">
+                                            </div>
                                         </div>
                                     </div>
-                                    <p class="cpf">'.$dados_modalProntuario['cpf_pacientes'].'</p>
-                                    <p>'.$dados_modalProntuario['rg_pacientes'].'</p>
-                                    <p>'.$dados_modalProntuario['telefone_pacientes'].'</p>
-                                    <p>'.$dados_modalProntuario['celular1_pacientes'].'</p>
-                                    <p>'.$dados_modalProntuario['celular2_pacientes'].'</p>
-                                    <p>'.$dados_modalProntuario['email_pacientes'].'</p>
                                 </div>
                                 
                                 <div class="ui bottom attached tab segment" data-tab="second">
@@ -103,6 +173,7 @@
                                 <div class="ui button">OK</div>
                             </div>
                         </div>
+                        <script>$("select.dropdown").dropdown();</script>
                         <script>
                             $(function(){
                                 $("#prontuario-'.$dados_modalProntuario['matricula_pacientes'].'").click(function(){
