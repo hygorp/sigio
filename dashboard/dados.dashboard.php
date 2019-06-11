@@ -10,7 +10,7 @@
         <div class="five wide column">
             <div class="ui green segment">
                 <h3 class="ui header centered"><i class="users icon"></i>Pacientes</h3>
-                <h2 class="ui header centered"><?php echo $dados_quantidade_pacientes['COUNT(*)']; ?></h2>
+                <h2 class="ui header centered"></h2>
             </div>
         </div>
         <div class="five wide column">
@@ -21,7 +21,7 @@
         <div class="five wide column">
             <div class="ui green segment">
                 <h3 class="ui header centered"><i class="users icon"></i>Dentistas</h3>
-                <h2 class="ui header centered"><?php echo $dados_quantidade_dentistas['COUNT(*)']; ?></h2>
+                <h2 class="ui header centered"></h2>
             </div>
         </div>
     </div>

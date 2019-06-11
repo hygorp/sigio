@@ -20,7 +20,7 @@ class ConveniosDAO {
     }
     
     public function listar_convenios(){
-        $sql = "SELECT * FROM convenios";
+        $sql = "SELECT * FROM convenios ORDER BY id_convenios;";
         $exe = mysqli_query($this->conexao->getCon(), $sql);
         if(mysqli_num_rows($exe) > 0){
             return $exe;

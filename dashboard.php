@@ -57,20 +57,6 @@
         }
     }
     
-    $quantidade_pacientes = $PacientesDAO->contar_pacientes();
-    if($quantidade_pacientes == true){
-        for($i = 0; $i < mysqli_num_rows($quantidade_pacientes); $i++){
-            $dados_quantidade_pacientes = mysqli_fetch_assoc($quantidade_pacientes);
-        }
-    }
-    
-    $quantidade_dentistas = $DentistasDAO->contar_dentistas();
-    if($quantidade_dentistas == true){
-        for($i = 0; $i < mysqli_num_rows($quantidade_dentistas); $i++){
-            $dados_quantidade_dentistas = mysqli_fetch_assoc($quantidade_dentistas);
-        }
-    }
-    
     //regra para nivel de acesso
     //Master
     if($Usuarios->getNivel_acesso_usuarios() == 1){
@@ -104,6 +90,7 @@
         <script type="text/javascript" src="assets/toastr/toastr.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
         <script type="text/javascript" src="assets/js/form-validation.js"></script>
+        <script type="text/javascript" src="assets/js/cep.js"></script>
         <script>
             toastr.options = {
                 "closeButton": true,

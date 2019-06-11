@@ -52,39 +52,39 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" class="cep" name="cep_pacientes" placeholder="CEP">
+                <input type="text" class="cep" id="cep" name="cep_pacientes" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
                 <label>Endereço</label>
-                <input type="text" name="endereco_pacientes" placeholder="Endereço">
+                <input type="text" name="endereco_pacientes" id="endereco" placeholder="Endereço">
             </div>
             
             <div class="eight wide field">
                 <label>Complemento</label>
-                <input type="text" name="complemento_pacientes" placeholder="Complemento">
+                <input type="text" name="complemento_pacientes" id="complemento" placeholder="Complemento">
             </div>
         </div>
         
         <div class="four fields">
             <div class="six wide field">
                 <label>Bairro</label>
-                <input type="text" name="bairro_pacientes" placeholder="Bairro">
+                <input type="text" name="bairro_pacientes" id="bairro" placeholder="Bairro">
             </div>
             
             <div class="six wide field">
                 <label>Cidade</label>
-                <input type="text" name="cidade_pacientes" placeholder="Cidade">
+                <input type="text" name="cidade_pacientes" id="cidade" placeholder="Cidade">
             </div>
             
             <div class="two wide field">
                 <label>UF</label>
-                <input type="text" name="uf_pacientes" placeholder="UF">
+                <input type="text" name="uf_pacientes" id="uf" placeholder="UF">
             </div>
             
             <div class="four wide field">
                 <label>País</label>
-                <input type="text" name="pais_pacientes" placeholder="País">
+                <input type="text" name="pais_pacientes" id="pais" placeholder="País">
             </div>
         </div>
         
@@ -116,9 +116,19 @@
             
         <h3 class="ui header disabled">Informações de Convênios</h3>
         <div class="two fields">
-            <div class="four wide field">
-                <label>ID do Convênio</label>
-                <input type="text" name="id_convenios_pacientes" placeholder="ID do Convênio">
+            <div class="eight wide field">
+                <label>Nome do Convênio</label>
+                <select class="ui fluid dropdown" name="id_convenios_pacientes">
+                    <?php
+                        $listaDeConvenios = $ConveniosDAO->listar_convenios();
+                        if($listaDeConvenios == true){
+                            for($i = 0; $i < mysqli_num_rows($listaDeConvenios); $i++){
+                                $dados_listaDeConvenios = mysqli_fetch_assoc($listaDeConvenios);
+                                echo '<option value="'.$dados_listaDeConvenios['id_convenios'].'">'.$dados_listaDeConvenios['nome_fantasia_convenios'].'</option>';
+                            }
+                        }
+                    ?>
+                </select>
             </div>
             <div class="eight wide field">
                 <label>Carteira Convênio</label>
@@ -142,7 +152,7 @@
         <div class="two fields">
             <div class="four wide field">
                 <label>Data de Cadastro</label>
-                <input type="text" class="data" name="data_cadastro_pacientes" placeholder="Data de Cadastro">
+                <input type="text" class="data" name="data_cadastro_pacientes" value="<?php echo date("d-m-Y"); ?>" placeholder="Data de Cadastro" readonly>
             </div>
             
             <div class="four wide field">
