@@ -19,11 +19,11 @@ class Pacientes {
     private $celular2_pacientes;
     private $email_pacientes;
     private $status_pacientes;
+    private $nome_convenio_pacientes;
     private $carteira_convenio_pacientes;
     private $titular_convenio_pacientes;
     private $tipo_plano_convenio_pacientes;
     private $data_cadastro_pacientes;
-    private $id_convenios_pacientes;
     
     function getMatricula_pacientes() {
         return $this->matricula_pacientes;
@@ -100,6 +100,10 @@ class Pacientes {
     function getStatus_pacientes() {
         return $this->status_pacientes;
     }
+    
+    function getNome_convenio_pacientes() {
+        return $this->nome_convenio_pacientes;
+    }
 
     function getCarteira_convenio_pacientes() {
         return $this->carteira_convenio_pacientes;
@@ -115,10 +119,6 @@ class Pacientes {
 
     function getData_cadastro_pacientes() {
         return $this->data_cadastro_pacientes;
-    }
-
-    function getId_convenios_pacientes() {
-        return $this->id_convenios_pacientes;
     }
 
     function setMatricula_pacientes($matricula_pacientes) {
@@ -196,6 +196,10 @@ class Pacientes {
     function setStatus_pacientes($status_pacientes) {
         $this->status_pacientes = $status_pacientes;
     }
+    
+    function setNome_convenio_pacientes($nome_convenio_pacientes) {
+        $this->nome_convenio_pacientes = $nome_convenio_pacientes;
+    } 
 
     function setCarteira_convenio_pacientes($carteira_convenio_pacientes) {
         $this->carteira_convenio_pacientes = $carteira_convenio_pacientes;
@@ -211,9 +215,5 @@ class Pacientes {
 
     function setData_cadastro_pacientes($data_cadastro_pacientes) {
         $this->data_cadastro_pacientes = $data_cadastro_pacientes;
-    }
-
-    function setId_convenios_pacientes($id_convenios_pacientes) {
-        $this->id_convenios_pacientes = $id_convenios_pacientes;
-    }   
+    }  
 }

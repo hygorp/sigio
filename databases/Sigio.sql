@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`funcionarios` (
   `matricula_funcionarios` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_funcionarios` VARCHAR(100) NOT NULL,
   `data_nascimento_funcionarios` VARCHAR(8) NOT NULL,
+  `sexo_funcionarios` VARCHAR(15) NOT NULL,
   `cpf_funcionarios` VARCHAR(11) NOT NULL,
   `rg_funcionarios` VARCHAR(10) NOT NULL,
   `orgao_emissor_funcionarios` VARCHAR(10) NOT NULL,
@@ -70,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`dentistas` (
   `matricula_dentistas` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_dentistas` VARCHAR(100) NOT NULL,
   `data_nascimento_dentistas` VARCHAR(8) NOT NULL,
+  `sexo_dentistas` VARCHAR(15) NOT NULL,
   `cpf_dentistas` VARCHAR(11) NOT NULL,
   `rg_dentistas` VARCHAR(10) NOT NULL,
   `orgao_emissor_dentistas` VARCHAR(10) NOT NULL,
@@ -106,7 +108,7 @@ ENGINE = InnoDB;
 -- Table `sigio`.`convenios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`convenios` (
-  `id_convenios` INT,
+  `id_convenios` INT NOT NULL AUTO_INCREMENT,
   `razao_social_convenios` VARCHAR(100) NOT NULL,
   `nome_fantasia_convenios` VARCHAR(100) NOT NULL,
   `inscricao_estadual_convenios` VARCHAR(15) NOT NULL,
@@ -144,6 +146,7 @@ CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `matricula_pacientes` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_pacientes` VARCHAR(100) NOT NULL,
   `data_nascimento_pacientes` VARCHAR(8) NOT NULL,
+  `sexo_pacientes` VARCHAR(15) NOT NULL,
   `cpf_pacientes` VARCHAR(11) NOT NULL,
   `rg_pacientes` VARCHAR(10) NOT NULL,
   `orgao_emissor_pacientes` VARCHAR(10) NOT NULL,
@@ -159,11 +162,11 @@ CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `celular2_pacientes` VARCHAR(11) NULL,
   `email_pacientes` VARCHAR(50) NULL,
   `status_pacientes` VARCHAR(10) NOT NULL,
-  `carteira_convenio_pacientes` INT NOT NULL,
-  `titular_convenio_pacientes` VARCHAR(100) NOT NULL,
-  `tipo_plano_convenio_pacientes` VARCHAR(100) NOT NULL,
+  `carteira_convenio_pacientes` INT NULL,
+  `titular_convenio_pacientes` VARCHAR(100) NULL,
+  `tipo_plano_convenio_pacientes` VARCHAR(100) NULL,
   `data_cadastro_pacientes` VARCHAR(8) NOT NULL,
-  `id_convenios_pacientes` INT NOT NULL,
+  `nome_convenio_pacientes` VARCHAR(50) NOT NULL,
   UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
   PRIMARY KEY (`cpf_pacientes`),
   UNIQUE INDEX `cpf_pacientes_UNIQUE` (`cpf_pacientes` ASC) VISIBLE

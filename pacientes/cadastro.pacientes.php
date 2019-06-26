@@ -118,17 +118,13 @@
         <div class="two fields">
             <div class="eight wide field">
                 <label>Nome do Convênio</label>
-                <select class="ui fluid dropdown" name="id_convenios_pacientes">
-                    <?php
-                        $listaDeConvenios = $ConveniosDAO->listar_convenios();
-                        if($listaDeConvenios == true){
-                            for($i = 0; $i < mysqli_num_rows($listaDeConvenios); $i++){
-                                $dados_listaDeConvenios = mysqli_fetch_assoc($listaDeConvenios);
-                                echo '<option value="'.$dados_listaDeConvenios['id_convenios'].'">'.$dados_listaDeConvenios['nome_fantasia_convenios'].'</option>';
-                            }
-                        }
-                    ?>
-                </select>
+                <div class="ui action input">
+                    <input type="text" name="nome_convenio_pacientes">
+                    <button type="button" class="ui teal button right labeled icon" id="listar-convenios">
+                        Listar
+                        <i class="filter icon"></i>
+                    </button>
+                </div>
             </div>
             <div class="eight wide field">
                 <label>Carteira Convênio</label>
@@ -169,6 +165,71 @@
     </form>
 </div>
 
+<div class="ui modal modal-listar-convenios">
+    <div class="header">
+        <h4>Selecione na Lista de Convênios</h4>
+    </div>
+    
+    <div class="content">
+        <table class="ui celled definition table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Razão Social</th>
+                    <th>Nome Fantasia</th>
+                </tr>
+            </thead>
+           
+            <tbody>
+            <?php
+                $valor_checkbox;
+                $listaDeConvenios = $ConveniosDAO->listar_convenios();
+                if($listaDeConvenios == true){
+                    while($dados_listaDeConvenios = mysqli_fetch_assoc($listaDeConvenios)){
+            ?>
+                <tr>
+                    <td class="collapsing">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="selecao" value="<?php echo $dados_listaDeConvenios['razao_social_convenios'] ?>"><label></label>
+                        </div>
+                    </td>
+                    <td><?php echo $dados_listaDeConvenios['id_convenios'] ?></td>
+                    <td><?php echo $dados_listaDeConvenios['razao_social_convenios'] ?></td>
+                    <td><?php echo $dados_listaDeConvenios['nome_fantasia_convenios'] ?></td>
+                </tr>
+            <?php
+                    }
+                }
+            ?>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="actions">
+        <div class="ui negative left deny labeled icon button">
+            Sair
+            <i class="close icon"></i>
+        </div>
+        
+        <button class="ui positive right labeled icon button" name="selecionar-checkbox" type="submit">
+            OK
+            <i class="checkmark icon"></i>
+        </button>
+    </div>
+</div>
+          
+<script>
+    $(function(){
+        $("#listar-convenios").click(function(){
+           $(".modal-listar-convenios").modal('show');
+        });
+        $(".modal-listar-convenios").modal({
+           closable: true 
+        });
+    });
+</script>
+
 <?php 
     function soNumero($str){
         return preg_replace('/[^0-9]/', '', $str);
@@ -193,11 +254,11 @@
             $Pacientes->setCelular2_pacientes(soNumero($POST['celular2_pacientes']));
             $Pacientes->setEmail_pacientes($POST['email_pacientes']);
             $Pacientes->setStatus_pacientes($POST['status_pacientes']);
+            $Pacientes->setNome_convenios_pacientes($POST['nome_convenio_pacientes']);
             $Pacientes->setCarteira_convenio_pacientes($POST['carteira_convenio_pacientes']);
             $Pacientes->setTitular_convenio_pacientes($POST['titular_convenio_pacientes']);
             $Pacientes->setTipo_plano_convenio_pacientes($POST['tipo_plano_convenio_pacientes']);
             $Pacientes->setData_cadastro_pacientes(soNumero($POST['data_cadastro_pacientes']));
-            $Pacientes->setId_convenios_pacientes($POST['id_convenios_pacientes']);
             
             $exe = $PacientesDAO->cadastrar_pacientes($Pacientes);
                 if($exe == true){

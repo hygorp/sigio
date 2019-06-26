@@ -138,13 +138,20 @@
             
             <div class="six wide field">
                 <label>Status do Funcionário</label>
-                <select class="ui fluid dropdown">
+                <select class="ui fluid dropdown" name="status_funcionarios">
                     <option value="Ativo">Ativo</option>
                     <option value="Inativo">Inativo</option>
                 </select>
                 <script>$('select.dropdown').dropdown();</script>
             </div>
         </div>
+        <div class="one fields">
+            <div class="four wide field">
+                <label>Nome de Usuário</label>
+                <input type="text" name="nome_usuarios_funcionarios" placeholder="Nome de Usuário">
+            </div>
+        </div>
+        
         <button class="ui button teal" type="submit" name="cadastrar_funcionarios">Cadastrar Funcionário</button>
         <div class="ui error message"></div>
     </form>

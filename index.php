@@ -44,7 +44,6 @@
     
     <body>
         <div class="alerts">
-           
         </div>
         
         <div class="logo">
