@@ -138,10 +138,10 @@ CREATE TABLE IF NOT EXISTS `sigio`.`convenios` (
   UNIQUE INDEX `cnpj_convenios_UNIQUE` (`cnpj_convenios` ASC) VISIBLE)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `sigio`.`pacientes`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `matricula_pacientes` INT NOT NULL AUTO_INCREMENT,
   `nome_completo_pacientes` VARCHAR(100) NOT NULL,
@@ -160,18 +160,19 @@ CREATE TABLE IF NOT EXISTS `sigio`.`pacientes` (
   `telefone_pacientes` VARCHAR(10) NULL,
   `celular1_pacientes` VARCHAR(11) NOT NULL,
   `celular2_pacientes` VARCHAR(11) NULL,
-  `email_pacientes` VARCHAR(50) NULL,
+  `email_pacientes` VARCHAR(45) NULL,
   `status_pacientes` VARCHAR(10) NOT NULL,
-  `carteira_convenio_pacientes` INT NULL,
+  `nome_convenio_pacientes` VARCHAR(50) NOT NULL,
+  `carteira_convenio_pacientes` VARCHAR(50) NULL,
   `titular_convenio_pacientes` VARCHAR(100) NULL,
   `tipo_plano_convenio_pacientes` VARCHAR(100) NULL,
   `data_cadastro_pacientes` VARCHAR(8) NOT NULL,
-  `nome_convenio_pacientes` VARCHAR(50) NOT NULL,
   UNIQUE INDEX `matricula_pacientes_UNIQUE` (`matricula_pacientes` ASC) VISIBLE,
-  PRIMARY KEY (`cpf_pacientes`),
+  PRIMARY KEY (`matricula_pacientes`),
   UNIQUE INDEX `cpf_pacientes_UNIQUE` (`cpf_pacientes` ASC) VISIBLE
 )
 ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------

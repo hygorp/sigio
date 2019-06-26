@@ -254,7 +254,7 @@
             $Pacientes->setCelular2_pacientes(soNumero($POST['celular2_pacientes']));
             $Pacientes->setEmail_pacientes($POST['email_pacientes']);
             $Pacientes->setStatus_pacientes($POST['status_pacientes']);
-            $Pacientes->setNome_convenios_pacientes($POST['nome_convenio_pacientes']);
+            $Pacientes->setNome_convenio_pacientes($POST['nome_convenio_pacientes']);
             $Pacientes->setCarteira_convenio_pacientes($POST['carteira_convenio_pacientes']);
             $Pacientes->setTitular_convenio_pacientes($POST['titular_convenio_pacientes']);
             $Pacientes->setTipo_plano_convenio_pacientes($POST['tipo_plano_convenio_pacientes']);
