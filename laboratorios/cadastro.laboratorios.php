@@ -43,39 +43,39 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" class="cep" name="cep_laboratorios" placeholder="CEP">
+                <input type="text" class="cep" name="cep_laboratorios" id="cep" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
                 <label>Endereço</label>
-                <input type="text" name="endereco_laboratorios" placeholder="Endereço">
+                <input type="text" name="endereco_laboratorios" id="endereco" placeholder="Endereço">
             </div>
             
             <div class="eight wide field">
                 <label>Complemento</label>
-                <input type="text" name="complemento_laboratorios" placeholder="Complemento">
+                <input type="text" name="complemento_laboratorios" id="complemento" placeholder="Complemento">
             </div>
         </div>
         
         <div class="four fields">
             <div class="six wide field">
                 <label>Bairro</label>
-                <input type="text" name="bairro_laboratorios" placeholder="Bairro">
+                <input type="text" name="bairro_laboratorios" id="bairro" placeholder="Bairro">
             </div>
             
             <div class="six wide field">
                 <label>Cidade</label>
-                <input type="text" name="cidade_laboratorios" placeholder="Cidade">
+                <input type="text" name="cidade_laboratorios" id="cidade" placeholder="Cidade">
             </div>
             
             <div class="two wide field">
                 <label>UF</label>
-                <input type="text" name="uf_laboratorios" placeholder="UF">
+                <input type="text" name="uf_laboratorios" id="uf" placeholder="UF">
             </div>
             
             <div class="four wide field">
                 <label>País</label>
-                <input type="text" name="pais_laboratorios" placeholder="País">
+                <input type="text" name="pais_laboratorios" placeholder="País" value="Brasil">
             </div>
         </div>
         

@@ -38,39 +38,39 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" class="cep" name="cep_convenios" placeholder="CEP">
+                <input type="text" class="cep" name="cep_convenios" id="cep" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
                 <label>Endereço</label>
-                <input type="text" name="endereco_convenios" placeholder="Endereço">
+                <input type="text" name="endereco_convenios" id="endereco" placeholder="Endereço">
             </div>
             
             <div class="eight wide field">
                 <label>Complemento</label>
-                <input type="text" name="complemento_convenios" placeholder="Complemento">
+                <input type="text" name="complemento_convenios" id="complemento" placeholder="Complemento">
             </div>
         </div>
         
         <div class="four fields">
             <div class="six wide field">
                 <label>Bairro</label>
-                <input type="text" name="bairro_convenios" placeholder="Bairro">
+                <input type="text" name="bairro_convenios" id="bairro" placeholder="Bairro">
             </div>
             
             <div class="six wide field">
                 <label>Cidade</label>
-                <input type="text" name="cidade_convenios" placeholder="Cidade">
+                <input type="text" name="cidade_convenios" id="cidade" placeholder="Cidade">
             </div>
             
             <div class="two wide field">
                 <label>UF</label>
-                <input type="text" name="uf_convenios" placeholder="UF">
+                <input type="text" name="uf_convenios" id="uf" placeholder="UF">
             </div>
             
             <div class="four wide field">
                 <label>País</label>
-                <input type="text" name="pais_convenios" placeholder="País">
+                <input type="text" name="pais_convenios" placeholder="País" value="Brasil">
             </div>
         </div>
         

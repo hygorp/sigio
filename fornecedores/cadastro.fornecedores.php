@@ -43,39 +43,39 @@
         <div class="three fields">
             <div class="three wide field">
                 <label>CEP</label>
-                <input type="text" class="cep" name="cep_fornecedores" placeholder="CEP">
+                <input type="text" class="cep" name="cep_fornecedores" id="cep" placeholder="CEP">
             </div>
             
             <div class="eight wide field">
                 <label>Endereço</label>
-                <input type="text" name="endereco_fornecedores" placeholder="Endereço">
+                <input type="text" name="endereco_fornecedores" id="endereco" placeholder="Endereço">
             </div>
             
             <div class="eight wide field">
                 <label>Complemento</label>
-                <input type="text" name="complemento_fornecedores" placeholder="Complemento">
+                <input type="text" name="complemento_fornecedores" id="complemento" placeholder="Complemento">
             </div>
         </div>
         
         <div class="four fields">
             <div class="six wide field">
                 <label>Bairro</label>
-                <input type="text" name="bairro_fornecedores" placeholder="Bairro">
+                <input type="text" name="bairro_fornecedores" id="bairro" placeholder="Bairro">
             </div>
             
             <div class="six wide field">
                 <label>Cidade</label>
-                <input type="text" name="cidade_fornecedores" placeholder="Cidade">
+                <input type="text" name="cidade_fornecedores" id="cidade" placeholder="Cidade">
             </div>
             
             <div class="two wide field">
                 <label>UF</label>
-                <input type="text" name="uf_fornecedores" placeholder="UF">
+                <input type="text" name="uf_fornecedores" id="uf" placeholder="UF">
             </div>
             
             <div class="four wide field">
                 <label>País</label>
-                <input type="text" name="pais_fornecedores" placeholder="País">
+                <input type="text" name="pais_fornecedores" placeholder="País" value="Brasil">
             </div>
         </div>
         
