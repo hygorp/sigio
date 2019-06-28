@@ -106,8 +106,8 @@
         </div>
         <div class="two fields">
             <div class="seven wide field">
-                <label>Representante</label>
-                <input type="text" name="nome_representante_laboratorios" placeholder="ex: representante@gmail.com">
+                <label>Nome do Representante</label>
+                <input type="text" name="nome_representante_laboratorios" placeholder="Nome do Representante">
             </div>
             
             <div class="seven wide field">

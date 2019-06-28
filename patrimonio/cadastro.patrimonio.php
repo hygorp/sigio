@@ -89,7 +89,7 @@
             
             <div class="four wide field">
                 <label>Data de Cadastro</label>
-                <input type="text" class="data" name="data_cadastro_patrimonio" placeholder="Data de Cadastro">
+                <input type="text" class="data" name="data_cadastro_patrimonio" value="<?php echo date("d-m-Y"); ?>" placeholder="Data de Cadastro">
             </div>
         </div>
         

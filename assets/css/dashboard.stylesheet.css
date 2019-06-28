@@ -284,7 +284,19 @@ body{
     padding-bottom: 2%;
 }
 .controle-laboratorios{
-    width: 90%;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.controle-convenios{
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.controle-estoque{
+    width: 95%;
     margin: 0 auto;
     padding-top: 2%;
     padding-bottom: 2%;

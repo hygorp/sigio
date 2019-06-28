@@ -27,6 +27,9 @@
     if($valueGet == "cadastro-estoque"){
         require_once 'estoque/cadastro.estoque.php';
     }
+    if($valueGet == "controle-estoque"){
+        require_once 'estoque/controle.estoque.php';
+    }
     if($valueGet == "cadastro-patrimonio"){
         require_once 'patrimonio/cadastro.patrimonio.php';
     }
@@ -47,4 +50,7 @@
     }
     if($valueGet == "cadastro-convenios"){
         require_once 'convenios/cadastro.convenios.php';
+    }
+    if($valueGet == "controle-convenios"){
+        require_once 'convenios/controle.convenios.php';
     }

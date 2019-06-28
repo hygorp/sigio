@@ -18,5 +18,14 @@ class EstoqueDAO {
         }else{
             return false;
         }
-    }       
+    }
+    public function listar_estoque(){
+        $sql = "SELECT * FROM estoque";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }
 }

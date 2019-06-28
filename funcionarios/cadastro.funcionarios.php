@@ -22,7 +22,7 @@
             </div>
             
             <div class="three wide field">
-                <label>Status do Funcionário</label>
+                <label>Sexo</label>
                 <select class="ui fluid dropdown" name="sexo_funcionarios">
                     <option value="Feminino">Feminino</option>
                     <option value="Masculino">Masculino</option>

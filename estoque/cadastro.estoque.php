@@ -25,7 +25,10 @@
         <div class="four fields">
             <div class="seven wide field">
                 <label>Valor do Produto</label>
-                <input type="text" name="valor_produto_estoque" placeholder="Valor">
+                <div class="ui labeled input">
+                    <label for="amount" class="ui label active">R$</label>
+                    <input type="text" name="valor_produto_estoque" placeholder="Valor">
+                </div>
             </div>
             <div class="seven wide field">
                 <label>Código do Produto</label>

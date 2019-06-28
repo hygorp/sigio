@@ -124,14 +124,9 @@
         Cadastro de Produto
     </button>
 
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=controle-estoque'">
         <i class="caret right icon"></i>
-        Produtos
-    </button>
-
-    <button class="accordion-item">
-        <i class="caret right icon"></i>
-        Fornecedores
+        Controle de Estoque
     </button>
 </div>
 
@@ -193,7 +188,7 @@
         Cadastro
     </button>
 
-    <button class="accordion-item">
+    <button class="accordion-item" onclick="location.href='dashboard.php?p=controle-convenios'">
         <i class="caret right icon"></i>
         Consultar Convênios
     </button>
@@ -326,13 +321,9 @@
                 <i class="caret right icon"></i>
                 Cadastro de Produto
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=controle-estoque'">
                 <i class="caret right icon"></i>
-                Produtos
-            </div>
-            <div class="dropdown-content-item">
-                <i class="caret right icon"></i>
-                Fornecedores
+                Controle de Estoque
             </div>
         </div>
     </div>
@@ -398,7 +389,7 @@
                 <i class="caret right icon"></i>
                 Cadastro
             </div>
-            <div class="dropdown-content-item">
+            <div class="dropdown-content-item" onclick="location.href='dashboard.php?p=controle-convenios'">
                 <i class="caret right icon"></i>
                 Consultar Convênios
             </div>

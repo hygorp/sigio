@@ -223,6 +223,20 @@ $(function(){
                     type: 'empty',
                     prompt: 'Preencha o campo Data de Admissao'
                }]
+           },
+           nome_usuarios_dentistas: {
+               identifier: 'nome_usuarios_dentistas',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome de Usuário'
+               }]
+           },
+           especialidade1_dentistas: {
+               identifier: 'especialidade1_dentistas',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Especialidade 01'
+               }]
            }
         }
     });
@@ -319,6 +333,13 @@ $(function(){
                rules: [{
                     type: 'empty',
                     prompt: 'Preencha o campo Data de Admissao'
+               }]
+           },
+           nome_usuarios_funcionarios: {
+               identifier: 'nome_usuarios_funcionarios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome de Usuário'
                }]
            }
         }
@@ -661,6 +682,95 @@ $(function(){
            },
            nome_representante_laboratorios: {
                identifier: 'nome_representante_laboratorios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome do Representante'
+               }]
+           }
+        }
+    });
+    $('.ui.form.cadastro-convenios-form').form({
+        keyboardShortcuts: false,
+        fields: {
+           razao_social_convenios: {
+               identifier: 'razao_social_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Razão Social'
+               }]
+           },
+           nome_fantasia_convenios: {
+               identifier: 'nome_fantasia_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Nome Fantasia'
+               }]
+           },
+           inscricao_estadual_convenios: {
+               identifier: 'inscricao_estadual_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Inscrição Estadual'
+               }]
+           },
+           cnpj_convenios: {
+               identifier: 'cnpj_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo CNPJ'
+               }]
+           },
+           endereco_convenios: {
+               identifier: 'endereco_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Endereço'
+               }]
+           },
+           complemento_convenios: {
+               identifier: 'complemento_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Complemento'
+               }]
+           },
+           bairro_convenios: {
+               identifier: 'bairro_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo Bairro'
+               }]
+           },
+           cidade_convenios: {
+               identifier: 'cidade_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o Cidade'
+               }]
+           },
+           uf_convenios: {
+               identifier: 'uf_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo UF'
+               }]
+           },
+           pais_convenios: {
+               identifier: 'pais_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o campo País'
+               }]
+           },
+           telefone_convenios: {
+               identifier: 'telefone_convenios',
+               rules: [{
+                    type: 'empty',
+                    prompt: 'Preencha o primeiro campo Telefone'
+               }]
+           },
+           nome_representante_convenios: {
+               identifier: 'nome_representante_convenios',
                rules: [{
                     type: 'empty',
                     prompt: 'Preencha o campo Nome do Representante'
