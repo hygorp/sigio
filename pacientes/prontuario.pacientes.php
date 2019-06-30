@@ -183,7 +183,22 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            <?php
+                                $listaDeProcedimentos_Pacientes = $ProcedimentosPacientesDAO->exibir_procedimento();
+                                if($listaDeProcedimentos_Pacientes == true){
+                                    while($dados_listaDeProcedimentos_Pacientes = mysqli_fetch_assoc($listaDeProcedimentos_Pacientes)){  
+                            ?>
+                            
+                            <tr>
+                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['codigo_procedimentos_pacientes'] ?></td>
+                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['nome_procedimentos_pacientes'] ?></td>
+                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['data_cadastro_procedimentos_pacientes'] ?></td>
+                            </tr>
+                            
+                            <?php
+                                    }
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
