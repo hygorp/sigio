@@ -28,4 +28,13 @@ class PacientesDAO {
             return false;
         }
     }
+    
+    public function editar_prontuario($matricula_pacientes, $nome_completo_pacientes, $data_nascimento_pacientes, $sexo_pacientes, $cpf_pacientes, $rg_pacientes, $orgao_emissor_pacientes, $cep_pacientes, $endereco_pacientes, $complemento_pacientes, $bairro_pacientes, $cidade_pacientes, $uf_pacientes, $pais_pacientes, $telefone_pacientes, $celular1_pacientes, $celular2_pacientes, $email_pacientes, $status_pacientes, $nome_convenio_pacientes, $carteira_convenio_pacientes, $titular_convenio_pacientes, $tipo_plano_convenio_pacientes, $data_cadastro_pacientes){
+        $sql = "UPDATE pacientes SET nome_completo_pacientes = '$nome_completo_pacientes', data_nascimento_pacientes = '$data_nascimento_pacientes', sexo_pacientes = '$sexo_pacientes', cpf_pacientes = '$cpf_pacientes', rg_pacientes = '$rg_pacientes', orgao_emissor_pacientes = '$orgao_emissor_pacientes', cep_pacientes = '$cep_pacientes', endereco_pacientes = '$endereco_pacientes', complemento_pacientes = '$complemento_pacientes', bairro_pacientes = '$bairro_pacientes', cidade_pacientes = '$cidade_pacientes', uf_pacientes = '$uf_pacientes', pais_pacientes = '$pais_pacientes', telefone_pacientes = '$telefone_pacientes', celular1_pacientes = '$celular1_pacientes', celular2_pacientes = '$celular2_pacientes', email_pacientes = '$email_pacientes', status_pacientes = '$status_pacientes', nome_convenio_pacientes = '$nome_convenio_pacientes', carteira_convenio_pacientes = '$carteira_convenio_pacientes', titular_convenio_pacientes = '$titular_convenio_pacientes', tipo_plano_convenio_pacientes = '$tipo_plano_convenio_pacientes', data_cadastro_pacientes = '$data_cadastro_pacientes' WHERE matricula_pacientes = '$matricula_pacientes'";
+        if(mysqli_query($this->conexao->getCon(), $sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

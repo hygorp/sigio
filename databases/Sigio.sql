@@ -228,6 +228,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos` (
   `codigo_procedimentos` VARCHAR(15) NOT NULL,
   `nome_procedimentos` VARCHAR(100) NOT NULL,
+  `matricula_paciente_procedimentos` INT NOT NULL,
+  `matricula_dentista_procedimentos` INT NOT NULL,
+  `data_cadastro_procedimentos` VARCHAR(8) NOT NULL,
+  `status_procedimentos` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`codigo_procedimentos`, `nome_procedimentos`))
 ENGINE = InnoDB;
 
