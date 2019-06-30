@@ -163,29 +163,29 @@
                         </div>
                     </div>
                 </div>
-                    <div class="ui bottom attached tab segment" data-tab="second">
-                        <h4 class="ui header disabled">Procedimentos</h4>
+                
+                <div class="ui bottom attached tab segment" data-tab="second">
+                    <h4 class="ui header disabled">Procedimentos</h4>
 
-                        <button class="ui button positive labeled icon">
-                            <i class="plus icon"></i>
-                            Incluir Procedimentos
-                        </button>
+                    <button class="ui button positive labeled icon">
+                        <i class="plus icon"></i>
+                        Incluir Procedimentos
+                    </button>
 
-                        <table class="ui celled table">
-                            <thead>
-                                <tr>
-                                    <th>Código</th>
-                                    <th>Procedimento</th>
-                                    <th>Data</th>
-                                    <th>Dentista</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <table class="ui celled table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Procedimento</th>
+                                <th>Data</th>
+                                <th>Dentista</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="ui bottom attached tab segment" data-tab="third">
