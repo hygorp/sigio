@@ -223,16 +223,26 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sigio`.`procedimentos`
+-- Table `sigio`.`procedimentos_pacientes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos` (
-  `codigo_procedimentos` VARCHAR(15) NOT NULL,
-  `nome_procedimentos` VARCHAR(100) NOT NULL,
-  `matricula_paciente_procedimentos` INT NOT NULL,
-  `matricula_dentista_procedimentos` INT NOT NULL,
-  `data_cadastro_procedimentos` VARCHAR(8) NOT NULL,
-  `status_procedimentos` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`codigo_procedimentos`, `nome_procedimentos`))
+CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos_pacientes` (
+  `codigo_procedimentos_pacientes` VARCHAR(15) NOT NULL,
+  `nome_procedimentos_pacientes` VARCHAR(100) NOT NULL,
+  `matricula_pacientes` INT NOT NULL,
+  `matricula_dentistas` INT NOT NULL,
+  `data_cadastro_procedimentos_pacientes` VARCHAR(8) NOT NULL,
+  `status_procedimentos_pacientes` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`matricula_pacientes`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `sigio`.`procedimentos_clinica`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos_clinica` (
+  `codigo_procedimentos_clinica` VARCHAR(15) NOT NULL,
+  `nome_procedimentos_clinica` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`codigo_procedimentos_clinica`, `nome_procedimentos_clinica`))
 ENGINE = InnoDB;
 
 
