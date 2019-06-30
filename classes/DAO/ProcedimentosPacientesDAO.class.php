@@ -5,7 +5,17 @@ class ProcedimentosPacientesDAO{
     
     public function __construct(){
         $this->conexao = new Conexao();
-        $this->ProcedimentosPacientes = new ProcecimentosPacientes();
+        $this->ProcedimentosPacientes = new ProcedimentosPacientes();
+    }
+    
+    public function exibir_procedimento(){
+        $sql = "SELECT * FROM procedimentos_pacientes";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
     }
     
     public function inserir_procedimento($ProcedimentosPacientes){
