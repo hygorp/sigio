@@ -38,4 +38,14 @@ class DentistasDAO {
             return false;
         }
     }
+        
+    public function listar_dentistas_id($matricula_dentistas){
+        $sql = "SELECT * FROM dentistas WHERE matricula_denstistas = $matricula_dentistas";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }     
 }
