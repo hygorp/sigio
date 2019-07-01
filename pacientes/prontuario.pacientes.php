@@ -208,10 +208,19 @@
                                 <td><?php echo '<b>'.$dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'].'</b>' ?></td>
                                 <td class="center aligned">
                                     <?php
+<<<<<<< HEAD
                                         if($dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'] == "Realizado"){
                                             echo '<i class="large green checkmark icon"></i>';
                                         }else{
                                             echo '<i class="large red attention close icon"></i>';
+=======
+                                        $matricula_dentista = $listaDeProcedimentos_Pacientes['matricula_dentistas'];
+                                        $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($matricula_dentista);
+                                        if($listaDeDentistasPorMatricula == true){
+                                            while($dados_listaDeDentistaPorMatricula = mysqli_fetch_*($listaDeDentistasPorMatricula)){
+                                                echo $dados_listaDeDentistas['nome_completo_dentistas'];
+                                            }
+>>>>>>> e34e380d0867303606b7b0a754697d2f81201c26
                                         }
                                     ?>
                                 </td>
