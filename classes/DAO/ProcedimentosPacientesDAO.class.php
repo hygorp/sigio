@@ -8,8 +8,18 @@ class ProcedimentosPacientesDAO{
         $this->ProcedimentosPacientes = new ProcedimentosPacientes();
     }
     
-    public function exibir_procedimento(){
-        $sql = "SELECT * FROM procedimentos_pacientes";
+    public function exibir_procedimento_id($matricula_pacientes){
+        $sql = "SELECT * FROM procedimentos_pacientes WHERE matricula_pacientes = '$matricula_pacientes'";
+        $exe = mysqli_query($this->conexao->getCon(), $sql);
+        if(mysqli_num_rows($exe) > 0){
+            return $exe;
+        }else{
+            return false;
+        }
+    }
+    
+    public function exibir_procedimento_id_join($matricula_pacientes, $matricula_dentistas){
+        $sql = "SELECT * FROM procedimentos_pacientes INNER JOIN dentistas WHERE (procedimentos_pacientes.matricula_pacientes = '$matricula_pacientes' AND dentistas.matricula_dentistas = '$matricula_dentistas')";
         $exe = mysqli_query($this->conexao->getCon(), $sql);
         if(mysqli_num_rows($exe) > 0){
             return $exe;

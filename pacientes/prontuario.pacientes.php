@@ -6,6 +6,16 @@
     ?>
     
         <div class="ui fullscreen modal prontuario-<?php echo $dados_modalProntuario['matricula_pacientes']?>">
+            <?php 
+                $id_paciente_selecionado = $dados_modalProntuario['matricula_pacientes'];
+                $retorna_id_dentista = $ProcedimentosPacientesDAO->exibir_procedimento_id($id_paciente_selecionado);
+                if($retorna_id_dentista == true){
+                    for($i = 0; $i < mysqli_num_rows($retorna_id_dentista); $i++){
+                        $listarRetornaIdDentista = mysqli_fetch_array($retorna_id_dentista);
+                    }
+                }
+                $id_dentista_selecionado = $listarRetornaIdDentista['matricula_dentistas'];
+            ?>
             <div class="header">
                     <?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>
             </div>
@@ -13,7 +23,7 @@
             <div class="scrolling content">
                 <div class="ui top attached tabular menu">
                     <a class="item active" data-tab="first">Dados Pessoais</a>
-                    <a class="item" data-tab="second">Second</a>
+                    <a class="item" data-tab="second">Procedimentos</a>
                     <a class="item" data-tab="third">Third</a>
                 </div>
 
@@ -169,7 +179,7 @@
 
                     <button class="ui button positive labeled icon">
                         <i class="plus icon"></i>
-                        Incluir Procedimentos
+                        Incluir Procedimento
                     </button>
 
                     <table class="ui celled table">
@@ -180,34 +190,31 @@
                                 <th>Data</th>
                                 <th>Dentista</th>
                                 <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $listaDeProcedimentos_Pacientes = $ProcedimentosPacientesDAO->exibir_procedimento();
+                                $listaDeProcedimentos_Pacientes = $ProcedimentosPacientesDAO->exibir_procedimento_id_join($id_paciente_selecionado, $id_dentista_selecionado);
                                 if($listaDeProcedimentos_Pacientes == true){
                                     while($dados_listaDeProcedimentos_Pacientes = mysqli_fetch_assoc($listaDeProcedimentos_Pacientes)){
                             ?>
                             
-                            <?php
-                                
-                            ?>
                             <tr>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['codigo_procedimentos_pacientes'] ?></td>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['nome_procedimentos_pacientes'] ?></td>
-                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['data_cadastro_procedimentos_pacientes'] ?></td>
-                                <td>
+                                <td class="data"><?php echo $dados_listaDeProcedimentos_Pacientes['data_cadastro_procedimentos_pacientes'] ?></td>
+                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['nome_completo_dentistas'] ?></td>
+                                <td><?php echo '<b>'.$dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'].'</b>' ?></td>
+                                <td class="center aligned">
                                     <?php
-                                        $matricula_dentista = $listaDeProcedimentos_Pacientes['matricula_dentistas'];
-                                        $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($matricula_dentista);
-                                        if($listaDeDentistasPorMatricula == true){
-                                            while($dados_listaDeDentistaPorMatricula = mysqli_fetch_assoc($listaDeDentistasPorMatricula)){
-                                                echo $dados_listaDeDentistaPorMatricula['nome _completo_dentistas'];
-                                            }
+                                        if($dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'] == "Realizado"){
+                                            echo '<i class="large green checkmark icon"></i>';
+                                        }else{
+                                            echo '<i class="large red attention close icon"></i>';
                                         }
                                     ?>
                                 </td>
-                                <td><?php echo $dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'] ?></td>
                             </tr>
                             
                             <?php
