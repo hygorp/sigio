@@ -201,8 +201,8 @@
                                         $matricula_dentista = $listaDeProcedimentos_Pacientes['matricula_dentistas'];
                                         $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($matricula_dentista);
                                         if($listaDeDentistasPorMatricula == true){
-                                            while($dados_listaDeDentistaPorMatricula = mysqli_fetch_assoc($listaDeDentistasPorMatricula)){
-                                                echo $dados_listaDeDentistaPorMatricula['nome _completo_dentistas'];
+                                            while($dados_listaDeDentistaPorMatricula = mysqli_fetch_*($listaDeDentistasPorMatricula)){
+                                                echo $dados_listaDeDentistas['nome_completo_dentistas'];
                                             }
                                         }
                                     ?>
