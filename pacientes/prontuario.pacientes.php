@@ -190,22 +190,24 @@
                             ?>
                             
                             <?php
-                                $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($listaDeProcedimentos_Pacientes['matricula_dentistas']);
-                                    if($listaDeDentistasPorMatricula == true){
-                                        while($dados_listaDeDentistaPorMatricula = mysqli_fetch_assoc($listaDeDentistasPorMatricula)){
+                                
                             ?>
                             <tr>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['codigo_procedimentos_pacientes'] ?></td>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['nome_procedimentos_pacientes'] ?></td>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['data_cadastro_procedimentos_pacientes'] ?></td>
-                                <td><?php echo $dados_listaDeDentistaPorMatricula['nome _completo_dentistas'] ?></td>
+                                <td>
+                                    <?php
+                                        $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($listaDeProcedimentos_Pacientes['matricula_dentistas']);
+                                        if($listaDeDentistasPorMatricula == true){
+                                            while($dados_listaDeDentistaPorMatricula = mysqli_fetch_assoc($listaDeDentistasPorMatricula)){
+                                                echo $dados_listaDeDentistaPorMatricula['nome _completo_dentistas'];
+                                            }
+                                        }
+                                    ?>
+                                </td>
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['status_procedimentos_pacientes'] ?></td>
                             </tr>
-                            
-                            <?php
-                                    }
-                                }
-                            ?>
                             
                             <?php
                                     }
