@@ -198,7 +198,8 @@
                                 <td><?php echo $dados_listaDeProcedimentos_Pacientes['data_cadastro_procedimentos_pacientes'] ?></td>
                                 <td>
                                     <?php
-                                        $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($listaDeProcedimentos_Pacientes['matricula_dentistas']);
+                                        $matricula_dentista = $listaDeProcedimentos_Pacientes['matricula_dentistas'];
+                                        $listaDeDentistasPorMatricula = $DentistasDAO->listar_dentistas_id($matricula_dentista);
                                         if($listaDeDentistasPorMatricula == true){
                                             while($dados_listaDeDentistaPorMatricula = mysqli_fetch_assoc($listaDeDentistasPorMatricula)){
                                                 echo $dados_listaDeDentistaPorMatricula['nome _completo_dentistas'];
