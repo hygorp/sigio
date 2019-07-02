@@ -177,7 +177,7 @@
                 <div class="ui bottom attached tab segment" data-tab="second">
                     <h4 class="ui header disabled">Procedimentos</h4>
 
-                    <button class="ui button positive labeled icon" id="incluir-procedimento">
+                    <button class="ui button positive labeled icon">
                         <i class="plus icon"></i>
                         Incluir Procedimento
                     </button>
@@ -242,21 +242,6 @@
                 </button>
             </div>
         </div>
-    
-        <div class="ui modal incluir-procedimento" data-object="incluir-procedimento">
-            <div class="header">Incluir Procedimento</div>
-            <div class="actions">
-                <button class="ui red labeled icon button cancel">
-                    <i class="close icon"></i>
-                    Fechar
-                </button>
-                
-                <button class="ui positive labeled icon button">
-                    <i class="checkmark icon"></i>
-                    Incluir
-                </button>
-            </div>
-        </div>
 
         <script>$("select.dropdown").dropdown();</script>
         <script>
@@ -264,13 +249,7 @@
                 $("#prontuario-<?php echo $dados_modalProntuario['matricula_pacientes'] ?>").click(function(){
                     $(".prontuario-<?php echo $dados_modalProntuario['matricula_pacientes'] ?>.fullscreen.modal").modal({ blurring: true }).modal("show");
                 });
-                $("#incluir-procedimento").click(function(){
-                   $(".incluir-procedimento").modal({ allowMultiple: true, centered: true }).modal("show"); 
-                });
-                $(".incluir-procedimento").each(function(idx, elem){
-                    $(elem).modal('attach events', '#' + $(elem).attr('data-object'));
-                });
-                $(".prontuario-<?php echo $dados_modalProntuario['matricula_pacientes'] ?>.incluir-procedimento").modal({
+                $(".prontuario-<?php echo $dados_modalProntuario['matricula_pacientes'] ?>").modal({
                     closable: true
                 });
                 $(".menu .item").tab();
