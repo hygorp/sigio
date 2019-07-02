@@ -177,11 +177,39 @@
                 <div class="ui bottom attached tab segment" data-tab="second">
                     <h4 class="ui header disabled">Procedimentos</h4>
 
-                    <button class="ui button positive labeled icon">
+                    <button class="ui button positive labeled icon" id="incluir-procedimento">
                         <i class="plus icon"></i>
                         Incluir Procedimento
                     </button>
-
+                    <div class="ui segment formulario-procedimento" style="display: none">
+                    <form class="ui form">
+                        <div class="two fields">
+                            <div class="four wide field">
+                                <label>Matrícula Pacientes</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="twelve wide field">
+                                <label>Nome do Paciente</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
+                            <i class="close icon"></i>
+                            Fechar
+                        </div>
+                    </form>
+                    </div>
+                    
+                    <script>
+                        $('#incluir-procedimento').click(function(){
+                            $('.formulario-procedimento').css("display", "block");
+                        });
+                        $('#fechar-incluir-procedimento').click(function(){
+                            $('.formulario-procedimento').css("display", "none");
+                        });
+                    </script>
+                    
                     <table class="ui celled table">
                         <thead>
                             <tr>
