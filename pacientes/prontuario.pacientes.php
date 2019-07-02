@@ -14,7 +14,7 @@
                         $listarRetornaIdDentista = mysqli_fetch_array($retorna_id_dentista);
                     }
                 }
-                $id_dentista_selecionado = $listarRetornaIdDentista['matricula_dentistas'];
+                $id_dentista_selecionado = isset($listarRetornaIdDentista['matricula_dentistas']);
             ?>
             <div class="header">
                     <?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>
