@@ -240,8 +240,8 @@ ENGINE = InnoDB;
 -- Table `sigio`.`procedimentos_clinica`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos_clinica` (
-  `codigo_procedimentos_clinica` VARCHAR(15) NOT NULL,
-  `nome_procedimentos_clinica` VARCHAR(100) NOT NULL,
+  `codigo_procedimentos_clinica` INT AUTO_INCREMENT NOT NULL,
+  `nome_procedimentos_clinica` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`codigo_procedimentos_clinica`, `nome_procedimentos_clinica`))
 ENGINE = InnoDB;
 
