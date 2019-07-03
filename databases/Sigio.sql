@@ -226,8 +226,6 @@ ENGINE = InnoDB;
 -- Table `sigio`.`procedimentos_pacientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`procedimentos_pacientes` (
-  `codigo_procedimentos_pacientes` VARCHAR(15) NOT NULL,
-  `nome_procedimentos_pacientes` VARCHAR(100) NOT NULL,
   `matricula_pacientes` INT NOT NULL,
   `matricula_dentistas` INT NOT NULL,
   `data_cadastro_procedimentos_pacientes` VARCHAR(8) NOT NULL,
