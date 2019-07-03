@@ -186,12 +186,12 @@
                         <div class="two fields">
                             <div class="four wide field">
                                 <label>Matrícula Pacientes</label>
-                                <input type="text">
+                                <input type="text" value="<?php echo $dados_modalProntuario['matricula_pacientes'] ?>">
                             </div>
                             
                             <div class="twelve wide field">
                                 <label>Nome do Paciente</label>
-                                <input type="text">
+                                <input type="text" value="<?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>">
                             </div>
                         </div>
                         <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
