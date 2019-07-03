@@ -24,7 +24,7 @@
                 <div class="ui top attached tabular menu">
                     <a class="item active" data-tab="first">Dados Pessoais</a>
                     <a class="item" data-tab="second">Procedimentos</a>
-                    <a class="item" data-tab="third">Third</a>
+                    <a class="item" data-tab="third">Anamnese</a>
                 </div>
 
                 <div class="ui bottom attached tab segment active" data-tab="first">
@@ -287,7 +287,101 @@
                 </div>
 
                 <div class="ui bottom attached tab segment" data-tab="third">
-                    Third
+                    <h4 class="ui header disabled">Anamnese</h4>
+                    <h4 class="ui dividing header"></h4>
+                    <table class="ui definition table">
+                        <div class="ui form">
+                            <div class="inline fields">
+                                <label>1- Pelo qual motivo que está nos procurando?</label>
+                                <input type="text" name="pergunta1_anamnese">
+                            </div>
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>2- Quando foi a sua última consulta?</label>
+                                <input type="text" name="pergunta2_anamnese">
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>3- Com qual frequência você vai ao dentista?</label>
+                                <input type="text" name="pergunta3_anamnese">
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>4- Sua gengiva costumar sangrar?</label>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta4_anamnese" tabindex="0" class="hidden">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta4_anamnese" tabindex="0" class="hidden">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>5- Tem hábito de beber café ou refrigerante?</label>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta5_anamnese" tabindex="0" class="hidden">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta5_anamnese" tabindex="0" class="hidden">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>6- Você fuma?</label>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta6_anamnese" tabindex="0" class="hidden">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="pergunta6_anamnese" tabindex="0" class="hidden">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>7- Já se submeteu a anestesia dentária? Teve alguma reação?</label>
+                                <input type="text" name="pergunta7_anamnese">
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>8- Toma algum medicamento? Qual?</label>
+                                <input type="text" name="pergunta8_anamnese">
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>9- Tem alergia a algum medicamento? Qual?</label>
+                                <input type="text" name="pergunta9_anamnese">
+                            </div>
+                            
+                            <h4 class="ui dividing header"></h4>
+                            <div class="inline fields">
+                                <label>10- Está grávida? Quantos meses?</label>
+                                <input type="text" name="pergunta10_anamnese">
+                            </div>
+                        </div>
+                    </table>
+                    
+                    <div class="ui button green labeled icon" id="salvar-incluir-anamnese">
+                        <i class="checkmark icon"></i>
+                        Salvar
+                    </div>
                 </div>
             </div>
 

@@ -249,6 +249,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sigio`.`anamnese` (
   `matricula_pacientes_anamnese` INT NOT NULL,
+  `data_cadastro_anamnese` VARCHAR(8) NOT NULL,
   PRIMARY KEY (`matricula_pacientes_anamnese`)
 )
 ENGINE = InnoDB;
