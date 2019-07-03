@@ -186,17 +186,50 @@
                         <div class="two fields">
                             <div class="four wide field">
                                 <label>Matrícula Pacientes</label>
-                                <input type="text" value="<?php echo $dados_modalProntuario['matricula_pacientes'] ?>">
+                                <input type="text" value="<?php echo $dados_modalProntuario['matricula_pacientes'] ?>" readonly>
                             </div>
                             
                             <div class="twelve wide field">
                                 <label>Nome do Paciente</label>
-                                <input type="text" value="<?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>">
+                                <input type="text" value="<?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="three fields">
+                            <div class="four wide field">
+                                <label>Dentista</label>
+                                <select class="ui fluid dropdown" name="nome_completo_dentistas">
+                                    <?php
+                                        $listaDeDentistas = $DentistasDAO->listar_dentistas();
+                                        if($listaDeDentistas == true){
+                                            for($i = 0; $i < mysqli_num_rows($listaDeDentistas); $i++){
+                                                $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
+                                                echo '<option>'.$dados_listaDeDentistas['nome_completo_dentistas'].'</option>';
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            
+                            <div class="three wide field">
+                                <label>Data de Cadastro</label>
+                                <input type="text" name="data_cadastro_procedimentos_pacientes" value="<?php echo date ("d-m-Y"); ?>" class="data" readonly>
+                            </div>
+                            
+                            <div class="five wide field">
+                                <label>Status</label>
+                                <select class="ui fluid dropdown" name="status_procedimentos_pacientes">
+                                    <option value="Realizado">Realizado</option>
+                                    <option value="Não Realizado">Não Realizado</option>
+                                </select>
                             </div>
                         </div>
                         <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
                             <i class="close icon"></i>
                             Fechar
+                        </div>
+                        <div class="ui button green labeled icon" id="salvar-incluir-procedimento">
+                            <i class="checkmark icon"></i>
+                            Salvar
                         </div>
                     </form>
                     </div>
