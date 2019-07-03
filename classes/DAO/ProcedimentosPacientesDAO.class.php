@@ -29,8 +29,9 @@ class ProcedimentosPacientesDAO{
     }
     
     public function inserir_procedimento($ProcedimentosPacientes){
-        $sql = "INSERT INTO procedimentos_pacientes (codigo_procedimentos_pacientes, nome_procedimentos_pacientes, matricula_pacientes, matricula_dentistas, data_cadastro_procedimentos_pacientes, status_procedimentos_pacientes)
-               VALUES ('".$ProcedimentosPacientes -> getCodigo_procedimentos_pacientes()."', '".$ProcedimentosPacientes -> getNome_procedimentos_pacientes()."', '".$ProcedimentosPacientes -> getMatricula_pacientes()."', '".$ProcedimentosPacientes -> getMatricula_dentistas()."', '".$ProcedimentosPacientes -> getData_cadastro_procedimentos_pacientes()."', '".$ProcedimentosPacientes -> getStatus_procedimentos_pacientes()."')";
+        $sql = "INSERT INTO procedimentos_pacientes (matricula_pacientes, matricula_dentistas, procedimento_procedimentos_pacientes, data_cadastro_procedimentos_pacientes, status_procedimentos_pacientes)
+               VALUES ('".$ProcedimentosPacientes->getMatricula_pacientes()."', '".$ProcedimentosPacientes->getMatriculaDentistas()."', '".$ProcedimentosPacientes->getProcedimento_procedimentos_pacientes()."', '".$ProcedimentosPacientes->getData_cadatro_procedimentos_pacientes()."', '".$ProcedimentosPacientes->getStatus_procedimentos_pacientes()."')";
+        
         if(mysqli_query($this->conexao->getCon(), $sql)){
             return true;
         }else{

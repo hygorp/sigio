@@ -182,56 +182,95 @@
                         Incluir Procedimento
                     </button>
                     <div class="ui segment formulario-procedimento" style="display: none">
-                    <form class="ui form">
-                        <div class="two fields">
-                            <div class="four wide field">
-                                <label>Matrícula Pacientes</label>
-                                <input type="text" value="<?php echo $dados_modalProntuario['matricula_pacientes'] ?>" readonly>
+                        <form class="ui form" method="POST" id="ajax-incluir-procedimento">
+                            <div class="two fields">
+                                <div class="four wide field">
+                                    <label>Matrícula Pacientes</label>
+                                    <input type="text" name="matricula_pacientes" value="<?php echo $dados_modalProntuario['matricula_pacientes'] ?>" readonly>
+                                </div>
+
+                                <div class="twelve wide field">
+                                    <label>Nome do Paciente</label>
+                                    <input type="text" value="<?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>" readonly>
+                                </div>
                             </div>
                             
-                            <div class="twelve wide field">
-                                <label>Nome do Paciente</label>
-                                <input type="text" value="<?php echo $dados_modalProntuario['nome_completo_pacientes'] ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="three fields">
-                            <div class="four wide field">
-                                <label>Dentista</label>
-                                <select class="ui fluid dropdown" name="nome_completo_dentistas">
-                                    <?php
-                                        $listaDeDentistas = $DentistasDAO->listar_dentistas();
-                                        if($listaDeDentistas == true){
-                                            for($i = 0; $i < mysqli_num_rows($listaDeDentistas); $i++){
-                                                $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
-                                                echo '<option>'.$dados_listaDeDentistas['nome_completo_dentistas'].'</option>';
+                            <div class="one fields">
+                                <div class="sixteen wide field">
+                                    <label>Nome do Procedimento</label>
+                                    <select class="ui fluid dropdown" name="procedimento_procedimentos_pacientes">
+                                        <?php
+                                            $listaDeProcedimentosClinica = $ProcedimentosClinicaDAO->exibir_procedimentos();
+                                            if($listaDeProcedimentosClinica == true){
+                                                for($i = 0; $i < mysqli_num_rows($listaDeProcedimentosClinica); $i++){
+                                                    $dados_listaDeProcedimentosClinica = mysqli_fetch_assoc($listaDeProcedimentosClinica);
+                                                    echo '<option value="<'.$dados_listaDeProcedimentosClinica['nome_procedimentos_clinica'].'">'.$dados_listaDeProcedimentosClinica['nome_procedimentos_clinica'].'</option>';
+                                                }
                                             }
-                                        }
-                                    ?>
-                                </select>
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             
-                            <div class="three wide field">
-                                <label>Data de Cadastro</label>
-                                <input type="text" name="data_cadastro_procedimentos_pacientes" value="<?php echo date ("d-m-Y"); ?>" class="data" readonly>
+                            <div class="three fields">
+                                <div class="eight wide field">
+                                    <label>Dentista</label>
+                                    <select class="ui fluid dropdown" name="matricula_dentistas">
+                                        <?php
+                                            $listaDeDentistas = $DentistasDAO->listar_dentistas();
+                                            if($listaDeDentistas == true){
+                                                for($i = 0; $i < mysqli_num_rows($listaDeDentistas); $i++){
+                                                    $dados_listaDeDentistas = mysqli_fetch_assoc($listaDeDentistas);
+                                                    echo '<option value="<'.$dados_listaDeDentistas['matricula_dentistas'].'>'.$dados_listaDeDentistas['nome_completo_dentistas'].'</option>';
+                                                }
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <div class="three wide field">
+                                    <label>Data de Cadastro</label>
+                                    <input type="text" name="data_cadastro_procedimentos_pacientes" value="<?php echo date("d-m-Y"); ?>" class="data" readonly>
+                                </div>
+
+                                <div class="five wide field">
+                                    <label>Status</label>
+                                    <select class="ui fluid dropdown" name="status_procedimentos_pacientes">
+                                        <option value="Realizado">Realizado</option>
+                                        <option value="Não Realizado">Não Realizado</option>
+                                    </select>
+                                </div>
                             </div>
-                            
-                            <div class="five wide field">
-                                <label>Status</label>
-                                <select class="ui fluid dropdown" name="status_procedimentos_pacientes">
-                                    <option value="Realizado">Realizado</option>
-                                    <option value="Não Realizado">Não Realizado</option>
-                                </select>
+                            <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
+                                <i class="close icon"></i>
+                                Fechar
                             </div>
-                        </div>
-                        <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
-                            <i class="close icon"></i>
-                            Fechar
-                        </div>
-                        <div class="ui button green labeled icon" id="salvar-incluir-procedimento">
-                            <i class="checkmark icon"></i>
-                            Salvar
-                        </div>
-                    </form>
+                            <button class="ui button green labeled icon" id="salvar-incluir-procedimento" type="submit" name="salvar-incluir-procedimento">
+                                <i class="checkmark icon"></i>
+                                Salvar
+                            </button>
+                        </form>
+                        <?php
+                            function soNumero($str){
+                                return preg_replace('/[^0-9]/', '', $str);
+                            }
+                            if($POST){
+                                if(isset($_POST['salvar-incluir-procedimento'])){
+                                    $ProcedimentosPacientes->setMatricula_pacientes($_POST['matricula_pacientes']);
+                                    $ProcedimentosPacientes->setMatricula_dentistas($_POST['matricula_dentistas']);
+                                    $ProcedimentosPacientes->setProcedimento_procedimentos_pacientes($_POST['procedimento_procedimentos_pacientes']);
+                                    $ProcedimentosPacientes->setData_cadatro_procedimentos_pacientes($_POST['data_cadastro_procedimentos_pacientes']);
+                                    $ProcedimentosPacientes->setStatus_procedimentos_pacientes($_POST['status_procedimentos_pacientes']);
+                                    
+                                    $exe = $ProcedimentosPacientesDAO->inserir_procedimento($ProcedimentosPacientes);
+                                    if($exe == true){
+                                        echo '<script>toastr["success"]("Procedimento cadastrado!", "Sucesso")</script>';
+                                    }else{
+                                        echo '<script>toastr["error"]("Procedimento não Cadastrado!", "Erro")</script>';
+                                    }
+                                }
+                            }
+                        ?>
                     </div>
                     
                     <script>

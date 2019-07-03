@@ -19,6 +19,7 @@
     include './classes/ENTIDADES/Laboratorios.class.php';
     include './classes/ENTIDADES/Convenios.class.php';
     include './classes/ENTIDADES/ProcedimentosPacientes.class.php';
+    include './classes/ENTIDADES/ProcedimentosClinica.class.php';
     include './classes/DAO/UsuariosDAO.class.php';
     include './classes/DAO/PacientesDAO.class.php';
     include './classes/DAO/DentistasDAO.class.php';
@@ -29,6 +30,7 @@
     include './classes/DAO/LaboratoriosDAO.class.php';
     include './classes/DAO/ConveniosDAO.class.php';
     include './classes/DAO/ProcedimentosPacientesDAO.class.php';
+    include './classes/DAO/ProcedimentosClinicaDAO.class.php';
     $UsuariosDAO = new UsuariosDAO();
     $PacientesDAO = new PacientesDAO();
     $DentistasDAO = new DentistasDAO();
@@ -39,6 +41,7 @@
     $LaboratoriosDAO = new LaboratoriosDAO();
     $ConveniosDAO = new ConveniosDAO();
     $ProcedimentosPacientesDAO = new ProcedimentosPacientesDAO();
+    $ProcedimentosClinicaDAO = new ProcedimentosClinicasDAO();
     $Usuarios = new Usuarios();
     $Pacientes = new Pacientes();
     $Dentistas = new Dentistas();
@@ -49,6 +52,7 @@
     $Laboratorios = new Laboratorios();
     $Convenios = new Convenios();
     $ProcedimentosPacientes = new ProcedimentosPacientes;
+    $ProcedimentosClinica = new ProcedimentosClinica;
     $usuario_logado = $_SESSION['usuario'];
 
     $exibir_usuario_logado = $UsuariosDAO->usuario_logado($usuario_logado);
