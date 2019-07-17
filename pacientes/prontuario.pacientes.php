@@ -166,7 +166,7 @@
             <div class="ui bottom attached tab segment" data-tab="second">
                 <h4 class="ui header disabled">Procedimentos</h4>
 
-                <button class="ui button positive labeled icon" id="incluir-procedimento">
+                <button class="ui button positive labeled icon incluir-procedimento">
                     <i class="plus icon"></i>
                     Incluir Procedimento
                 </button>
@@ -188,7 +188,16 @@
                             <div class="sixteen wide field">
                                 <label>Nome do Procedimento</label>
                                 <select class="ui fluid dropdown" name="procedimento_procedimentos_pacientes">
-                                    
+                                <?php
+                                    $procedimentosClinica = $ProcedimentosClinicaDAO->exibir_procedimentos();
+                                    if($procedimentosClinica == true){
+                                        while($linha_procedimentosClinica = mysqli_fetch_assoc($procedimentosClinica)){  
+                                ?>
+                                    <option value="<?php echo $linha_procedimentosClinica['codigo_procedimentos_clinica']; ?>"><?php echo $linha_procedimentosClinica['nome_procedimentos_clinica']; ?></option>
+                                <?php
+                                        }
+                                    }
+                                ?>
                                 </select>
                             </div>
                         </div>
@@ -223,7 +232,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="ui button red labeled icon" id="fechar-incluir-procedimento">
+                        <div class="ui button red labeled icon fechar-incluir-procedimento">
                             <i class="close icon"></i>
                             Fechar
                         </div>
@@ -236,10 +245,10 @@
                 </div>
 
                 <script>
-                    $('#incluir-procedimento').click(function(){
+                    $('.incluir-procedimento').click(function(){
                         $('.formulario-procedimento').css("display", "block");
                     });
-                    $('#fechar-incluir-procedimento').click(function(){
+                    $('.fechar-incluir-procedimento').click(function(){
                         $('.formulario-procedimento').css("display", "none");
                     });
                 </script>
