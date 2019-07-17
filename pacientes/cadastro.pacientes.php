@@ -3,13 +3,15 @@
         <i class="dashboard icon divider"></i>
         <a class="section" href="dashboard.php?p=dados-dashboard">Dashboard</a>
         <i class="users icon divider"></i>
+        <div class="active section">Pacientes</div> 
+        <i class="caret right icon divider active"></i>
         <div class="active section">Cadastro</div>  
     </div>
 </div>
 <div class="cadastro-pacientes">
     <form class="ui form cadastro-pacientes-form" method="POST">
-        <h2 class="ui dividing header">Cadastro de Pacientes</h2>
-        <h3 class="ui header disabled">Informações Pessoais</h3>
+    <h2 class="ui dividing header">Cadastro de Pacientes</h2>
+    <h3 class="ui header disabled">Informações Pessoais</h3>
         <div class="three fields">
             <div class="eleven wide field">
                 <label>Nome Completo</label>
@@ -201,10 +203,10 @@
             $Pacientes->setData_cadastro_pacientes(soNumero($POST['data_cadastro_pacientes']));
             
             $exe = $PacientesDAO->cadastrar_pacientes($Pacientes);
-                if($exe == true){
-                    echo '<script>toastr["success"]("Paciente cadastrado!", "Sucesso")</script>';
-                }else{
-                    echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
-                }
+            if($exe == true){
+                echo '<script>toastr["success"]("Paciente cadastrado!", "Sucesso")</script>';
+            }else{
+                echo '<script>toastr["error"]("Cadastro não efetuado!", "Erro")</script>';
+            }
         }
     }
