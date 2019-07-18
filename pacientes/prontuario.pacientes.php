@@ -171,7 +171,7 @@
                     Incluir Procedimento
                 </button>
                 <div class="ui segment formulario-procedimento" style="display: none">
-                    <form class="ui form" method="POST" id="ajax-incluir-procedimento">
+                    <form class="ui form" method="POST" action="pacientes/actions/incluir.procedimento.php">
                         <div class="two fields">
                             <div class="four wide field">
                                 <label>Matrícula Pacientes</label>
@@ -193,7 +193,7 @@
                                     if($procedimentosClinica == true){
                                         while($linha_procedimentosClinica = mysqli_fetch_assoc($procedimentosClinica)){  
                                 ?>
-                                    <option value="<?php echo $linha_procedimentosClinica['codigo_procedimentos_clinica']; ?>"><?php echo $linha_procedimentosClinica['nome_procedimentos_clinica']; ?></option>
+                                    <option value="<?php echo $linha_procedimentosClinica['nome_procedimentos_clinica']; ?>"><?php echo $linha_procedimentosClinica['nome_procedimentos_clinica']; ?></option>
                                 <?php
                                         }
                                     }
@@ -205,7 +205,7 @@
                         <div class="three fields">
                             <div class="eight wide field">
                                 <label>Dentista</label>
-                                <select class="ui fluid dropdown" name="matricula_dentistas">
+                                <select class="ui fluid dropdown" name="nome_completo_dentistas">
                                 <?php
                                     $dentistaProcedimento = $DentistasDAO->listar_dentistas();
                                     if($dentistaProcedimento == true){
@@ -236,27 +236,16 @@
                             <i class="close icon"></i>
                             Fechar
                         </div>
-                        <button class="ui button green labeled icon" id="salvar-incluir-procedimento" type="submit" name="salvar-incluir-procedimento">
+                        <button type="submit" class="ui button green labeled icon salvar-incluir-procedimento">
                             <i class="checkmark icon"></i>
                             Salvar
                         </button>
                     </form>
-                    
                 </div>
-
-                <script>
-                    $('.incluir-procedimento').click(function(){
-                        $('.formulario-procedimento').css("display", "block");
-                    });
-                    $('.fechar-incluir-procedimento').click(function(){
-                        $('.formulario-procedimento').css("display", "none");
-                    });
-                </script>
 
                 <table class="ui celled table">
                     <thead>
                         <tr>
-                            <th>Código</th>
                             <th>Procedimento</th>
                             <th>Data</th>
                             <th>Dentista</th>
@@ -265,7 +254,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        <?php
+                            $matricula_paciente_procedimentos = $linha_dadosDoProntuario['matricula_pacientes'];
+                            $pacienteProcedimentos = $ProcedimentosPacientesDAO->exibir_procedimento_id($matricula_paciente_procedimentos);
+                            if($pacienteProcedimentos == true){
+                                while($linha_pacienteProcedimentos = mysqli_fetch_assoc($pacienteProcedimentos)){  
+                        ?>
+                            <tr>
+                                <td><?php echo $linha_pacienteProcedimentos['procedimento_procedimentos_pacientes'] ?></td>
+                                <td class="data"><?php echo $linha_pacienteProcedimentos['data_cadastro_procedimentos_pacientes'] ?></td>
+                                <td><?php echo $linha_pacienteProcedimentos['nome_completo_dentistas'] ?></td>
+                                <td><?php echo $linha_pacienteProcedimentos['status_procedimentos_pacientes'] ?></td>
+                                <td></td>
+                            </tr>
+                        <?php
+                                }
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -287,12 +292,11 @@
                 </button>
             </div>
         </div>
-    
-        <script>$("select.dropdown").dropdown();</script>
+
         <script>
             $(function(){
                 $("#prontuario-<?php echo $linha_dadosDoProntuario['matricula_pacientes'] ?>").click(function(){
-                    $(".prontuario-<?php echo $linha_dadosDoProntuario['matricula_pacientes'] ?>.fullscreen.modal").modal({ blurring: true }).modal("show");
+                    $(".prontuario-<?php echo $linha_dadosDoProntuario['matricula_pacientes'] ?>.fullscreen.modal").modal("show");
                 });
                 $(".prontuario-<?php echo $linha_dadosDoProntuario['matricula_pacientes'] ?>").modal({
                     closable: true
@@ -306,3 +310,39 @@
             }
         ?>
 </div>
+
+<script>
+    $("select.dropdown").dropdown();
+    $('.incluir-procedimento').click(function(){
+        $('.formulario-procedimento').css("display", "block");
+    });
+    $('.fechar-incluir-procedimento').click(function(){
+        $('.formulario-procedimento').css("display", "none");
+    });
+</script>
+
+<script>
+    $(".salvar-incluir-procedimento").click(function(e){
+        e.preventDefault();
+        var form_action = $(".formulario-procedimento").find("form").attr("action");
+        var matricula_pacientes = $(".formulario-procedimento").find("input[name='matricula_pacientes']").val();
+        var nome_completo_dentistas = $(".formulario-procedimento").find("select[name='nome_completo_dentistas']").val();
+        var procedimento_procedimentos_pacientes = $(".formulario-procedimento").find("select[name='procedimento_procedimentos_pacientes']").val();
+        var data_cadastro_procedimentos_pacientes = $(".formulario-procedimento").find("input[name='data_cadastro_procedimentos_pacientes']").val();
+        var status_procedimentos_pacientes = $(".formulario-procedimento").find("select[name='status_procedimentos_pacientes']").val();
+        
+        if(matricula_pacientes !== ''){
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                url: url + form_action,
+                data:{matricula_pacientes: matricula_pacientes, nome_completo_dentistas: nome_completo_dentistas, procedimento_procedimentos_pacientes: procedimento_procedimentos_pacientes, data_cadastro_procedimentos_pacientes: data_cadastro_procedimentos_pacientes, status_procedimentos_pacientes: status_procedimentos_pacientes}
+            }).done(function(data){
+                toastr.success('Procedimento salvo.', 'Sucesso!', {timeOut: 5000});
+                $('.formulario-procedimento').css("display", "none");
+            });
+        }else{
+            alert('funciona!');
+        }
+    });
+</script>

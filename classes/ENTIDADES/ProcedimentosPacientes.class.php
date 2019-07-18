@@ -1,7 +1,7 @@
 <?php
 class ProcedimentosPacientes {
     private $matricula_pacientes;
-    private $matricula_dentistas;
+    private $nome_completo_dentistas;
     private $procedimento_procedimentos_pacientes;
     private $data_cadatro_procedimentos_pacientes;
     private $status_procedimentos_pacientes;
@@ -10,8 +10,8 @@ class ProcedimentosPacientes {
         return $this->matricula_pacientes;
     }
 
-    function getMatricula_dentistas() {
-        return $this->matricula_dentistas;
+    function getNome_completo_dentistas() {
+        return $this->nome_completo_dentistas;
     }
 
     function getProcedimento_procedimentos_pacientes() {
@@ -30,8 +30,8 @@ class ProcedimentosPacientes {
         $this->matricula_pacientes = $matricula_pacientes;
     }
 
-    function setMatricula_dentistas($matricula_dentistas) {
-        $this->matricula_dentistas = $matricula_dentistas;
+    function setNome_completo_dentistas($nome_completo_dentistas) {
+        $this->nome_completo_dentistas = $nome_completo_dentistas;
     }
 
     function setProcedimento_procedimentos_pacientes($procedimento_procedimentos_pacientes) {
@@ -45,4 +45,6 @@ class ProcedimentosPacientes {
     function setStatus_procedimentos_pacientes($status_procedimentos_pacientes) {
         $this->status_procedimentos_pacientes = $status_procedimentos_pacientes;
     }
+
+
 }

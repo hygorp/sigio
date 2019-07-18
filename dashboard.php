@@ -16,6 +16,7 @@
         <script type="text/javascript" src="assets/js/form-validation.js"></script>
         <script type="text/javascript" src="assets/js/cep.js"></script>
         <script>
+            var url = "http://localhost:8080/";
             toastr.options = {
                 "closeButton": true,
                 "debug": false,
